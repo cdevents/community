@@ -83,7 +83,7 @@ The committee MUST define a contribution process that:
 The code of conduct MUST set expectations for contributors on expected behavior, as well as explaining the consequences of violating the terms of the code.
 The [Contributor Covenant](https://www.contributor-covenant.org) has become the de facto standard for this language.
 
-Members of the governance committee will be responsible for handling [CDEvents code of conduct](code-of-conduct.md)
+Members of the governance committee will be responsible for handling [CDEvents code of conduct](https://github.com/cdevents/.github/blob/main/docs/CODE_OF_CONDUCT.md)
 violations via cdevents-code-of-conduct@googlegroups.com.
 
 ## Project Communication Channels
