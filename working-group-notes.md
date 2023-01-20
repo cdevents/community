@@ -17,7 +17,7 @@ This document contains the notes from the [CDEvents Working Group](https://hackm
 
 ### Previous Years
 
-- [2022 Meeting Notes](working-group-notes-2022.md)
+- [2022 Meeting Notes](https://github.com/cdevents/community/blob/main/working-group-notes-2022.md)
 
 ### Template
 
