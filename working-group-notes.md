@@ -25,8 +25,9 @@ Participants:
 - Name / affiliation / TZ
 
 Links:
-- [v0.3 Roadmap](https://github.com/orgs/cdevents/projects/1/views/12)
-    - Planned for [Apr 20th]
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
 
 Agenda:
 - Action Items
@@ -34,8 +35,128 @@ Agenda:
 
 ### Topics for coming meetings
 
-- Nominate CDEvents project representative for TOC
-    - Sometime between May 22 and June 5
+- To be added
+
+
+### Jun 5, 2023
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+2
+- Andrea Frittoli, IBM, UTC+1
+- Name / affiliation / TZ
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+Agenda:
+- Action Items
+    - [Emil's nomination for TOC](https://github.com/cdfoundation/foundation/issues/442#issuecomment-1568928869)
+    - Nominations close today
+
+- v0.4 Planning
+    - [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - [all in roadmap](https://github.com/orgs/cdevents/projects/1/views/8)
+    - [issues in CDEvents org not labeled with roadmap](https://github.com/issues?page=1&q=is%3Aopen+is%3Aissue+archived%3Afalse+user%3Acdevents+-label%3Aroadmap)
+
+- Connecting events
+    - Reminder to review 
+    - https://hackmd.io/-Or6hobHSLWVj4duAWX7nA
+    - https://github.com/cdevents/spec/issues/104
+    - https://github.com/cdevents/spec/pull/139 (Very Rough Draft)
+
+- Updates
+    - [Harbor draft RFC](https://hackmd.io/fNI4B111Sq6HESk7a5KVNA)
+        - [Issue](https://github.com/goharbor/community/issues/225)
+    - Java SDK: ready for v0.1.2
+    - 
+
+### May 30, 2023
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+2
+- Ben powell, Apple, CST
+- Fatih Degirmenci, CDF, UTC+2
+- Andrea Frittoli, IBM, UTC+1
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+- Daniel Han, Bloomberg, UTC-4
+- Andrew Fenner, Ericsson Software Technology, UTC+1
+- Adam Kenihan, Ericsson Software Technology, UTC+1
+- Name / affiliation / TZ
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [TBD]
+
+Agenda:
+
+- Action Items
+
+- Welcome Daniel Han!
+    - Standardization around testing
+    - Special focus on integration testing
+    - Interested in contributing back to CDEvents
+
+- TOC Project representatives
+    - [Process](https://github.com/cdfoundation/toc/blob/main/elections/2023/README.md#project-representative-elections)
+        - 4 seats from 9 projects in TOC 
+    - [Nominations](https://github.com/cdfoundation/foundation/issues/442)
+        - The nomination period starts on May 22, 2023 and ends on June 5, 2023.
+    - Emil has volunteered to be nominated from CDEvents. The nomination will be submitted later today.
+
+- CDEvents visualization discussion - Adam/Andrew/Jalander from Ericsson Software Technology
+    - Follow-up: track slide questions on github
+    - Discuss libraries vs. services in this area
+    - Share screenshots of demos?
+    - Issue on visualizing CDEvents: https://github.com/cdevents/community/issues/25
+
+- Update on Connecting Events
+    - https://hackmd.io/-Or6hobHSLWVj4duAWX7nA
+    - https://github.com/cdevents/spec/issues/104
+    - https://github.com/cdevents/spec/pull/139 (Very Rough Draft)
+    - Should be ready in a couple of weeks
+    - Ben to let the team know when it's ready for review
+
+- CDEvents usage at Bloomberg - Daniel Han from Bloomberg
+
+- (Andrea) Signed CDEvents
+    - We should probably delegate signature to the envelope layer
+        - That would allow us to sign the entire payload
+        - Which CE headers would we like to be included in the signature?
+    - Trying to restart the conversation on [CloudEvents side](https://github.com/cloudevents/spec/issues/565)
+    - It would be really useful to have a security expert involved in the discussion
+    - Signatures associated to the envelope layer means that they would only be available with certain bindings
+        - That should be acceptable
+
+- Updates:
+    - CDEvents  + Argo: 
+        - [Project View](https://github.com/orgs/cdevents/projects/4/views/10)
+        - [Draft RFC](https://github.com/argoproj/argo-cd/pull/13723)
+        - Question
+            - Do we need separate proposal for each Argo project?
+    - CDEvents + Harbor:
+        - Discussed in the CNCF Harbor slack channel
+        - Andrea to start and RFC
+        - https://github.com/goharbor/community/tree/main/proposals
+    - CDEvents + other registries
+        - JFrog, meeting today
+        - Chainguard, planning POC
+    - CDEvents + GitHub:
+        - Brad working on a GitHub App
+            - SCM events
+            - Pipeline events (GH Actions)
+    - CDEvents + Testkube:
+        - Implemented in dev
+        - Release coming soon
+    - CDEvents + Spinnaker
+        - PRs ready for review
+        - Demo available for Spinnaker meetings
+        - Ben to ping people on Spinnaker side
+            - Organise a meeting to see the demo with all interested parties
+
+- CDEvents v0.4 planning
+
+- Other topics?
 
 
 ### May 22, 2023
@@ -108,7 +229,7 @@ Agenda:
     - Argo integration interesting for Ericsson
     - Argo integration interesting for RedHat
 
-    - CDEvents in the OSS keynote, thank you Tracy!
+- CDEvents in the OSS keynote, thank you Tracy!
 
 - Include updated architecture picture in docs
     - It would be good to show what kind of events are used where
