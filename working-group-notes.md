@@ -28,14 +28,330 @@ Links:
 - [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
     - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
 
-
 Agenda:
+- New attendees
 - Action Items
 - \<addme\>
 
 ### Topics for coming meetings
 
+- July 25th - with Dotan Horovits, [OpenTelemetry and CDEvents](https://github.com/open-telemetry/oteps/pull/223)
+    - A new OTEP to add CI/CD observability semantics to OpenTelemetry 
 - To be added
+
+
+### July 17, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+Agenda:
+- New attendees
+- Action Items
+    - (Andrea) Create a repo for the visualisation reference architecture and poc
+        - https://github.com/cdevents/visualisation/
+    - (Jalander) Share slides at https://github.com/cdevents/presentations
+        - https://github.com/cdevents/presentations/pull/25
+
+- [Support of custom types](https://github.com/cdevents/spec/issues/147)
+
+
+- How does CDEvents fit with the big platform picture?
+    - We should add diagrams to document the big picture
+
+- What about CDEvents and software supply chain
+    - We have artifact signed event today
+    - We want to have more, looking to collaborate with OpenSSF
+
+- \<addme\>
+
+
+### July 11, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+- Ben Powell, Apple, UTC+5
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+- 
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+Agenda:
+- New attendees
+    - 
+- Action Items
+    - (Ben) Meeting with Spinnaker for CDEvents demo
+        - Ben to create the meeting in the next ~1w
+        - Invite Spinnaker team as optional
+    - (Andrea) Create an issue / doc / slack channel to discuss artifact events
+        - Issue: https://github.com/cdevents/spec/issues/143
+        - Design doc: https://hackmd.io/AfT-5D3JQZynKk5yDyAWeA?both
+        - Slack channel: #cdevents-artifacts
+
+ 
+- CDEvents Visualization - Reference Architecture
+    - (Jalander) Share slides at https://github.com/cdevents/presentations
+    - (Andrea) Create a repo for the visualisation reference architecture and poc
+
+- Connecting Events
+    - [PR](https://github.com/cdevents/spec/pull/139)
+    - (Andrea) How do we handle proposals?
+        - Switch to hackmd
+        - Add a proposal folder in the spec repo
+        - Use a separate repo
+        - Else?
+    - (Andrea) Trying to visualise the connecting events proposal in a simple example
+        - ![](https://hackmd.io/_uploads/SJXvCnqt2.png)
+        - ![](https://hackmd.io/_uploads/Hysk60cFh.png)
+
+        - How do we carry the context?
+            - Where global_id, parent_id and links come from in each step?
+        - How does each of those help us in connecting those three events
+
+
+
+### June 30, 2023
+
+
+Participants:
+- Victor Lu
+- Ben Powell
+- Emil Bäckmark
+- Andrea Frittoli
+
+Agenda: Session dedicated at Connecting Events
+
+- [PR](https://github.com/cdevents/spec/pull/139)
+- Review of comments on the PR, discussion tracked in comments
+- We could use some of the nomenclature from the [VSMI reference arch](https://docs.google.com/presentation/d/16-c-Kui3LKmiIc54N7f_4tebTt-zcbCnKDypksT5WRo/edit#slide=id.p)
+- 
+
+### June 27, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Emil Bäckmark, Ericsson, UTC+2
+- Fatih Degirmenci, CDF, UTC+2
+- Tracy Ragan, DeployHub / Ortelius
+- Daniel Han / Bloomberg / NY
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+- Neil McGonigle, Fidelity, UTC+1
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+Agenda:
+- New attendees
+    - Carmit from JFrog
+
+- Action Items
+    - (Ben) Meeting with Spinnaker for CDEvents demo
+        - The PR is being reviewed
+        - Meeting still TBD
+
+- SDK Updates
+    - Golang: v0.3.2 patch release
+        - Fix the CDEvents spec version
+        - Set CloudEvents Id
+    - Java:
+        - Release v0.1.2 - ready to be done
+        - Generating the SDK
+
+    - Security Events:
+        - Ortelius and GUAC talking to develop security use cases / events
+
+- Tools Adoption Updates
+    - Harbor:
+        - Proposal: https://github.com/goharbor/community/pull/229
+        - Implementation: https://github.com/goharbor/harbor/pull/18853
+        - Demo
+    - Tekton:
+        - [Enhancement Proposal](https://github.com/tektoncd/community/pull/1028/files?short_path=bae3223#diff-bae3223ff38b679c88bd900ea859b210404aa243536087b842df3324d825f957)
+    - ArgoCD: 
+        - [Proposal](https://github.com/argoproj/argo-cd/pull/13723)
+    - Spinnaker
+        - PR being reviewed
+    - Testkube
+        - (Andrea) Reach out to Ole for updates
+
+- CDF Online meeting
+    - Testkube team presented, including CDEvents
+    - Available on youtube playlist https://youtu.be/d2BRv3sY2A8
+
+- Artifact events
+    - Carmit:
+        - Events produced by an artifact registry
+            - bundling of artifacts
+            - promotion of artifacts/bundles
+            - distribution
+            - release
+    - Dan: 
+        - Tagging of artifacts as event
+    - Carmit: 
+        - Generally events should contain only event data
+        - More data about the artifact can be pulled via APIs
+    - Emil: What is the bundling of events specifically
+    - Carmit: a bundle is a group of artifacts (like docker image, helm chart etc), a bundle can inculde up to 1k artifacts
+    - (Andrea) Create initial tickets to track the events
+        - Link issues about events to artifact registries
+            - https://github.com/cdevents/spec/issues/143 
+    - Artifact pull/pushed/deleted but also moved (for artifactory)
+    - Artifact scanning events are security type of events and should be produced by the tool the perform the security scan
+    - Quota events in Harbor may not be good candidates for CDEvents
+    - Archiving may be relevant from an audit trail point of view, less relevant from and SDLC point of view
+    - Tags could be used to indicate that an artifact is ready for promotion or deployment
+
+    - Emil: start a document about events from registries
+        - Capture events for different artifact registry
+        - Collaborate on the document
+        - Use this document as input for the specification work
+        - Create a slack channel for artifact registry specific discussions
+
+- Issue tracking events
+    - Carmit: it would be interesting to have those associated with artifacts
+
+- Spec Topics
+    - Connecting Events
+        - [PR](https://github.com/cdevents/spec/pull/139) ready for review
+
+- Collaborations
+    - VSM Interoperability
+        - New monthly meeting for CDEvents + VSMI collaboration
+        - [Meeting Notes](https://hackmd.io/Du6iay8PTyypWchaINsRiA)
+            - Steve introduced the VSMI Topology and Ontology
+            - CDEvents is part of picture
+    - CNCF App Delivery TAG
+        - Looking for contributors to drive/work on a version of podtato-head based on CDEvents
+
+- CDEvents visualisation
+
+- \<addme\>
+
+
+### Jun 19, 2023
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+2
+- Neil McGonigle, Fidelity Investments, UTC
+- Andrea Frittoli, IBM, UTC+1
+- Name / affiliation / TZ
+- 
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+
+Agenda:
+- Action Items
+    - Ben to arrange a meeting with Spinnaker team for CDEvents demo
+
+- (Brad) Update on GitHub action for CDEvents
+    - Mock end point implemented
+    - Testing different example, getting ready for first version
+    - To be presented in the next version
+
+- (Brad) Events for featureas and issues
+    - CDEvents in scope for features and issues?
+        - Issues can be associated with incidents as well
+        - Related to VSM interop
+        - Related to connecting events discussion
+        - Source code events could be associated to issues/features delivered in a certain code change
+
+- (Andrea) Harbor proposal [pull request](https://github.com/goharbor/community/pull/229)
+    - Changes on CDEvents side [may be required](https://github.com/cdevents/spec/issues/143)
+    - (Emil) We should be consciuous about the use cases associated with events when adding new events
+    - (Emil) Are events related to CD? We don't have a definition today of what is in scope for CD
+        - Relevant for triggering a CI/CD workflow
+        - Relevant for observation of a CI/CD overall workflow
+    - (Emil) We should invite JFrog to the conversation about relevant events for artifact registries
+    - (Neil) What kind of events (if any) does artifactory support today?
+
+- (Andrea) Parent-child pipelines use case https://github.com/cdevents/spec/issues/142
+    - (Emil) Is this within a pipeline execution or upstream/downstream dependencies?
+    - (Emil) Example: a test step is replaced with a call to an external test system which may have its own pipeline and events. How do events from the test system refer back to the original pipeline?
+
+- v0.4 Planning (in progress):
+    - [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - [all in roadmap](https://github.com/orgs/cdevents/projects/1/views/8)
+    - [issues in CDEvents org not labeled with roadmap](https://github.com/issues?page=1&q=is%3Aopen+is%3Aissue+archived%3Afalse+user%3Acdevents+-label%3Aroadmap)
+
+
+
+### Jun 13, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+- Ben Powell, Apple, CST
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+Agenda:
+- Action Items (None)
+
+- CDF TOC:
+    - Voting for the CDF TOC representatives ongoing
+    - Please vote if you're eligible!
+
+- CDF Outreach Committee:
+    - Proposed project updates:
+        - CDEvents, a common specification for Continuous Delivery events: it drives interoperability and brings disruption in the CD ecosystem with a growing and active community. Contributors from 20 companies, 142 twitter followers, 85 GitHub stars.
+            - Releases v0.2, v0.3: test and incident events, initial software supply chain security. Java SDK to Maven.
+            - Tools: Jenkins, Testkube, Spinnaker (implementing), Tekton (experimental), ArgoCD (RFC), Harbor (RFC). More tools have expressed interest (Shipwright, JX, Tracetest, JReleaser, Flux)
+            - Collaborations: VSM Interop, CNCF App Delivery TAG, OpenSSF, CDF SIG Interop
+            - Interested companies: Fidelity (adopter), SAS, Apple, Ericsson, IBM and more
+            - What’s next: connecting events, visualisation, supply chain security, more tools and adoption
+
+- Connecting events
+    - Reminder to review 
+    - https://hackmd.io/-Or6hobHSLWVj4duAWX7nA
+    - https://github.com/cdevents/spec/issues/104
+    - https://github.com/cdevents/spec/pull/139 (Very Rough Draft)
+    - Ben working on client API and storage description
+    - PR will be available soon-ish
+
+- Spinnaker
+    - Ben to arrange a meeting for a demo of the current implementation
+
+- Fidelity adoption:
+    - [User story](https://cd.foundation/wp-content/uploads/sites/78/2023/02/CDF_SecuringtheFinancialServicesSupplyChainthroughContinuousDelivery_012023.pdf)
+    - Starting from the central point: Jenkins
+    - Looking forward to artifactory plugin
+    - Challenges:
+        - Versioning (of Jenkins)
+        - Implementation of the plugin (Jenkins documentation issue)
+    - Events are sent to a Kafka queue
+    - Goals:
+        - Improve developer experience: automatic audit trail for artifacts, track via commit id
+        - Visibility towards management of application landscape
+    - Non-relational DBs are really beneficial
+        - But they do present challenges with versioning
+        - Posgres provide a JSON type column
+
+- CDEvents visualisation
+
+- Python SDK
+    - Adopting pydantic in progress
+    - Release to pypi in progress
+    - Question: generation of the SDK?
+
+- v0.4 Planning (in progress):
+    - [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - [all in roadmap](https://github.com/orgs/cdevents/projects/1/views/8)
+    - [issues in CDEvents org not labeled with roadmap](https://github.com/issues?page=1&q=is%3Aopen+is%3Aissue+archived%3Afalse+user%3Acdevents+-label%3Aroadmap)
 
 
 ### Jun 5, 2023
@@ -69,7 +385,6 @@ Agenda:
     - [Harbor draft RFC](https://hackmd.io/fNI4B111Sq6HESk7a5KVNA)
         - [Issue](https://github.com/goharbor/community/issues/225)
     - Java SDK: ready for v0.1.2
-    - 
 
 ### May 30, 2023
 
