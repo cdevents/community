@@ -35,9 +35,522 @@ Agenda:
 
 ### Topics for coming meetings
 
-- July 25th - with Dotan Horovits, [OpenTelemetry and CDEvents](https://github.com/open-telemetry/oteps/pull/223)
-    - A new OTEP to add CI/CD observability semantics to OpenTelemetry 
-- To be added
+- Review proposal for demo system https://github.com/cdevents/community/issues/31
+
+### Oct 9th, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Emil Bäckmark, Ericsson, UTC+1
+- Andrea Frittoli, IBM, UTC+1
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [TBD](https://github.com/cdevents/spec/milestone/4)
+
+- New attendees
+
+- Adam working on a Flux integration
+    - Jalander: Plan to include in the original POC
+    - Emil: should we have a dedicated POC instead?
+    - https://github.com/orgs/cdevents/projects/4
+    - Adam to file an issue on CDEvents side
+
+- Connecting Events 
+    - [Connecting/linking events](https://github.com/cdevents/spec/pull/139)
+    - Emil: Call for reviews!
+
+- Proposed New Meeting Schedule:
+    - CDEvents APAC meeting, 10am UTC, every 4 weeks on Monday, starting 30/10
+    - CDEvents EMEA/NA meeting 1, 3pm UTC, every other Tuesday, starting on 17/10 (no change!)
+    - CDEvents EMEA/NA meeting 2, 3pm UTC, every other Monday, starting on 09/10 (takes the slot that used to be SIG Events)
+    - SIG Events, 3pm UTC, every 4 weeks on Monday, starting 16/10 (same time, different week)
+        - Topics that are broader than CDEvents, e.g. VSMI or events in general
+
+- PR Reviews
+    - https://github.com/cdevents/spec/pulls
+    - URL to URI https://github.com/cdevents/spec/pull/162
+        - Version numbers ok now
+        - Will the backwards incompatible change cause issues for SDKs?
+
+- SDKs Updates
+    - Java
+        - Part 1 of generating the SDK is merged
+        - Part 2 to be reviewed?
+
+- Spinnaker integration
+    - Jalander working on addressing review comments
+    - 
+
+- \<other topics, please add\>
+
+
+### Oct 3rd, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+- Ben Powell, Apple, CST
+- Emil Bäckmark, Ericsson, UTC+2
+- Daniel Han, Bloomberg, EDT
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [TBD](https://github.com/cdevents/spec/milestone/4)
+
+- New attendees
+    - Sean Brennan - Bloomberg
+        - E2E visibility
+        - Automation in pipelines
+
+- Discuss introduction of new ticket/issue events, with Sean Brennan, base on [Slack chat](https://cdeliveryfdn.slack.com/archives/C030SKZ0F4K/p1695312825361389)
+    - Also detailed in [issue 164](https://github.com/cdevents/spec/issues/164)
+    - Sean: Product approvals through issues
+    - Ben: CDEvents for ticketing systems needed at Apple
+    - Link between PRs and issues
+        - At bloomberg: Jira ID in the PR title
+        - Emil: at Ericsson, specific syntax in the commit message
+        - Andrea: CDEvents should define the data model of how tickets and CSM/other events are connected
+    - What does the data model look like?
+        - Possibly a ticket subject
+        - Several events:
+            - Create event is needed
+            - Ben: we will need a "resolved" event too. It would be important for deploy/rollback use cases
+            - Sean: updates / transition events, e.g. approval
+            - Do we need to track all ticket events?
+                - Emil: we should not replicate the whole data model of ticketing systems
+                - Ben: we can optional components of the tickets spec
+                - Sean: if we define events, consumers may use those they need
+        - Daniel: identify the bare minimum data model we can start with
+            - We can add more fields, but we need to be careful and not to slip into adding too much
+    - Next steps:
+        - Example proposals
+            - Testing events https://github.com/cdevents/spec/pull/126
+            - Incident events https://github.com/cdevents/spec/pull/107
+        - Sean and Ben to collaborate on getting this started
+
+- Meetings Schedule Review
+    - Weekly alternate times
+    - SIG Events bi-weekly
+    - Proposal for new meeting schedule
+        - Every other Monday and every other Tuesday
+        - Reduce APAC meeting to monthly/optional
+
+- OTel proposal
+    - [OpenTelemetry and CDEvents](https://github.com/open-telemetry/oteps/pull/223)
+    - Ben cannot share example payloads from Apple about how CDEvents would work at Apple
+
+- [Connecting/linking events](https://github.com/cdevents/spec/pull/139)
+    - Ben to document advantages of using separate link events
+
+- [Hacktoberfest](https://github.com/cdevents/community/issues/35)
+
+- PR Reviews
+    - https://github.com/cdevents/spec/pulls
+
+- SDKs Updates
+    - Java
+        - Part 1 of generating the SDK is merged
+        - Part 2 to be reviewed?
+
+
+### Sep 19, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli. IBM, UTC+1
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [TBD](https://github.com/cdevents/spec/milestone/4)
+
+
+- New attendees
+
+- OTel proposal
+    - [OpenTelemetry and CDEvents](https://github.com/open-telemetry/oteps/pull/223)
+
+- [Connecting/linking events](https://github.com/cdevents/spec/pull/139)
+
+- [Hacktoberfest](https://github.com/cdevents/community/issues/35)
+
+- PR Reviews
+    - https://github.com/cdevents/spec/pulls
+
+- SDKs
+    - 
+
+### Sep 19, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, he/him, IBM, UTC+1
+- Ben Powell, Apple, CST
+- Daniel Han, Bloomberg, EDT
+- Emil Bäckmark, Ericsson, UTC+2
+- Dotan Horovits, Logz.io, CNCF, UTC+3
+- Adam Kenihan
+- Evan Elms
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+
+Agenda:
+- New attendees
+
+- Action Items
+
+- Focus on "Tracing with CDEvents"
+    - with Dotan Horovits, [OpenTelemetry and CDEvents](https://github.com/open-telemetry/oteps/pull/223)
+        - A new OTEP to add CI/CD observability semantics to OpenTelemetry 
+    - Dotan presented
+        - Brief intro to OTel
+        - Main uses case is monitoring a production system
+        - Monitoring the release pipeline is just as critical
+        - Otel plugin for Jenkins shows some pipeline data: https://plugins.jenkins.io/opentelemetry/ (in proprietary format)
+        - OTel is not just for distributed tracing, but also to monitoring and logging
+        - Blog post: https://logz.io/learn/cicd-observability-jenkins/
+        - The [PR](https://github.com/open-telemetry/oteps/pull/223) focuses on the modelling part ([read it in repo](https://github.com/horovits/oteps-cicd-o11y/blob/95672d53dc2bf9d13ecee737ac85e7236da1437c/text/0223-cicd-observability-OTEP.md))
+        - OTLP allows to transmit OTel data within other protocols
+        - OpenObservability Talks podcast episode on observability in CI/CD pipelines, hosting Oleg Nenashev: https://podcasters.spotify.com/pod/show/openobservability/episodes/Continuous-Observability-Shedding-Light-on-CICD-Pipelines---OpenObservability-Talks-S3E02-e26p5fk
+    - Questions
+        - Where should the border between CDEvents and OTel be? What should be notified with what technology/protocol?
+    - Next steps
+        - Andrea to call for a separate session to continue the discussion on OTel & CDEvents
+        - It would be great to have a simple PoC showcasing how we can manage this
+
+
+- [Connecting/linking events](https://github.com/cdevents/spec/pull/139)
+    - Ben will add example payloads to the sequence diagram events, for clarity
+    - Also add some pros/cons on keeping the relation object as a separate event compared to including it as an optional array of relations within the events
+    - Consider architectural differences
+
+- [Hacktoberfest](https://github.com/cdevents/community/issues/35)
+    - Not many issues labeled yet
+
+- SDK Updates
+
+- Integration updates
+    - Tekton: [proposal merged](https://github.com/tektoncd/community/pull/1046)
+
+
+- 
+
+
+### Sep 11, 2023
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+2
+- Andrea Frittoli, IBM, UTC+1
+- Victor Lu
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [TBD](https://github.com/cdevents/spec/milestone/4)
+
+Agenda:
+- New attendees
+- Action Items
+
+- Visualisation POC (@SIG Events meeting)
+    - PR: https://github.com/cdevents/visualisation/pull/1
+    - GitHub Action with hosted worker
+    - Visualization independent from tools
+    - Two kind of visualization tools
+        - CDEvents specific
+        - Generic (Grafana based)
+    - Dependency to the link model
+        - Current assumption do not affect the visualisation codebase much
+        - Data collection part depends on the link model
+    - [POC Demo Recording](https://youtu.be/KIGhmPQ2V9c)
+
+- (Victor) Comparison of different CI/CD
+    - It would be nice to have a comparision table to understand which tool can be used for what
+    - Discussion forum would be helpful too
+
+- [Hacktoberfest](https://github.com/cdevents/community/issues/35)
+    - Action for all: label issues for hacktoberfest
+
+- [Release Planning](https://github.com/cdevents/spec/milestone/4)
+    - A few PR were merged
+    - We could make a release if it takes too long for connecting events to be implemented
+
+- SDK Updates
+    - Java v0.1.2 released
+    - Dotnet SDK
+        - [obowersa](https://github.com/obowersa) plans to contribute the SDK
+        - [slack thread](https://cdeliveryfdn.slack.com/archives/C030SKZ0F4K/p1692915343895089)
+        - Would be good to plan a presentation / discussion in the CDEvents WG
+
+- Integration updates
+    - Tekton: [proposal approved](https://github.com/tektoncd/community/pull/1046)
+    - Harbor: [proposal pending approval](https://github.com/goharbor/community/pull/229)
+    - Argo CD: [draft proposal](https://github.com/argoproj/argo-cd/pull/13723) - next step is building a POC, Andrea to follow-up
+    - Spinnaker: PRs pending reviews 
+        - https://github.com/spinnaker/deck/pull/9997
+        - https://github.com/spinnaker/echo/pull/1295
+
+- [Connecting/linking events](https://github.com/cdevents/spec/pull/139)
+    - Ben has some action items to update the PR based on the latest discussion
+    - List of parent ids to be removed for now and potentially added back later on
+
+
+- \<addme\>
+
+
+### Sep 5, 2023
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+2
+- Ben Powell, Apple, CST
+
+Agenda:
+- [Connecting/linking events](https://github.com/cdevents/spec/pull/139), using trace spans
+    - [How to create/finish spans](https://github.com/cdevents/spec/pull/139#issuecomment-1696934569)
+        - We could hide the complexity of calling a Links Service, when producing events, within the SDK.
+        - Having a links service as part of producing an event adds a synchronous/blocking call, unless the links service is also called through the asynchronous message bus
+    - [Specific or generic relations types](https://github.com/cdevents/spec/pull/139#discussion_r1305661282)
+    - Links/relationships between events is critically important if not all info relevant for a consumer is contained within a specific event.
+        - Should a service.deployed event contain all relevant info from artifact.packaged and change.merged event, or should the relationships between the events be used to find that info.
+    - What should the global id / trace id be called?
+        - Global id, Trace id, Context id, Trail id, Lifecycle id, ...
+        - Ben will create a poll on CDEvents Slack to vote for the right term
+    - For now the parent id will be removed from the [PR](https://github.com/cdevents/spec/pull/139), just keeping the global id in there.
+    - To be discussed further and eventually decided on:
+        - Should the relationships/links be contained in the Links Spec and event data in CDEvents spec, or should it all be combined in the CDEvents spec?
+            - Span id to be the only relationship to keep in the CDEvents spec, and the rest of relationships in the Links spec?
+            - Separating the data from relationships introduced a dependency between the two, both ways, and they need to evolve hand-in-hand
+
+- Hacktoberfest
+    - https://github.com/cdevents/community/issues/35
+    - Let's label more issues
+    - https://docs.google.com/document/d/1IxVtP7GTm0NqwIn98pLSHONKllbzm0kVRmURn8x394w/edit
+    - Ben will create/identify some issues and ask Emil/Andrea to label them.
+
+
+### Aug 28, 2023
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+2
+- Brad McCoy, Basiq, UTC+11
+- Adam Kenihan, UTC+1
+
+Agenda:
+- Incident Events
+    - (Brad) shows an implementation of incident.reported event with Atlassian Jira
+
+- GitHub Actions
+    - (Brad) Working on GitHub actions as well (TestKube folks interested)
+    - GitHub actions runner (self-hosted runner). Could either pull or push.
+    - https://github.com/cdevents/github-action
+
+- OpenTelemetry integration. Not much news. Looking forward to discussion on Sept 5.
+
+
+### Aug 22, 2023
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+2
+- Ben Powell, Apple, CST
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+- Daniel Han, Bloomberg, EDT
+- Evan Elms
+- Name / affiliation / TZ
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4). Will most certainly be delayed.
+
+Agenda:
+- New attendees
+
+- Action Items
+
+- [Hacktoberfest 2023](https://hacktoberfest.com/)
+    - [Hacktoberfest on CDF Website](https://cd.foundation/hacktoberfest/)
+    - [CDEvents Hacktoberfest issue 2022](https://github.com/cdevents/community/issues/7)
+    - [CDEvents Hacktoberfest project 2023](https://github.com/orgs/cdevents/projects/5/views/1)
+        - Emil to notify CDF about the new issue link once its there
+    - Items to add
+        - Ideas from Microcks presentation? https://github.com/cdevents/spec/issues/148
+        - Visualization?
+        - Python SDK?
+            - Code generation
+            - Putting it on PyPi
+        - Other SDK improvements?
+            - Daniel to write an issue about code generation for e.g. Python/Go (could relate to https://github.com/cdevents/sdk-go/issues/24)
+        - Generate DB schemas for the events?
+        - Client hooks for SDK usage
+            - Create github issue (Ben)
+
+- [Connecting Events PR](https://github.com/cdevents/spec/pull/139)
+
+- Visualization proposals
+    - https://github.com/cdevents/presentations/blob/main/CDEvents-Visualisation/CDEvents_visualisation_types.pdf
+    - A demo of the current state of the visualization PoC to be presented on SIG Events next week
+
+- Other current PRs and issues
+    - Java SDK generator https://github.com/cdevents/sdk-java/pull/58/
+    - Spinnaker integration 
+        https://github.com/spinnaker/deck/pull/9997
+        https://github.com/spinnaker/echo/pull/1295
+        Ben will invite reviewers to these reviews
+
+- \<addme\>
+
+
+### Aug 14, 2023
+
+**Meeting canceled since no one showed up**
+
+
+### Aug 8, 2023
+
+Participants:
+- Andrea Frittoli, IBM, UTC+1
+- Emil Bäckmark, Ericsson, UTC+2
+- Ben Powell, Apple, CST
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+- Tracy Ragan, DeployHub / Ortelius
+- Adam Kenihan
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+Agenda:
+- New attendees
+- Action Items
+
+- [Hacktoberfest 2023](https://hacktoberfest.com/):
+    - From CDF TOC meeting:
+        - Roxanne wants to know by August 31st
+            - Which projects plan to participate
+            - Blog posts need to be live and sent to CDF by September 29th
+            - Project contact persons need to be identified
+        - Hacktoberfest 2022 info on [CDF Website](https://cd.foundation/hacktoberfest/)
+        - Ideally list of participating projects and contact persons by next TOC meeting on Aug 15th
+    - Shall CDEvents participate?
+        - It requires a little bit of initial investment, but not too much
+        - The more we invest, the better the return, see Jenkins 2022 https://www.jenkins.io/events/hacktoberfest/	
+        - It requires extra review bandwidth during the event
+        - Good for new reviewers and prospective reviewers to refine their skills and build review numbers
+        - It usually brings mostly occasional contributors, but it may help us tackling our bug backlog and implement small improvements on docs, tools and website
+    - If we participate, we need:
+        - One person driving the effort (contact for CDF)
+        - List of interested CDEvents projects, and project/areas ideas
+        - A blog post or github issue
+        - Ideally (but optional) list of interested reviewers / mentors
+    - Tracy:
+        - We should participate
+        - Happy to write a blog post
+        - Security Events?
+        - Point of contact for the CDF
+    - Ben: security events might be too much for hacktoberfest
+    - Emil: hacktobefest should be easy to review
+    - Topics:
+        - Ben:
+            - SDK code generation, modelling
+            - Documentation
+            - Abstraction layers
+        - Andrea:
+            - CLI
+            - Autogeneration of docs
+            - Investigate async
+    - 2022 Project: https://github.com/orgs/cdevents/projects/3/views/1
+
+- [Connecting events](https://github.com/cdevents/spec/pull/139)
+
+- [v0.4 Release](https://github.com/orgs/cdevents/projects/1/views/13)
+
+- v1.0 release
+
+- \<please add\>
+
+
+### July 31, 2023
+
+Participants:
+- Andrea Frittoli, IBM, UTC+1
+- Neil McGonigle, Fidelity, UTC+1
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+Agenda:
+- New attendees
+- Action Items
+
+- Request for reviews:
+    - [Connecting events](https://github.com/cdevents/spec/pull/139)
+    - [OpenTelemetry and CDEvents](https://github.com/open-telemetry/oteps/pull/223)
+
+- Java SDK v0.1.2 released
+
+
+### July 25, 2023
+
+Participants:
+- Ben Powell, Apple, CST
+- Andrea Frittoli, IBM, UTC+1
+- Daniel Han, Bloomberg, EDT
+- Neil McGonigle, Fidelity, UTC+1
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+Agenda:
+- New attendees
+- Action Items
+
+- (Ben) New *optional* fields for change events
+    - [created change event should contain a top level description](https://github.com/cdevents/spec/issues/151)
+    - [commit array should be present in change events](https://github.com/cdevents/spec/issues/150)
+    - [Branch info in change events](https://github.com/cdevents/spec/issues/149)
+    - Bundle artifacts are required to avoid sending one event for each single artifact
+        - Example deployment @ Apple with 500+ artifacts
+        - This is a single deployment, and there are many deployments
+
+    - Ben: adding more fields, but make them optional
+        - Note: optional -> mandatory is a breaking change
+        - Requiring API Calls is not good for interoperability as they shift the issue of interoperability
+    - Dan: for test cases we have testcaserun which could generate 1000s if events
+        - How would bundling help? 
+    - Dan: is there a cadence for releases
+        - Andrea: We are automating the SDKs updates
+        - Andrea: Currently we plan releases on demand, we could switch to a regular cadence if we have enough contributions
+        - (A) Andrea to make a proposal for regular release candence
+    - Ben: How do we help people transition from customData to CDEvents data
+    - Daniel: we could add helpers/adapters in the SDK that help with that
+    - (A) Ben to create an issue to track this discussion
+
+- (Ben) Not all data in events can be disclosed to everyone
+    - Some team cannot broadcast their events to all
+    - Identity of sender
+    - Ben to create an issue
+    - Dan: can we have an FAQ page, recommendation about things
+        - How do I deal with security
+        - How do I add data to the subject
+        - Can be open-ended i.e. we have the question, not the answer yet
+            - Andrea: we have the [primer](https://cdevents.dev/docs/primer/) today, but that does not answer specific questions
+            - Ben: it should not be in the spec
+            - Daniel: create an issue
+
+- (Ben) What about Ticket/Feature/Issues
+    - Brad McCoy is interested in this feature
+    - Steve Pereira from VSMI
+
+- Connecting Events
+
+- Bundling of events
+    - Daniel: Binding events in the some format, so that they are sent out all together, it could help consumers connect the dots
+    - 
 
 
 ### July 17, 2023
