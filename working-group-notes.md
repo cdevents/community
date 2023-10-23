@@ -37,6 +37,90 @@ Agenda:
 
 - Review proposal for demo system https://github.com/cdevents/community/issues/31
 
+
+### Oct 23rd, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, he/him, IBM, PDT
+- Ben Powell, Apple, CST
+- Emil Bäckmark, Ericsson, UTC+2
+- Sean Brennan, Bloomberg, EST
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+- Owen Bower Adams, Intelligent Growth Solutions, BST
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [TBD](https://github.com/cdevents/spec/milestone/4)
+
+- New meeting schedule (reminder)
+    - CDEvents: Every Monday at 3pm UTC (Summer) / 4pm (Winter)
+    - Every 4 weeks APAC friendly meeting at 11am UTC (Nov 27th ->)
+    - DST in Americas end on Nov 5: https://en.wikipedia.org/wiki/Daylight_saving_time_in_the_United_States
+    - DST in Europe end on Oct 29: https://en.wikipedia.org/wiki/Summer_time_in_Europe#Table_of_transition_dates_for_European_Summer_Time
+    - Andrea to propose the exact time for next week on slack (1h later for EU timezone)
+
+- Connecting Events 
+    - [Connecting/linking events](https://github.com/cdevents/spec/pull/139)
+    - Ben to address comments on the links section
+    - Ben will update the PR with schema updates (all events)
+    - Ben plans to create a mock CI/CD system to demonstrate links to demonstrate CDEvents at Apple
+
+- Ticket Proposal
+    - Sean and Ben met weekly to discuss about this
+    - Approvals
+        - Dedicated subject or use the tickets subject
+        - At Apple: an approval is every time a manual approval is involved
+        - Good for auditing
+            - Example, during freeze, two step approval process is required
+        - Emil: at Ericsson, approval is only at review time
+        - Alternative: add "approved" preticate to all (many) events
+        - Ben and Sean to identify pros/cons of the two options
+            - A new "approval" subject (declined, accepted?, in progress)
+            - Add "approval" predicate to several existing subjects
+    - [Tickets](https://github.com/cdevents/spec/issues/164)
+        - ticket subject
+        - Predicates could be what happened or the ticket state
+        - Emil: workflow can be customised per project/team, predicates should not dictate the workflow names
+    - Approvals
+        - Owen:
+            - Automated approval can be part of the model
+            - An approval can come from humans or machines or a combination
+            - It would be good to include this in the "approval" subject docs
+        - Emil:
+            - PRs can be automatically approved if they are small enough
+
+- PR Reviews
+    - https://github.com/cdevents/spec/pulls
+
+- Deprecation of fields
+    - Option1 - Document on the markdown, define an ETA for removal
+    - Option2 - Keep the deprecate fields forever
+    - Option3 - Just update the version and drop the field
+    - [Related PR](https://github.com/cdevents/spec/pull/162)
+        - PR not urgent, good to use to define the deprecation process
+    - Action Andrea to capture this in a ticket
+
+- SDKs Updates
+    - Java
+        - Part 2 of generating the SDK to be reviewed
+        - https://github.com/cdevents/sdk-java/pull/60
+    - Rust
+        - Scaffolding started as part of Hacktoberfest
+    - .NET
+        - Owen: have been working wih a manually generated .NET SDK for a couple of months. Work is starting on a generated version.
+    - Ben: what languages are tools written in?
+    - Swift used heavly at Apple
+
+- CDEvents Use Cases
+    - Owen to present internal use cases for CDEvents (added to the agenda in a few weeks)
+
+- Spinnaker
+    - Ben to add reviewers to the Front End PR
+
+- \<other topics, please add\>
+
+
 ### Oct 9th, 2023
 
 Participants:
@@ -83,6 +167,9 @@ Links:
 - Spinnaker integration
     - Jalander working on addressing review comments
     - 
+
+- Ben: can we add links to recording in these notes?
+    - Andrea to share the link to the videos
 
 - \<other topics, please add\>
 
