@@ -4,12 +4,27 @@ This is the central home for the CDEvents community documentation.
 
 ## The CDEvents project
 
+CDEvents is a common specification for Continuous Delivery events.
+Its scope spans the entire software development lifecycle and it includes several projects:
+
+* [a specification](https://github.com/cdevents/spec)
+* various SDKs
+  * [golang](https://github.com/cdevents/go-sdk)
+  * [java](https://github.com/cdevents/go-java)
+  * [python](https://github.com/cdevents/go-python)
+* [the CDEvents website and primer](https://github.com/cdevents/cdevents.dev)
+
+Plus various experiments, proof-of-concepts and upcoming SDKs.
+
+To learn more about CDEvents:
+
+* read the [CDEvents docs and primer](https://cdevents.dev/docs/)
+* take a look at the [features we're working on](https://github.com/orgs/cdevents/projects/1)
+* take a look at the [tools integration we're working on](https://github.com/orgs/cdevents/projects/4)
+
 ## How to get involved
 
-### How to get involved
-
-[Reach out](governance.md#project-communication-channels) to see what we're up
-via:
+Reach out to see what we're up via:
 
 * [slack](https://cdeliveryfdn.slack.com/archives/C030SKZ0F4K)
 * [our mailing list](https://groups.google.com/g/cdevents-dev)
@@ -18,14 +33,19 @@ via:
   * [EMEA/APAC Friendly](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=YmV1Mmdna3RnbnYwZmszZm5nNTY2cTNuZmxfMjAyMzEwMzBUMTEwMDAwWiBsaW51eGZvdW5kYXRpb24ub3JnX21oZjBrbWdlZG42N2lobmk4cjEyOWF2cDI0QGc&tmsrc=linuxfoundation.org_mhf0kmgedn67ihni8r129avp24%40group.calendar.google.com&scp=ALL)
   * [Meeting Notes](working-group-notes.md)
 
-### Contributing
+## Contributing
 
 If you would like to contribute, see our [contributing](https://github.com/cdevents/.github/blob/main/docs/CONTRIBUTING.md)
 guidelines.
 
+See out standards and processes regarding:
+
+* [Code of conduct](https://github.com/cdevents/.github/blob/main/docs/CODE_OF_CONDUCT.md)
+* [Versioning](https://cdevents.dev/docs/primer/#versioning)
+* [Development](processes.md#contributions)
+* [Contributor Ladder](processes.md#contributor-ladder)
+
 ### Governance
 
-The project has been started by the CDF
-[SIG Events](https://github.com/cdfoundation/sig-events) and is currently
-[governed](governance.md) by a few members of the SIG.
+The project governance is documented in the [`governance.md` document](/governance.md).
 
