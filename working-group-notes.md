@@ -26,7 +26,6 @@ Participants:
 
 Links:
 - [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
-    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
 
 Agenda:
 - New attendees
@@ -37,8 +36,229 @@ Agenda:
 
 - Review proposal for demo system https://github.com/cdevents/community/issues/31
 
+### Nov 13, 2023
 
-### Oct 23rd, 2023
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC
+- Emil Bäckmark, Ericsson, UTC+1
+- Ben Powell, Apple, CST
+- Sean Brennan, Bloomberg, EST
+- Jalander Ramagiri, Ericsson Software Technology, UTC
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+
+Agenda:
+- New attendees
+    - Felipe Silveira, Farfetch
+        - Focussed on CI/CD, ArgoCD, Workflow, Jenkins
+
+- Action Items
+- \<addme\>
+
+- (Andrea) Proposal for [Governance and Contributor Ladder](https://github.com/cdevents/community/pull/38)
+    - Once we have an agreed version we can
+        - Start GB elections
+        - Setup GitHub reviewes/maintainers teams and files
+
+- (Andrea) Updates from KubeCon+CloudNativeCon NA
+    - Make projects and companies available on the CDEvents website https://github.com/cdevents/cdevents.dev/issues/36
+    - Harbor
+        - Still supportive of CDEvents adoption
+        - CDEvents notifications must cover all event types. For Harbor events that are not defined by the CDEvents spec
+            - A schema should be defined
+            - The schema could be maintained on Harbor side
+            - Versioning to be clarified
+            - Extension mechanism on CDEvents side
+            - Proposal: https://github.com/cdevents/spec/issues/168
+        - Other registries to look into
+            - https://quay.io/ 
+            - https://zothub.io/
+    - CNCF App Delivery TAG
+        - Still interested in CDEvents
+        - Need contributors to work with Podtato Head
+    - Argo CD / Workflow
+        - Still interested in CDEvents
+        - (Initial) implementation could be achieved via Argo Notifications
+            - Use templates instead of SDKs
+        - Met together with CNOE.io team repr
+    - CNOE.io
+        - IDP platform, very interested in CDEvents
+        - Define capabilities as well as CNOE favourite set of tools
+        - Would like to support interoperability
+            - Make it easy to swap tools
+            - Single language for a Backstage plugin to surface data to users
+        - Would need IaaS events
+        - Will help drive implementation in Argo CD/Workflow and possibly other tools
+    - Guac.sh
+        - Interested in ingesting SBOM through CDEvents
+        - SBOM link in artifact events
+            - Artifact type already in purl
+            - SBOM type is not important for guac (for now at least)
+        - Should try and include in upcoming v0.4
+        - Interested in asyncapi.io / openapi definitions for CDEvents
+    - Pelorus project for DORA metrics
+        - https://github.com/dora-metrics/pelorus/
+        - Related to https://github.com/dora-team/fourkeys ?
+    - Harness
+        - CDEvents integration may be technically simple
+        - Engineering focussed on end-user demand, CDEvents not in scope yet
+        - May be possible to build a POC in collaboration with Dev Advocacy
+    - Dagger.io
+        - Interested in pipeline observability
+        - Looked into distributed tracing, however the lack of fan-in was a showstopper
+        - CDEvents is an interesting alternative as long as it supports fan-in/fan-out
+    - Some vendors associated the idea of interoperability with making it easiers for users to leave their platform
+        - My take on this is that it also makes it easier for users to adopt their platform. Users should stay because the platform is excellent in solving their problem, not because of lock-in and attrition.
+        - Ben: how do we alleviate that fear? Similar to early days of SQL.
+
+- Connecting & linking events
+    - [PR](https://github.com/cdevents/spec/pull/139)
+    - New link type
+        - Connecting of the graph
+        - Attach metadata to nodes in the graph
+        - Commit 1. New PR coming up to separate the two things
+        - Commit 2. Adding optional links to context
+        - Commit 3. Examples being added
+
+- Tickets / Approvals
+    - Probably two separate proposals
+    - Tickets first, only a couple of outstanding questions
+        - How to link tickets to anything else
+        - Trying to envision how a consumer would use this events
+        - We won't model the consumer workflow in the protocol
+    - Next week or two ready for initial review
+
+- Java SDK
+    - Generating the SDK - review pending
+
+- Flux
+    - Flux integration work in progress
+        - Planning to present to flux community this week or next
+
+### Nov 6, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Emil Bäckmark, Ericsson, UTC+1
+- Ben Powell, Apple, CST
+- Sean Brennan, Bloomberg, EST
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+
+Agenda:
+- New attendees
+
+- Action Items
+    - Ben, Add reviewers to Spinnaker FE PR
+
+- [Hacktoberfest](https://github.com/cdevents/community/issues/35)
+    - [Project](https://github.com/orgs/cdevents/projects/5/views/1)
+    - No resolved issues this time
+
+- CDEvents integrations
+    - Project: https://github.com/orgs/cdevents/projects/4
+    - Proposed implementations at Apple that could potentially be open-sourced if the community is interested
+        - Event bus - with authentication/autorization
+        - Collector - for collecting events in a distributed way. Might not be needed at this stage, before we reach a certain scale of events sent
+        - Links service - for connecting events
+        - Events storage - for storing and retrieving events
+    - Does the CDEvents SDK propagate for any specific infrastructure?
+        - No, they should all be based on the corresponding Cloudevents SDK
+
+- Connecting & linking events
+    - [PR](https://github.com/cdevents/spec/pull/139)
+    - (Andrea) Fan-out/fan-in support
+        - Supported today through links
+        - It would be nice to support through CDEvents context alone
+            - What about adding a list of parent_ids into the context (together with chain_id) for a simple solution for fan-out/fan-in?
+            - Alternative add the link list into the context?
+        - NIT: could we call the chain_id a graph_id
+
+ 
+
+- \<addme\>
+
+
+### Oct 30, 2023
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, he/him, IBM, UTC
+- Emil Bäckmark, Ericsson, UTC+1
+- Sean Brennan, Bloomberg, UTC-4
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+    - Planned for [31.08](https://github.com/cdevents/spec/milestone/4)
+
+Agenda:
+- New attendees
+
+- Action Items
+    - Andrea, Meeting times :heavy_check_mark: 
+    - Andrea, create [an issue](https://github.com/cdevents/spec/issues/165) about deprecations :heavy_check_mark: 
+    - Ben, Add reviewers to Spinnaker FE PR
+
+- Meeting recordings
+    - New notification in the #cdevents channel
+
+- LF Member Summit Updates (Andrea)
+    - [Presentation](https://lfms23.sched.com/event/1S3Ae/unlocking-the-potential-how-standardization-empowers-security-in-modern-software-factories-andrea-frittoli-ibm)
+    - Possible collaboration with Guac / OpenSSF
+        - [Guac](https://guac.sh/) provides storage for supply chain documents, needs data/context with events in the CI/CD pipeline
+        - CDEvents could provide that link
+        - [Prototype by Michael Libermann](https://github.com/kusaridev/sscp/tree/main)
+
+- CDEvents mentioned in CNCF slack channels
+    - #aep
+    - #cicd-o11y (opentelemetry)
+
+- CNOE https://cnoe.io/ 
+
+- Cloud Native Telco Day
+    - Andrea - [CDEvents lightning talk](https://sched.co/1Rj5Y)
+
+- CDEvents integrations
+    - Project: https://github.com/orgs/cdevents/projects/4
+    - GitHub action repo https://github.com/cdevents/community/issues/28
+    - Andrea to follow up on potential JFrog integration
+
+- Connecting Events 
+    - [Connecting/linking events](https://github.com/cdevents/spec/pull/139)
+    - New PR version to be reviewed
+
+- Ticket/Approvals Proposal
+    - [Tickets/issues](https://github.com/cdevents/spec/issues/164)
+    - [Draft proposal](https://hackmd.io/9eTiXHu6RfedSuSwUMGTLw?both)
+
+- Planning for v0.4
+    - Proposal: aiming for a v0.4 by the end of November
+    - In time for cdCon Japan Dec 4
+    - Scope:
+        - Connecting events
+        - SBOM link in artifact events
+            - Do we need to store the format of the SBOM?
+            - Ortelius registry link?
+
+- Implementing CDEvents
+    - Is there any guidance about implementing CDEvents
+    - Setting up topics
+    - Architecture
+    - Emil: no experience in prod with CDEvents, but could share best practices about Eiffel
+    - Fidelity and SAS may have some insight
+    - CDF User Stories https://cd.foundation/user-stories-and-whitepapers/
+    - CDF Best Practices https://bestpractices.cd.foundation/
+        - CDF Reference Architecture  https://bestpractices.cd.foundation/architecture/
+    - CDEvents https://cdevents.dev/docs/primer/
+        - We could expand on the primer
+
+- \<addme\>
+
+
+### Oct 23, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -48,6 +268,8 @@ Participants:
 - Sean Brennan, Bloomberg, EST
 - Jalander Ramagiri, Ericsson Software Technology, UTC+1
 - Owen Bower Adams, Intelligent Growth Solutions, BST
+
+[Meeting Recording](https://youtu.be/8x1HWvTKqXs?si=zbOfoJHU9qg0X-DK)
 
 Links:
 - [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
@@ -121,7 +343,7 @@ Links:
 - \<other topics, please add\>
 
 
-### Oct 9th, 2023
+### Oct 9, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -174,7 +396,7 @@ Links:
 - \<other topics, please add\>
 
 
-### Oct 3rd, 2023
+### Oct 3, 2023
 
 Participants:
 - Name / affiliation / TZ
