@@ -75,7 +75,7 @@ An Organization Member must meet the responsibilities and has the requirements o
     * Authored or Reviewed 5 PRs,
     * Or be endorsed by at least 2 existing Org Members:
       * Endorsers should have close interactions with the prospective member - e.g. code/design/proposal review, coordinating on issues, etc.
-      * Endorsers must be reviewers or approvers in at least one OWNERS file within one of the Tekton sub-projects.
+      * Endorsers must be reviewers or approvers in at least one OWNERS file within one of the CDEvents sub-projects.
       * Endorsers must be from multiple member organizations to demonstrate integration across community.
   * Must have 2FA enabled on their GitHub account
 * Privileges:
@@ -115,7 +115,7 @@ Reviewers have all the rights and responsibilities of an [Organization Member](#
 
 To facilitate productivity, small repositories, repositories that do not contain production code or that have a low traffic of PRs may decide to use simpler requirements. Each of these projects may define their own requirements. Each of these projects may define their own requirements, in a local `processes.md` file.
 
-* Be an OWNER on any other repository in the Tekton project, and ask an existing OWNER to add you.
+* Be an OWNER on any other repository in the CDEvents project, and ask an existing OWNER to add you.
 * Or, Be nominated by another OWNER (with no objections from other OWNERs)
 
 The process of becoming a Reviewer is:
@@ -136,7 +136,7 @@ A Maintainer must meet the responsibilities and requirements of a [Reviewer](#Re
   - Reviewing PRs that involve multiple parts of the project
   - Mentoring new [Contributors](#contributor) and [Reviewers](#Reviewer)
   - Writing PRs that involve many parts of the project (e.g. refactoring)
-  - Participating in Tekton maintainer activities (build captain, WG lead)
+  - Participating in CDEvents maintainer activities (Facilitate working group, triage issues)
   - Determining strategy and policy for the project
   - Participating in, and leading, community meetings
   - Mentoring other contributors
@@ -149,7 +149,7 @@ A Maintainer must meet the responsibilities and requirements of a [Reviewer](#Re
   - Be nominated by another Maintainer (with no objections from other Maintainers)
 - Additional privileges:
   - Approve PRs to any area of the project
-  - Granted access to shared Tekton CI/CD infrastructure
+  - Granted access to shared CDEvents CI/CD infrastructure
   - Represent the project in public as a Maintainer
   - Have a vote in Maintainer decision-making meetings
 
@@ -199,3 +199,4 @@ Involuntary removal or demotion is handled through a vote by a majority of the [
 If and when contributors' commitment levels change, contributors can consider stepping down (moving down the contributor ladder) vs moving to emeritus status (completely stepping away from the project).
 
 Contact the Maintainers about changing to Emeritus status, or reducing your contributor level.
+Emeritus Governing Board members are tracked in the [governance](/governance.md#former-members-❤️) documentation.
