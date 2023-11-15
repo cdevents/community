@@ -148,6 +148,7 @@ When someone joins the Governing Board:
 - They will be added to these mailing lists as owners:
   - [`cdevents-governance`](https://groups.google.com/g/cdevents-governance)
   - [`cdevents-dev`](https://groups.google.com/g/cdevents-dev)
+  - [`cdevents-code-of-conduct`](https://groups.google.com/g/cdevents-code-of-conduct)
 
 When someone leaves the Governing Board:
 
@@ -159,6 +160,7 @@ When someone leaves the Governing Board:
 - They will be removed as owners from these mailing lists:
   - [`cdevents-governance`](https://groups.google.com/g/cdevents-governance)
   - [`cdevents-dev`](https://groups.google.com/g/cdevents-dev)
+  - [`cdevents-code-of-conduct`](https://groups.google.com/g/cdevents-code-of-conduct)
 
 ### Exceptions
 
