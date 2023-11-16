@@ -9,8 +9,9 @@ The CDEvents Governing Board is the governing body of the CDEvents open source p
 - [Board Responsibilities and Deliverables](#board-responsibilities-and-deliverables)
 - [Governance Meetings and Decision-Making Process](#governance-meetings-and-decision-making-process)
 - [Elections](#elections)
-- [Permissions and access](#permissions-and-access)
 - [Governing Board leave policy](#governing-board-leave-policy)
+- [Code of Conduct](#code-of-conduct)
+- [Outstanding Policies](#outstanding-policies)
 
 ## CDEvents Governing Board
 
@@ -46,9 +47,9 @@ The governance facilitator role is a non-voting, non-technical advisory position
 
 ## Maximum Representation
 
-No single employer/company may be represented by more than 40% (i.e., 2 seats) of the board at any one time. If the results of an election result in greater than 40% representation, the lowest vote getters from any particular company will be removed until representation on the board is less than one-third.
+No single employer/company may be represented by more than 40% (i.e., 2 seats if all seats are filled) of the board at any one time. If the results of an election result in greater than 40% representation, the lowest vote getters from any particular company will be removed until representation on the board is equal to or less than 40%.
 
-If percentages shift because of job changes, acquisitions, or other events, sufficient members of the board must resign until max one-third representation is achieved. If it is impossible to find sufficient members to resign, the entire company’s representation will be removed and new special elections held. In the event of a question of company membership (for example evaluating independence of corporate subsidiaries) a majority of all non-involved Governing Board members will decide.
+If percentages shift because of job changes, acquisitions, or other events, sufficient members of the board must resign until max 40% representation is achieved. If it is impossible to find sufficient members to resign, the entire company’s representation will be removed and new special elections held. In the event of a question of company membership (for example evaluating independence of corporate subsidiaries) a majority of all non-involved Governing Board members will decide.
 
 ## Board Responsibilities and Deliverables
 
@@ -126,7 +127,7 @@ Example timeline:
 For every election, the Governing Board will choose two election officers, by the following criteria, so as to promote healthy rotation and diversity:
 
 - election officers must be eligible to vote
-- one election officers should have served before
+- one election officer should have served before
 - one election officer should have never served before
 - each officer should come from a different company to maintain 50% maximal representation
 - election officers should not be currently running in the election

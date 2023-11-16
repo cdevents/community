@@ -157,16 +157,16 @@ To facilitate productivity, small repositories, repositories that do not contain
 
 Process of becoming an Maintainer:
 
-1. Any current Maintainer may nominate a current [Reviewer](#Reviewer) to become a new Maintainer, by opening a PR against the appropriate project, adding the contributor to `MAINTAINERS.md`
+1. Any current Maintainer may nominate a current [Reviewer](#Reviewer) to become a new Maintainer, by opening a PR against the appropriate project, adding the contributor to `CODEOWNWERS`
 2. The nominee will add a comment to the PR testifying that they agree to all requirements of becoming a Maintainer.
 3. A majority of the current Maintainers must then approve.
 4. Add the new maintainer to the corresponding GitHub team
 
 - Each project has a `<repo>-maintainers` team, where `<repo>` is the name of the GitHub repository.
 
-## Governance Committee Member
+## Governing Board Member  Member
 
-Description: The CDEvents Governance committee is the governing body of the CDEvents open source project. It's an elected group that represents the contributors to the project, and has an oversight on governance and technical matters.
+Description: The CDEvents Governing board is the governing body of the CDEvents open source project. It's an elected group that represents the contributors to the project, and has an oversight on governance and technical matters.
 
 See [governance.md](/governance.md) for requirements, responsibilities, and election process.
 
@@ -174,7 +174,7 @@ See [governance.md](/governance.md) for requirements, responsibilities, and elec
   - Maintainer privileges on all CDEvents projects
   - Organization admin access.
 
-Members of the governance committee belong to the the `governance` GitHub team.
+Members of the governing board belong to the the `governance` GitHub team.
 
 ## Inactivity
 
