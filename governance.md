@@ -6,7 +6,7 @@ The CDEvents Governing Board is the governing body of the CDEvents open source p
 - [CDEvents Governing Board](#CDEvents-governing-board)
 - [Governance Facilitator Role (optional)](#governance-facilitator-role-optional)
 - [Maximum Representation](#maximum-representation)
-- [Committee Responsibilities and Deliverables](#committee-responsibilities-and-deliverables)
+- [Board Responsibilities and Deliverables](#board-responsibilities-and-deliverables)
 - [Governance Meetings and Decision-Making Process](#governance-meetings-and-decision-making-process)
 - [Elections](#elections)
 - [Permissions and access](#permissions-and-access)
@@ -26,13 +26,13 @@ The CDEvents Governing Board consists of five elected individuals. The five seat
 | Erik Sternerson   | Volvo Cars | [@erkist](https://github.com/erkist) | [@Erik Sternerson](https://cdeliveryfdn.slack.com/team/U01HSV3UVAN) | Oct 2021 | First Election |
 | Steve Taylor      | DeployHub  | [@sbtaylor15](https://github.com/sbtaylor15) | [@Steve Taylor](https://cdeliveryfdn.slack.com/team/U01FMSQSZBN) | Oct 2021 | First Election |
 
-There is no designated facilitator at the moment, the responsibility is distributed across the five members of the committee.
+There is no designated facilitator at the moment, the responsibility is distributed across the five members of the board.
 
-The committee MUST:
+The board MUST:
 
 * Represent a cross-section of interests, not just one company
 * Balance technical, architectural, and governance expertise since its initial mission is the establishment of structure around contributions, community, and decision-making
-* Hold staggered terms, sufficient to ensure an orderly transition of power via elections as designed and implemented by the committee (see below for specific deliverables)
+* Hold staggered terms, sufficient to ensure an orderly transition of power via elections as designed and implemented by the board (see below for specific deliverables)
 * Provide designated alternates in cases where quorum is required but not attainable with the current set of members
 * Communicate with the Continuous Delivery Foundation on a regular cadence
 
@@ -42,17 +42,17 @@ None yet.
 
 ## Governance Facilitator Role (optional)
 
-The governance facilitator role is a non-voting, non-technical advisory position that helps ensure all Governing Board meetings are inclusive, and key milestones toward governance are met. The facilitator is a role, meaning it may be occupied by a single individual, or a series of individuals over time. The goal of this position is servant leadership for the project, community, and stakeholders. The committee may choose to make this a permanent role at their discretion. Deliverables may include creation of mailing lists, project tracking boards, governance draft documents, and so forth.
+The governance facilitator role is a non-voting, non-technical advisory position that helps ensure all Governing Board meetings are inclusive, and key milestones toward governance are met. The facilitator is a role, meaning it may be occupied by a single individual, or a series of individuals over time. The goal of this position is servant leadership for the project, community, and stakeholders. The board may choose to make this a permanent role at their discretion. Deliverables may include creation of mailing lists, project tracking boards, governance draft documents, and so forth.
 
 ## Maximum Representation
 
 No single employer/company may be represented by more than 40% (i.e., 2 seats) of the board at any one time. If the results of an election result in greater than 40% representation, the lowest vote getters from any particular company will be removed until representation on the board is less than one-third.
 
-If percentages shift because of job changes, acquisitions, or other events, sufficient members of the committee must resign until max one-third representation is achieved. If it is impossible to find sufficient members to resign, the entire company’s representation will be removed and new special elections held. In the event of a question of company membership (for example evaluating independence of corporate subsidiaries) a majority of all non-involved Governing Board members will decide.
+If percentages shift because of job changes, acquisitions, or other events, sufficient members of the board must resign until max one-third representation is achieved. If it is impossible to find sufficient members to resign, the entire company’s representation will be removed and new special elections held. In the event of a question of company membership (for example evaluating independence of corporate subsidiaries) a majority of all non-involved Governing Board members will decide.
 
-## Committee Responsibilities and Deliverables
+## Board Responsibilities and Deliverables
 
-The committee MUST:
+The board MUST:
 
 - [Represent a cross-section of interests, not just one company](#maximum-representation)
 - Balance technical, architectural, and governance expertise
@@ -60,7 +60,7 @@ The committee MUST:
 - Provide designated alternates in cases where quorum is required but not attainable with the current set of members
 - Communicate with the Continuous Delivery Foundation on a regular cadence
 
-The committee is responsible for a series of specific artifacts and activities:
+The board is responsible for a series of specific artifacts and activities:
 
 - The [Code of Conduct](https://github.com/cdevents/.github/blob/main/docs/CODE_OF_CONDUCT.md) and handling violations
 - The [Project Communication Channels](README.md#how-to-get-involved)
@@ -84,6 +84,7 @@ Anyone who has at least 5 [contributions](/processes.md#contributions) in the la
 ### Candidate Eligibility
 
 Candidates themselves must be [contributors](/processes.md#contributor) who are eligible to vote, and must be nominated by contributors from at least two companies, which can include their own, and they can self-nominate.
+Candidates may not serve as [election officers](#election-officers).
 
 ### Nominations Process
 
@@ -122,7 +123,7 @@ Example timeline:
 
 ### Election Officers
 
-For every election, the Governing Board wll choose two election officers, by the following criteria, so as to promote healthy rotation and diversity:
+For every election, the Governing Board will choose two election officers, by the following criteria, so as to promote healthy rotation and diversity:
 
 - election officers must be eligible to vote
 - one election officers should have served before
@@ -193,7 +194,7 @@ violations via cdevents-code-of-conduct@googlegroups.com.
 
 ## Outstanding Policies
 
-The following policies have not yet been fully detailed by the governing committee.
+The following policies have not yet been fully detailed by the governing board.
 
 ### Roadmap and Meetings
 
@@ -206,7 +207,7 @@ How are meetings conducted:
 
 ### Contribution Process
 
-The committee MUST define a contribution process that:
+The board MUST define a contribution process that:
 
 * Explains to potential contributors how/if they can add code to the repository/repositories
 * Documents Workflow and management of pull requests
