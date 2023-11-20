@@ -1,17 +1,16 @@
 ## Gerrit-CDEvents Integration
 
 ### Design-Overview:
-This design approach of integrating CDEvents with Gerrit is achieved by translating Gerrit events to CDEvents, making use of existing Gerrit Webhooks instead of implementing a new CDEvent producer for each source code control actions.
+The integration of CDEvents with Gerrit is accomplished by translating Gerrit events into CDEvents. This approach utilizes existing Gerrit Webhooks instead of requiring the implementation of a new CDEvent producer for each source code control action.
 
-Gerrit sends events for each occurrence in real time for changes in source code, these events can be translated to CDEvents-Source Code Control Events by implementing a new event translator from Gerrit to CDEvents.
+Gerrit sends real-time events for every change in the source code. These events can be converted into CDEvents—Source Code Control Events—by creating a new event translator specifically tailored for the translation from Gerrit to CDEvents.
 
 
 ### Gerrit Webhooks configuration:
 
-Gerrit Webhooks plugin allows to propagate all Gerrit events to remote http URL endpoints,
-This Webhooks plugin can be created at the global/single project level.
+The Gerrit Webhooks plugin enables the propagation of all Gerrit events to remote HTTP URL endpoints. This plugin can be configured either at the global level or on a per-project basis.
 
-Example Webhook configuration at `All-Projects` level, and this configuration will be inherited to all projects by default.
+For instance, an example webhook configuration at the All-Projects level will be inherited by all projects by default.
 
 ```curl
 curl --user admin:password -H 'Content-Type: application/json' -X PUT -d '{"url" : "https://gerrit-translator-cdevents/gerrit-events","maxTries" : "3","sslVerify": "true"}' http://gerrit.est.tech/a/config/server/webhooks~projects/All-Projects/remotes/gerrit-events
@@ -26,7 +25,7 @@ The `webhooks.config` file will be created as below under `All-Projects/refs/met
   sslVerify = true
 ```
 
-More details on Gerrit plugin configuration and APIs can be found at [Webhooks-Documentation](https://gerrit.googlesource.com/plugins/webhooks/+/refs/heads/master/src/main/resources/Documentation)
+Additional information regarding Gerrit plugin configuration and APIs can be found at  [Webhooks-Documentation](https://gerrit.googlesource.com/plugins/webhooks/+/refs/heads/master/src/main/resources/Documentation)
 
 ### Gerrit-translator-CDEvents:
 
