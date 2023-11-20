@@ -36,7 +36,61 @@ Agenda:
 
 - Review proposal for demo system https://github.com/cdevents/community/issues/31
 
-### Nov 13, 2023
+
+## Nov 20, 2023
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+1
+- Jalander Ramagiri, Ericsson Software Technology, UTC
+- Ben Powell, Apple, CST
+- Sean Brennan, Bloomberg, EST
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+
+Agenda:
+- New attendees
+
+- Action Items
+
+- (Adam) Flux CD Integration with CDEvents
+    - Discussion held in Flux dev meeting
+    - https://github.com/fluxcd/flux2/discussions/4339
+    - Showcased a receiver & provider demo
+    - Reciever (consumer) will get a PR up soon
+    - The provider (producer) will need some more discussions before being implemented
+    - Where should source change events be sent from, when Flux directly integrates with e.g. GitHub?
+    - (Emil) The CDEvents protocol doesn't dictate who should send what event
+    - (Emil) It's important that the same event is not sent from multiple producers. Events should be unique.
+    - (Emil, Ben) The event should be sent as close to the source of the occurrence as possible. I.e. SCM related events should be sent from the SCM system if possible.
+    - (Emil) It's up to the system integrator to decide what tool sends what events.
+
+- (Jalander) Design approach [Gerrit CDEvents integration](https://github.com/rjalander/community/blob/main/rfc/gerrit-cdevents.md)
+    - (Emil) Would it be relevant/helpful to also have Argo-events in this picture? https://github.com/argoproj/argo-events/issues/2841
+    - (Andrea) We shouldn't maintain a lot of tool specific CDEvents implementations. With our limited community we need to take concious decisions on what tools to provide plugins or translators for
+    - (Emil) Webhook vs Gerrit 'stream-event' (inbout vs outbound connection & https vs ssh)?
+
+- Connecting & linking events
+    - [PR](https://github.com/cdevents/spec/pull/139)
+
+- Ticket/Approvals Proposal
+    - [Tickets/issues](https://github.com/cdevents/spec/issues/164)
+    - [Draft proposal](https://hackmd.io/9eTiXHu6RfedSuSwUMGTLw?both)
+    - PR to be created
+
+- (Andrea) Proposal for [Governance and Contributor Ladder](https://github.com/cdevents/community/pull/38)
+    - Targeting final review at next CDEvents meeting
+
+- Postponed to next meeting: (Andrea) Harbor integration & custom events
+    - Artifact events https://github.com/cdevents/spec/issues/143
+    - Custom events https://github.com/cdevents/spec/issues/168
+
+- Java SDK updates
+    - To be reviewed - https://github.com/cdevents/sdk-java/pull/60
+
+
+
+## Nov 13, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -137,7 +191,7 @@ Agenda:
     - Flux integration work in progress
         - Planning to present to flux community this week or next
 
-### Nov 6, 2023
+## Nov 6, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -182,7 +236,7 @@ Agenda:
 - \<addme\>
 
 
-### Oct 30, 2023
+## Oct 30, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -258,7 +312,7 @@ Agenda:
 - \<addme\>
 
 
-### Oct 23, 2023
+## Oct 23, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -343,7 +397,7 @@ Links:
 - \<other topics, please add\>
 
 
-### Oct 9, 2023
+## Oct 9, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -396,7 +450,7 @@ Links:
 - \<other topics, please add\>
 
 
-### Oct 3, 2023
+## Oct 3, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -465,7 +519,7 @@ Links:
         - Part 2 to be reviewed?
 
 
-### Sep 19, 2023
+## Sep 19, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -491,7 +545,7 @@ Links:
 - SDKs
     - 
 
-### Sep 19, 2023
+## Sep 19, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -550,7 +604,7 @@ Agenda:
 - 
 
 
-### Sep 11, 2023
+## Sep 11, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+2
@@ -611,7 +665,7 @@ Agenda:
 - \<addme\>
 
 
-### Sep 5, 2023
+## Sep 5, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+2
@@ -641,7 +695,7 @@ Agenda:
     - Ben will create/identify some issues and ask Emil/Andrea to label them.
 
 
-### Aug 28, 2023
+## Aug 28, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+2
@@ -660,7 +714,7 @@ Agenda:
 - OpenTelemetry integration. Not much news. Looking forward to discussion on Sept 5.
 
 
-### Aug 22, 2023
+## Aug 22, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+2
@@ -712,12 +766,12 @@ Agenda:
 - \<addme\>
 
 
-### Aug 14, 2023
+## Aug 14, 2023
 
 **Meeting canceled since no one showed up**
 
 
-### Aug 8, 2023
+## Aug 8, 2023
 
 Participants:
 - Andrea Frittoli, IBM, UTC+1
@@ -781,7 +835,7 @@ Agenda:
 - \<please add\>
 
 
-### July 31, 2023
+## July 31, 2023
 
 Participants:
 - Andrea Frittoli, IBM, UTC+1
@@ -802,7 +856,7 @@ Agenda:
 - Java SDK v0.1.2 released
 
 
-### July 25, 2023
+## July 25, 2023
 
 Participants:
 - Ben Powell, Apple, CST
@@ -862,7 +916,7 @@ Agenda:
     - 
 
 
-### July 17, 2023
+## July 17, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -893,7 +947,7 @@ Agenda:
 - \<addme\>
 
 
-### July 11, 2023
+## July 11, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -940,7 +994,7 @@ Agenda:
 
 
 
-### June 30, 2023
+## June 30, 2023
 
 
 Participants:
@@ -956,7 +1010,7 @@ Agenda: Session dedicated at Connecting Events
 - We could use some of the nomenclature from the [VSMI reference arch](https://docs.google.com/presentation/d/16-c-Kui3LKmiIc54N7f_4tebTt-zcbCnKDypksT5WRo/edit#slide=id.p)
 - 
 
-### June 27, 2023
+## June 27, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -1059,7 +1113,7 @@ Agenda:
 - \<addme\>
 
 
-### Jun 19, 2023
+## Jun 19, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+2
@@ -1109,7 +1163,7 @@ Agenda:
 
 
 
-### Jun 13, 2023
+## Jun 13, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -1176,7 +1230,7 @@ Agenda:
     - [issues in CDEvents org not labeled with roadmap](https://github.com/issues?page=1&q=is%3Aopen+is%3Aissue+archived%3Afalse+user%3Acdevents+-label%3Aroadmap)
 
 
-### Jun 5, 2023
+## Jun 5, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+2
@@ -1208,7 +1262,7 @@ Agenda:
         - [Issue](https://github.com/goharbor/community/issues/225)
     - Java SDK: ready for v0.1.2
 
-### May 30, 2023
+## May 30, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+2
@@ -1296,7 +1350,7 @@ Agenda:
 - Other topics?
 
 
-### May 22, 2023
+## May 22, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+2
@@ -1412,7 +1466,7 @@ Agenda:
 - Other topics?
 
 
-### May 16, 2023
+## May 16, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+2
@@ -1451,7 +1505,7 @@ Agenda:
 
 - \<addme\>
 
-### May 2nd, 2023
+## May 2, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+2
@@ -1503,10 +1557,10 @@ Agenda:
 - Connecting Events
     - https://hackmd.io/-Or6hobHSLWVj4duAWX7nA
 
-### May 2nd, 2023
+## May 2, 2023
 Meeting canceled due to too few participants
 
-### April 24th, 2023
+## April 24, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -1549,7 +1603,7 @@ Agenda:
     - 
 
 
-### April 4th, 2023
+## April 4, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+1
@@ -1600,7 +1654,7 @@ Agenda:
     - Tuesday April 18th.
         - Canceled due to KubeCon Europe? To be discussed on Slack
 
-### March 27st, 2023
+## March 27, 2023
 
 Participants:
 - Andrea Frittoli, IBM, UTC
@@ -1655,7 +1709,7 @@ Agenda:
 
 - [v0.3 Roadmap](https://github.com/orgs/cdevents/projects/1/views/12)
 
-### March 21st, 2023
+## March 21, 2023
 
 Participants:
 - Andrea Frittoli, IBM, UTC
@@ -1718,7 +1772,7 @@ Agenda:
     - Make a PR with hybrid approach so we can have hands on experience
     - Continue working on the DORA metrics POC and try to apply different way of connecting events
 
-### March 13th, 2023
+## March 13, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+1
@@ -1776,7 +1830,7 @@ Agenda:
 - \<addme\>
 
 
-### March 7th, 2023
+## March 7, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+1
@@ -1829,7 +1883,7 @@ Agenda:
 
 
 
-### Feb 27th, 2023
+## Feb 27, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+1
@@ -1880,7 +1934,7 @@ Agenda:
 
 - \<add me\>
 
-### Feb 21st, 2023
+## Feb 21, 2023
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+1
@@ -1924,7 +1978,7 @@ Agenda:
 - \<add me\>
 
 
-### Feb 13th, 2023
+## Feb 13, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -1985,7 +2039,7 @@ Agenda:
 - [v0.2 Roadmap](https://github.com/orgs/cdevents/projects/1/views/9) Review
 
 
-### Feb 7th, 2023
+## Feb 7, 2023
 
 Participants:
 - Name / affiliation / TZ
@@ -2028,7 +2082,6 @@ Agenda:
         - Mentor required
 
 - Tekton and CDEvents
-    - 
 
 - Jenkins X and CDEvents
     - Dependency on Tekton?
@@ -2059,7 +2112,7 @@ Agenda:
 
 
 
-### Jan 30th, 2023
+## Jan 30, 2023
 
 Participants:
 - Andrea Frittoli, IBM, UTC
@@ -2119,7 +2172,7 @@ Agenda:
 - Roadmap Review
 
 
-### Jan 24th, 2023
+## Jan 24, 2023
 
 Participants:
 - Andrea Frittoli, IBM, UTC
@@ -2171,7 +2224,7 @@ Agenda:
 
 
 
-## Jan 16th, 2023
+## Jan 16, 2023
 
 Participants:
 - Andrea Frittoli, IBM, UTC
@@ -2235,7 +2288,7 @@ Agenda:
     - Python SDK
 
 
-## Jan 10th, 2023
+## Jan 10, 2023
 
 Participants:
 - Andrea Frittoli, IBM, UTC
@@ -2266,7 +2319,7 @@ Agenda:
     - [RFC](https://github.com/spinnaker/governance/pull/299)
     - Proposal: setup an ad-hoc meeting to discuss and progress on the RFC
 
-## Dec 19th
+## Dec 19
 
 Participants:
 - Emil Bäckmark, Ericsson, UTC+1
@@ -2292,7 +2345,7 @@ Agenda:
 - v0.2 planning
 
 
-## Dec 13th
+## Dec 13
 
 Participants:
 - Andrea Frittoli, he/him, IBM, UTC
@@ -2322,7 +2375,7 @@ Agenda:
     - 
 
 
-## Dec 7th
+## Dec 7
 
 Participants:
 - Andrea Frittoli, he/him, IBM, UTC
