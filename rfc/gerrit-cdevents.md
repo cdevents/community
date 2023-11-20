@@ -3,7 +3,7 @@
 ### Design-Overview:
 The integration of CDEvents with Gerrit is accomplished by translating Gerrit events into CDEvents. This approach utilizes existing Gerrit Webhooks instead of requiring the implementation of a new CDEvent producer for each source code control action.
 
-Gerrit sends real-time events for every change in the source code. These events can be converted into CDEvents—Source Code Control Events—by creating a new event translator specifically tailored for the translation from Gerrit to CDEvents.
+Gerrit sends real-time events for every change in the source code. These events can be converted into [CDEvents-Source Code Control Events](https://github.com/cdevents/spec/blob/v0.3.0/source-code-version-control.md) by creating a new event translator specifically tailored for the translation from Gerrit to CDEvents.
 
 
 ### Gerrit Webhooks configuration:
