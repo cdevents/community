@@ -75,7 +75,7 @@ An Organization Member must meet the responsibilities and has the requirements o
     * Authored or Reviewed 5 PRs,
     * Or be endorsed by at least 2 existing Org Members:
       * Endorsers should have close interactions with the prospective member - e.g. code/design/proposal review, coordinating on issues, etc.
-      * Endorsers must be reviewers or approvers in at least one OWNERS file within one of the CDEvents sub-projects.
+      * Endorsers must be maintainers of at lease one of the CDEvents sub-projects.
       * Endorsers must be from multiple member organizations to demonstrate integration across community.
   * Must have 2FA enabled on their GitHub account
 * Privileges:
@@ -86,53 +86,14 @@ The process for a Contributor to become an Organization Member is as follows:
 
 1. Request an organization owner to be added to the GitHub organization
 
-## Reviewer
-
-Description: A Reviewer has responsibility for specific code, documentation, test, or other project areas. They are collectively responsible, with other Reviewers, for reviewing all changes to those areas and indicating whether those changes are ready to merge. They have a track record of contribution and review in the project.
-
-Reviewers are responsible for a "specific area." This can be a specific code directory, driver, chapter of the docs, test job, event, or other clearly-defined project component that is smaller than an entire repository or subproject. Most often it is one or a set of directories in one or more Git repositories. The "specific area" below refers to this area of responsibility.
-
-Reviewers have all the rights and responsibilities of an [Organization Member](#organization-member), plus:
-
-* Responsibilities include:
-  * Proactively help triage and respond to incoming issues (GitHub, Slack, mailing list)
-  * Following the [reviewing guide](../standards.md)
-  * Reviewing most Pull Requests against their specific areas of responsibility
-  * Reviewing at least 5 PRs per year
-  * Helping other contributors become reviewers
-* Requirements:
-  * Experience as a [Contributor](#contributor) for at least 2 months or 50% of the project lifetime, whichever is shorter
-  * Has authored or reviewed at least 8 Pull Requests
-    * including being the primary reviewer for at least 3 of the above
-  * Has analyzed and resolved test failures in their specific area
-  * Has demonstrated an in-depth knowledge of the specific area
-  * Commits to being responsible for that specific area
-  * Is supportive of new and occasional contributors and helps get useful PRs in shape to commit
-* Additional privileges:
-  * Review pull requests, triage issues
-  * All privileges granted by the [GitHub triage role](https://docs.github.com/en/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization#permissions-for-each-role)
-  * Can recommend and review other contributors to become Reviewers
-
-To facilitate productivity, small repositories, repositories that do not contain production code or that have a low traffic of PRs may decide to use simpler requirements. Each of these projects may define their own requirements. Each of these projects may define their own requirements, in a local `processes.md` file.
-
-* Be an OWNER on any other repository in the CDEvents project, and ask an existing OWNER to add you.
-* Or, Be nominated by another OWNER (with no objections from other OWNERs)
-
-The process of becoming a Reviewer is:
-
-1. The contributor is nominated by opening a PR against the appropriate project, adding the contributor to `REVIEWERS.md`
-2. At least two Reviewers/[Maintainers](#maintainer) of the team that owns that repository approve the nomination PR.
-3. Update the GitHub project reviewer team
-
-* Each project has a `<repo>.-reviewers` team defined, where `<repo>` is the name of the GitHub repository.
-
 ## Maintainer
 
 Description: Maintainers are very established contributors who are responsible for entire projects. As such, they have the ability to approve PRs against any area of a project, and are expected to participate in making decisions about the strategy and priorities of the project.
 
-A Maintainer must meet the responsibilities and requirements of a [Reviewer](#Reviewer), plus:
+A Maintainer must meet the responsibilities and requirements of an [organization member](#organization-member), plus:
 
 - Responsibilities include:
+  - Proactively help triage and respond to incoming issues (GitHub, Slack, mailing list)
   - Reviewing PRs that involve multiple parts of the project
   - Mentoring new [Contributors](#contributor) and [Reviewers](#Reviewer)
   - Writing PRs that involve many parts of the project (e.g. refactoring)
@@ -157,14 +118,15 @@ To facilitate productivity, small repositories, repositories that do not contain
 
 Process of becoming an Maintainer:
 
-1. Any current Maintainer may nominate a current [Reviewer](#Reviewer) to become a new Maintainer, by opening a PR against the appropriate project, adding the contributor to `CODEOWNWERS`
-2. The nominee will add a comment to the PR testifying that they agree to all requirements of becoming a Maintainer.
+1. Any current Maintainer may nominate a current [organization member](#organization-member) to become a new Maintainer, by opening an issue against the appropriate project.
+2. The nominee will add a comment to the issue testifying that they agree to all requirements of becoming a Maintainer.
 3. A majority of the current Maintainers must then approve.
 4. Add the new maintainer to the corresponding GitHub team
+5. (Optional) Update `CODEOWNWERS` with specific areas of expertise for the new maintainer. Add the new maintainer to the list of maintainers kept in a comment in `CODEOWNWERS`.
 
 - Each project has a `<repo>-maintainers` team, where `<repo>` is the name of the GitHub repository.
 
-## Governing Board Member  Member
+## Governing Board Member
 
 Description: The CDEvents Governing board is the governing body of the CDEvents open source project. It's an elected group that represents the contributors to the project, and has an oversight on governance and technical matters.
 
@@ -178,7 +140,7 @@ Members of the governing board belong to the the `governance` GitHub team.
 
 ## Inactivity
 
-It is important for contributors to be and stay active to set an example and show commitment to the project. Inactivity is harmful to the project as it may lead to unexpected delays, contributor attrition, and a lost of trust in the project.
+It is important for contributors, especially maintainers and governing board members, to be and stay active to set an example and show commitment to the project. Inactivity is harmful to the project as it may lead to unexpected delays, contributor attrition, and a lost of trust in the project.
 
 - Inactivity is measured by:
   - Failing to meet role requirements.
@@ -190,13 +152,18 @@ It is important for contributors to be and stay active to set an example and sho
 
 ### Involuntary Removal or Demotion
 
-Involuntary removal/demotion of a contributor happens when responsibilities and requirements aren't being met. This may include repeated patterns of inactivity, extended period of inactivity, a period of failing to meet the requirements of your role, and/or a violation of the Code of Conduct. This process is important because it protects the community and its deliverables while also opens up opportunities for new contributors to step in.
+Involuntary removal/demotion of a contributor (at any level) happens when responsibilities and requirements aren't being met. This may include repeated patterns of inactivity, extended period of inactivity, a period of failing to meet the requirements of your role, and/or a violation of the Code of Conduct. This process is important because it protects the community and its deliverables while also opens up opportunities for new contributors to step in.
 
 Involuntary removal or demotion is handled through a vote by a majority of the [CDEvents Governing Board](/governance.md).
 
 ### Stepping Down/Emeritus Process
 
-If and when contributors' commitment levels change, contributors can consider stepping down (moving down the contributor ladder) vs moving to emeritus status (completely stepping away from the project).
+If and when contributors' commitment levels change, contributors (at any level) can consider stepping down (moving down the contributor ladder) vs moving to emeritus status (completely stepping away from the project).
 
-Contact the Maintainers about changing to Emeritus status, or reducing your contributor level.
+[Community participants](#community-participant), [contributors](#contributor) and [organization members](#organization-member) may change their contribution level autonomously.
+
+[Maintainers](#maintainer) shall contact the other maintainers about changing to Emeritus status, or reducing their contributor level.
+CDEvents projects may opt for tracking emeritus maintainers in their `CODEOWNERS` file.
+
+[Governing Board members](#governing-board-member) shall contact the other Governing Board members about changing to Emeritus status, or reducing their contributor level.
 Emeritus Governing Board members are tracked in the [governance](/governance.md#former-members-❤️) documentation.
