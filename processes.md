@@ -6,7 +6,7 @@ This doc explains general development processes that apply to all projects withi
 
 We try and track community contributions as much as possible to measure the health of the project.
 
-Contributions can include opening PRs, reviewing and commenting on PRs, opening and commenting on issues, writing design docs, commenting on design docs, helping people on slack, and participating in working groups. Where possible, we use dashboards on cdevents.devstats.cd.foundation to track measurable engagement. We try our best to include contributions that are not GitHub, but accuracy varies when we don't have easily available data.
+Contributions can include opening PRs, reviewing and commenting on PRs, opening and commenting on issues, writing design docs, commenting on design docs, helping people on slack, and participating in working groups. Where possible, we use dashboards on [cdevents.devstats.cd.foundation](https://cdevents.devstats.cd.foundation) to track measurable engagement. We try our best to include contributions that are not GitHub, but accuracy varies when we don't have easily available data.
 
 See our [contributor ladder](#contributor-ladder) for more information.
 
@@ -75,7 +75,7 @@ An Organization Member must meet the responsibilities and has the requirements o
     * Authored or Reviewed 5 PRs,
     * Or be endorsed by at least 2 existing Org Members:
       * Endorsers should have close interactions with the prospective member - e.g. code/design/proposal review, coordinating on issues, etc.
-      * Endorsers must be maintainers of at lease one of the CDEvents sub-projects.
+      * Endorsers must be maintainers of at least one of the CDEvents sub-projects.
       * Endorsers must be from multiple member organizations to demonstrate integration across community.
   * Must have 2FA enabled on their GitHub account
 * Privileges:
@@ -95,16 +95,16 @@ A Maintainer must meet the responsibilities and requirements of an [organization
 - Responsibilities include:
   - Proactively help triage and respond to incoming issues (GitHub, Slack, mailing list)
   - Reviewing PRs that involve multiple parts of the project
-  - Mentoring new [Contributors](#contributor) and [Reviewers](#Reviewer)
+  - Mentoring new [Contributors](#contributor)
   - Writing PRs that involve many parts of the project (e.g. refactoring)
   - Participating in CDEvents maintainer activities (Facilitate working group, triage issues)
   - Determining strategy and policy for the project
   - Participating in, and leading, community meetings
   - Mentoring other contributors
 - Requirements
-  - Have been actively participating in reviews for at least 3 months or 50% of the project lifetime, whichever is shorter
+  - Has been actively participating in reviews for at least 3 months or 50% of the project lifetime, whichever is shorter
   - Has authored or reviewed at least 10 PRs to the codebase.
-    - Have been the primary reviewer for at least 5 substantial PRs to the codebase.
+    - Has been the primary reviewer for at least 5 substantial PRs to the codebase.
   - Demonstrates a broad knowledge of the project across multiple areas
   - Is able to exercise judgement for the good of the project, independent of their employer, friends, or team
   - Be nominated by another Maintainer (with no objections from other Maintainers)
@@ -160,7 +160,7 @@ Involuntary removal or demotion is handled through a vote by a majority of the [
 
 If and when contributors' commitment levels change, contributors (at any level) can consider stepping down (moving down the contributor ladder) vs moving to emeritus status (completely stepping away from the project).
 
-[Community participants](#community-participant), [contributors](#contributor) and [organization members](#organization-member) may change their contribution level autonomously.
+[Community participants](#community-participant), [contributors](#contributor) and [organization members](#organization-member) may reduce their contributor level autonomously.
 
 [Maintainers](#maintainer) shall contact the other maintainers about changing to Emeritus status, or reducing their contributor level.
 CDEvents projects may opt for tracking emeritus maintainers in their `CODEOWNERS` file.
