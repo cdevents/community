@@ -37,6 +37,279 @@ Agenda:
 - Review proposal for demo system https://github.com/cdevents/community/issues/31
 
 
+## Dec 18, 2023
+
+Participants:
+- Andrea Frittoli, IBM, UTC
+- Emil Bäckmark, Ericsson, UTC+1
+- Ben Powell, Apple, CST
+- Brett Smith, SAS, UTC-4
+- Christian Provenzano, Fidelity, UTC-4
+
+Agenda:
+
+- New attendees
+- Action Items
+    - Ben to prepare a demo on the maintainability topic
+        - Plan to work on it next week
+        - Demo in 2024
+    - Owen to create an issue about capitalizing URI
+    - Andrea to archive meeting notes for 2023
+    - Andrea to create an issue about conformance groups: pending
+    - Andrea to update the [Artifact PR](https://github.com/cdevents/spec/pull/172) based on feedback: pending.
+    - Andrea to update the [SBOM PR](https://github.com/cdevents/spec/pull/171) based on feedback: done 
+
+- (Sean/Ben) Ticket/Approvals Proposal
+    - [Tickets/issues](https://github.com/cdevents/spec/issues/164)
+    - [Draft proposal](https://hackmd.io/9eTiXHu6RfedSuSwUMGTLw?both)
+    - Proposal planned for 1st/2nd week in Jan 2024
+    - Sean/Ben to compare the current proposal against existing ticketing systems (GitHub issues, etc)
+
+- (Jalander) Generate Java SDK v0.3.0
+    - PR is merged.
+    - Conformance testing?
+    - Apple looking to have an up to date Java SDK
+    - Apple experiencing issues with some of the APIs
+    - Andrea to make an Release Candidate in Jan to let people test it
+
+- (Andrea) Spelling PR https://github.com/cdevents/spec/pull/173
+    - Andrea to update the config to exclude code sections in markdown
+
+- (Andrea) SBOM uri https://github.com/cdevents/spec/pull/171
+    - We need to define how we want case to be in case of acronyms 
+    - Update the document in https://github.com/cdevents/spec/blob/main/spec.md#types
+        - Andrea to create an issue
+    - Update two remaining comments and then ready to merge
+
+- (Brett) CDEvents Workshop 
+    - More work coming on this in the next weeks
+        - Need a go client for the EPR API
+        - Workshop should not ask users to post JSON via curl :)
+    - Blog post to announce the EPR
+        - It mentions SAS so it needs internal approval
+
+- (Andrea) Custom events https://github.com/cdevents/spec/issues/168
+    - Allowing for custom events expands the audience for events
+    - If we do allow custom events, we need a good set of rules
+        - We need to protect both producers and consumers
+    - The SDKs could provide hooks to parse the subject/context
+    - The schema should be hosted on the tool side, we could provide in the context a field that points to the schema
+    - Andrea to formalise the proposal in an hackmd linked into the issue
+
+
+## Dec 11, 2023
+
+Participants:
+- Andrea Frittoli, IBM, UTC
+- Emil Bäckmark, Ericsson, UTC+1
+- Christian Provenzano, Fidelity, UTC-4
+- Andrew Larsen, SAS, UTC-4
+- Owen Bower Adams, IGS, UTC
+- Jalander Ramagiri, Ericsson Software Technology, UTC
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+
+Agenda:
+
+- New attendees
+    - Welcome Christian Provenzano
+
+- Action Items
+    - Ben to prepare a demo on the maintainability topic
+    - ~~Emil to create a repo for Brett's workshop~~ https://github.com/cdevents/event-provenance-registry-workshop
+    - Owen to create an issue about capitalizing URI
+    - ~~Jalander to create a PR for SDK v0.3.0~~ https://github.com/cdevents/sdk-java/pull/62
+
+- Proposing Ben as spec maintainer
+    - Process: https://github.com/cdevents/community/blob/main/processes.md
+    - Issue: https://github.com/cdevents/spec/issues/175
+    - PR: https://github.com/cdevents/spec/pull/174
+
+- Introduce semantic conventions for CI/CD observability with OpenTelemetry
+    - Any update from the working group last week?
+    - Discussion about where the group belongs within CNCF
+    - PR was created to propose the group
+    - No technical discussion in the first meeting, mostly formalities
+    - [Slack](https://cloud-native.slack.com/archives/C0598R66XAP)
+    - [Meeting Notes](https://docs.google.com/document/d/1zlBtUs8Kk15MJP3LFvJ6mi59nNF2UOPxuA4w2t0N23k/edit#heading=h.klb8qbqa1ui6)
+    - [PR](https://github.com/open-telemetry/community/pull/1822)
+
+- (Jalander) Generate Java SDK v0.3.0
+    - [PR](https://github.com/cdevents/sdk-java/pull/62)
+
+- CDEvents Governance
+    - CDEvents Governance election coming up
+    - SIG Events meeting tomorrow, we should bring this up there
+    - Processes and policies: https://github.com/cdevents/community/blob/main/governance.md
+
+- CDEvents meetings during holidays season
+    - Dec 18th: ok
+    - Dec 25th (US + APAC): cancelled
+    - Jan 1st: cancelled
+    - Jan 8th: ok
+
+- (Andrea) Artifact events https://github.com/cdevents/spec/issues/143
+    - PR available https://github.com/cdevents/spec/pull/172
+    - Existing event is called published
+    - Artifact pulled should be renamed to download
+        - "Pulled" is specific to git/oci and might be confusing
+        - Use cases for download
+            - Track downloads of restricted artifact
+    - Andrea to create an issue about conformance groups
+    - Let's use the CI bucket for artifact events until we define a policy for grouping events and conformance
+
+- (Andrea) SBOM uri https://github.com/cdevents/spec/pull/171 
+
+- (Andrea) Custom events https://github.com/cdevents/spec/issues/168
+
+- (Brett) CDEvents Workshop
+
+- (Ben) Connecting & linking events
+    - [PR](https://github.com/cdevents/spec/pull/139)
+
+
+- (Ben) Maintainability of schemas, examples, and tests
+    - https://github.com/cdevents/spec/issues/170
+
+- (Sean/Ben) Ticket/Approvals Proposal
+    - [Tickets/issues](https://github.com/cdevents/spec/issues/164)
+    - [Draft proposal](https://hackmd.io/9eTiXHu6RfedSuSwUMGTLw?both)
+
+## Dec 4, 2023
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+1
+- Brett Smith, SAS, UTC-4
+- Ben Powell, Apple, CST
+- Jalander Ramagiri, Ericsson Software Technology, UTC
+- Owen Bower Adams, IGS, UTC
+- Andrew Larsen, SAS, UTC-4
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+
+Agenda:
+
+- New attendees
+
+- Action Items
+
+- (Andrea/Emil) Proposal for [Governance and Contributor Ladder](https://github.com/cdevents/community/pull/38)
+    - Any objections to merging the PR? Ok to merge it now.
+
+- Introduce semantic conventions for CI/CD observability with OpenTelemetry
+    - Workgroup kick-off this Thursday: https://cloud-native.slack.com/archives/C0598R66XAP/p1701267889193129?thread_ts=1701100511.547279&cid=C0598R66XAP
+    - Emerged from https://github.com/open-telemetry/oteps/pull/223#issuecomment-1831192461
+
+- (Ben) Connecting & linking events
+    - [PR](https://github.com/cdevents/spec/pull/139)
+    - Will work on resolving the comments this week
+
+- (Ben) Maintainability of schemas, examples, and tests
+    - https://github.com/cdevents/spec/issues/170
+    - Ben to prepare a demo this week
+
+- (Brett) Workshop for CDF with CDEvents
+    - [WIP Event Provenance Registry](https://github.com/sassoftware/event-provenance-registry)
+    - We should create a workshop repo under CDEvents "Event Provenance Registry workshop". Set Brett and Andrew as maintainers.
+    - Action: Emil
+
+- (Sean/Ben) Ticket/Approvals Proposal
+    - [Tickets/issues](https://github.com/cdevents/spec/issues/164)
+    - [Draft proposal](https://hackmd.io/9eTiXHu6RfedSuSwUMGTLw?both)
+
+- (Andrea) Artifact events https://github.com/cdevents/spec/issues/143
+    - PR available https://github.com/cdevents/spec/pull/172
+    - Artifact scanned event upcoming
+    - Discussions about what scanning an artifact means and how it should be noted in events. Different scan types need to be possible to provide.
+    - Scanning is made for example to find CVEs. 'binary.analyzed' migt be an option, to also cater for other types of binary analyses
+    - Also source code, Docker base images and deployments are scanned at SAS. Would it be better to have a 'scan.performed' event instead, to not limit to binaries only?
+    - The links proposal should be able to help declaring what artifacts has passed a certain scanning step or not, etc.
+
+- (Andrea) SBOM uri https://github.com/cdevents/spec/pull/171 
+    - What about capitalizing 'URI' in our parameters? What are the concerns regarding SDKs when it comes to paremeters formats?
+    - Owen to write an issue to track that discussion
+    - Concistency is key. Regardless of if we choose capitalizing all abbreviations or not.
+    - Golang is opinionated about capitalizing URI so we might need to stick with that.
+
+- (Jalander) Generate Java SDK v0.3.0
+    - PR to be created - https://github.com/cdevents/sdk-java/pull/62
+
+- (Andrea) Custom events https://github.com/cdevents/spec/issues/168
+
+
+
+## Nov 27, 2023
+
+Participants:
+- Andrea Frittoli, IBM, UTC
+- Emil Bäckmark, Ericsson, UTC+1
+- Brett Smith, SAS, UTC-4
+- Ben Powell, Apple, UTC+1
+- Jalander Ramagiri, Ericsson Software Technology, UTC
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+
+Agenda:
+- New attendees
+    - Andrew Larsen, SAS, welcome!
+
+- (Andrea) Proposal for [Governance and Contributor Ladder](https://github.com/cdevents/community/pull/38)
+    - Spec maintainers file https://github.com/cdevents/spec/pull/167
+
+- (Ben) Connecting & linking events
+    - [PR](https://github.com/cdevents/spec/pull/139)
+    - Examples to be updated
+
+- (Ben) Maintainability of schemas, examples, and tests
+    - https://github.com/cdevents/spec/issues/170
+    - Very painful today to make changes to the CDEvents context
+    - Ben to prepare a demo next week
+    - Examples today have two functions:
+        - Documentation
+        - Testing (SDK conformance)
+    - Automation will generate
+        - Schemas - factor up duplicate schema fragments
+        - Examples for testing purposes
+    - Template engine:
+        - Mustache
+        - [Jinja](https://github.com/pallets/jinja)
+        - [gomplate](https://github.com/hairyhenderson/gomplate)
+    - Emil:
+        - Hopefully not too many context changes in future
+        - It would be good to still validate any example we provide
+    - Ben: would like to handle testing of examples in a separate proposal
+    - Brett:
+        - Jinja - very powerful, it can become hard to read at times
+        - gomplate - could as well use go template directly
+            - Ben: gomplate provides a CLI on top of go template
+        - examples should always pass the schema
+        - Why not using the examples using the SDK?
+            - SDKs are dependant on the examples
+            - Chicken and egg issue with updating schema, examples, and SDK
+
+- (Brett) Workshop for CDF with CDEvents
+    - [WIP Event Provenance Registry](https://github.com/sassoftware/event-provenance-registry)
+    - Ben: what is the goal of the workshop
+    - Brett: workshop definition still being figured out
+
+- (Sean/Ben) Ticket/Approvals Proposal
+    - [Tickets/issues](https://github.com/cdevents/spec/issues/164)
+    - [Draft proposal](https://hackmd.io/9eTiXHu6RfedSuSwUMGTLw?both)
+
+- (Andrea) Artifact events https://github.com/cdevents/spec/issues/143
+    - PR available https://github.com/cdevents/spec/pull/172
+    - Artifact scanned event upcoming
+
+- (Andrea) SBOM uri https://github.com/cdevents/spec/pull/171 
+
+- (Andrea) Custom events https://github.com/cdevents/spec/issues/168
+
+
+
+
 ## Nov 20, 2023
 
 Participants:
@@ -44,6 +317,7 @@ Participants:
 - Jalander Ramagiri, Ericsson Software Technology, UTC
 - Ben Powell, Apple, CST
 - Sean Brennan, Bloomberg, EST
+- Andrea Frittoli, IBM, UTC
 
 Links:
 - [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
@@ -2318,143 +2592,3 @@ Agenda:
     - Spinnaker
     - [RFC](https://github.com/spinnaker/governance/pull/299)
     - Proposal: setup an ad-hoc meeting to discuss and progress on the RFC
-
-## Dec 19
-
-Participants:
-- Emil Bäckmark, Ericsson, UTC+1
-- Andrea Frittoli, IBM, UTC
-- Erik Sternerson, dowhile, UTC+1
-- 
-
-Agenda:
-- SIG Events meeting
-    - Presentations
-    - Interactions for other SIGs
-    - Event architecture
-    - Held on demand (if there is an agenda)
-- Holiday meetings
-    - Jan 2nd SIG Events, CDEvents Cancelled
-    - Dec 27th CDEvents Cancelled
-    - Next CDEvents WG Jan 10th
-    - Next SIG Events meeting (if agenda) Jan 16th
-- New timeslot for APAC friendly meeting since today
-    - https://time.is/11am_19_december_2022_in_UTC
-
-- (A) Andrea to track TOC presentation feedback in an issue
-- v0.2 planning
-
-
-## Dec 13
-
-Participants:
-- Andrea Frittoli, he/him, IBM, UTC
-- Emil Bäckmark, he/him, Ericsson, UTC+1
-- Erik Sternerson, he/him, doWhile, UTC+1
-- 
-
-Agenda:
-
-- Action Items
-    - [New meeting time poll](https://doodle.com/meeting/participate/id/e1W8D43b)
-    - [Top3 Issues for contributors](https://github.com/orgs/cdevents/projects/1/views/10)
-    - [Connecting events](https://github.com/cdevents/spec/issues/104)
-
-- cdevents.dev
-    - PRs merged
-
-- v0.2 roadmap
-
-- Enforcing global config in the cdevents GitHub org
-    -  github.com/github/safe-settings or github.com/probot/settings?
-
-- Connecting Events
-    - 
-
-- Release Events
-    - 
-
-
-## Dec 7
-
-Participants:
-- Andrea Frittoli, he/him, IBM, UTC
-- Emil Bäckmark, Ericsson, UTC+1
-- Mattias Linnér, Ericsson, UTC+1
-- Brad McCoy, he/hime, Basiq, UTC+10
-
-
-Agenda:
-
-- Meeting time
-    - Current time on Wednesday is a permanent conflict for Erik
-    - Alternatives (proposed by for Erik). Please vote with +1
-        - Tuesdays at the same time or 
-        - Tuesdays one hour earlier +2
-        - Wednesdays one hour earlier +2
-        - Wednesdays one hour later +2
-        - Thursdays one hour later +1
-        - Fridays almost any time
-    - Andrea to make a Doodle
-        - Ping Vibhav, Adam, Jalander, Salaboy, Hergy Tchuinkou, Christoffer Vig
-
-- CDEvents presentation to TOC
-    - Surface POC / videos on the website
-        - Showcase CDEvents
-        - Robert can help
-    - Provide a top 3 list of things CDEvents needs help with
-        - Maintain a list at all times
-        - TOC can help advertise how to contribute to CDEvents
-    - [Slides](https://github.com/afrittoli/cdevents_roadmap/blob/toc_update_202212/cdevents_roadmap.pdf)
-
-- TOP three priorities (good candidates for new contributors)
-    - Help with Java SDK
-    - Help with Python SDK
-    - Revamp POCs
-        - Port existing POC to v0.1
-        - Move to CDEvents GitHub org
-        - Document on website
-
-    - Other priorities, probably not good for newcomers
-        - Incident events
-            - Andrea working on it
-        - Release events
-            - Interest in contributing from IBM/RedHat
-            - Release stage defined by SIG Interop: https://github.com/cdfoundation/sig-interoperability/blob/main/docs/pipelines-terminology.md#release-stage
-        - Feature request events
-            - Eiffel has issues events
-        - These need more internal discussions to clarify what we want to do
-
-- Connecting events
-    - [Event Links](https://github.com/cdevents/spec/issues/10) 
-        - Eiffel model
-        - Database of events
-        - Links with different semantics
-    - Propagated Context
-        - Issue to be created by Ben
-            - https://github.com/cdevents/spec/issues/100 
-        - If an event does not have a context, it generates one (UUID)
-        - Events pass along a list(?) of contexts from "source" events
-        - Context ID meant to be used to easily filter events
-            - For the CloudEvents binding it could be a CE extension
-    - Existing art
-        - [Distributed tracing over CloudEvents](https://opentelemetry.io/docs/reference/specification/trace/semantic_conventions/cloudevents/)
-            - OpenTelemetry defines a semantic convention for CloudEvents
-        - [Trace Context RFC](https://www.w3.org/TR/trace-context/)
-    - Span IDs
-        - Honeycomb build events
-            - https://user-images.githubusercontent.com/361454/57872910-ac9eea00-77c1-11e9-8bdd-db7a870dcd61.png
-    - Linked events
-        -
-    - Use Cases:
-        - Find vulnerabilities upstream
-        - Visualise ditributed workflows
-        - Metric collections 
-    - Visualisation tools
-        - Jaeger
-        - Honeycomb
-        - Aspecto https://www.aspecto.io/ 
-
-
-- Release Events
-    - 
