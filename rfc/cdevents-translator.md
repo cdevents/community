@@ -18,8 +18,14 @@ Example of initializing endpoints for Gerrit and GitHub in `cdevents-translator`
 POST("/gerrit-webhooks", gerrit.HandleTranslateGerritEvent)
 POST("/github-webhooks", github.HandleTranslateGitHubEvent)
 ````
+An interface `EventTranslator` will be created to handle `TranslateEvent`. 
+Different source of systems need to implement `TranslateEvent()` to handle translation from source events to CDEvents.
 
-Methods will be implemented to handle translation of different types of SCM events received into CDEvents and send to configured message-broker
+````go
+type EventTranslator interface {
+	TranslateEvent()
+}
+````
 
 Go structs will be created for different types of events to Deserialize JSON data into a struct.
 It can be a common struct If the event structure is common for all the events produced by SCM system.
@@ -34,6 +40,24 @@ type ProjectCreated struct {
 }
 ````
 By passing this `ProjectCreated` struct as reference a corresponding CDEvent will be constructed
+
+A common methods will be available to create CDEvents from different implementations and send CDEvents to configured message-broker
+
+Below is the example method to create RepositoryCreated CDEvent by using [CDEvents Go-SDK](http://github.com/cdevents/sdk-go)
+
+````go
+func CreateRepositoryCreatedCDEvent() (*sdk.RepositoryCreatedEvent, error) {
+	cdevent, err := sdk.NewRepositoryCreatedEvent()
+	//Set the required context and subject fields 
+	if err != nil {
+		fmt.Println("Error occurred while Unmarshal gerritEvent data into ProjectCreated struct", err)
+		return nil, err
+	}
+	return cdevent, nil
+}
+````
+
+
 
 Note: A sample events creation for Gerrit Webhooks implemented as [PoC](https://github.com/rjalander/cdevents_translator/pull/1) 
 
