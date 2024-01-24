@@ -12,14 +12,14 @@ For Example configuring Gerrit webhooks and mapping with CDEvents can be found i
 ### Goals and Non-Goals
 Goals:
 - Create shared packages/interfaces that will be used as common in translating/sending CDEvents
-- Using `cdevents-translator` library to implement Gerrit translator initially
+- Finalize one of the three approaches and use `cdevents-translator` library to implement Gerrit translator initially
 
 Non-Goals:
 - Implement translators for other SCM tools or any application that needs a translation to CDEvents
 
 
 ### Design
-Based on the initial design discussion we have come up with 3 different approaches to create `cdevents-translator` library, each one has it's own pros/cons to pick the best suitable approach.
+Based on the initial design discussion, we have identified three different approaches to creating the cdevents-translator library. Each approach has its own pros and cons, and we need to choose the most suitable one.
 
 ### Approach 1 : Creating a Web Service with Libraries/Packages for different translators
 A Golang main application "cdevents-translator" will be created to expose the translation functionality as a web service with HTTP/REST API server.</br>
@@ -64,8 +64,8 @@ func (translator *GerritTranslator) TranslateEvent(req *http.Request) (CDEvent, 
 ````
 
 #### Pros and Cons
-This structure can be extended by adding more translator libraries in the future without modifying the main application code.</br>
-The problem with this approach anyone who is wanting some custom set of translator would need to write their own main class.
+- This structure can be extended by adding more translator libraries in the future without modifying the main application code.
+- The problem with this approach anyone who is wanting some custom set of translator would need to write their own main class.
 
 ### Approach 2 : Creating a Go's plugin system to implement different Translators
 Plugins are Go interface implementations that can be compiled and loaded during the runtime of a Go program using Go's [plugin](https://pkg.go.dev/plugin) package
@@ -109,9 +109,10 @@ func main() {
 
 #### Pros and Cons
 
-This structure can be extended by adding more translator plugins in the future without having to recompile the entire application.</br>
-But the Go plugin system is currently only supported on Unix-like systems and has some limitations, such as the need to compile everything with the same Go version.</br>
-Expose the functionality of Go translator plugins as an HTTP/REST API, if this needs be used from other languages.
+- This structure can be extended by adding more translator plugins in the future without having to recompile the entire application.
+- The plugins can be developed independently and reside in separate repositories.
+- But the Go plugin system is currently only supported on Unix-like systems and has some limitations, such as the need to compile everything with the same Go version.
+- Expose the functionality of Go translator plugins as an HTTP/REST API, if this needs be used from other languages.
 
 
 ### Approach 3 : Creating Go Plugin System over RPC(gRPC) using HashiCorp's go-plugin
@@ -218,8 +219,13 @@ func (m *GRPCServer) TranslateEvent(ctx context.Context, req *proto.TranslateReq
 ````
 
 The GRPC client/server implementations can be [generated in other languages](https://protobuf.dev/getting-started/), to enable Cross-language support for Plugins implemented.</br>
-Plugin users use `plugin.Client` to launch a subprocess and request an interface implementation using hashicorp's go-plugin over RPC.
-More detailed implementation cab be referred from HashiCorp's go-plugin [gRPC examples](https://github.com/hashicorp/go-plugin/tree/main/examples/grpc) 
+Plugin users use `plugin.Client` to launch a subprocess and request an interface implementation using hashicorp's go-plugin over RPC.</br>
+More detailed implementation can be referred from HashiCorp's go-plugin [gRPC examples](https://github.com/hashicorp/go-plugin/tree/main/examples/grpc) 
+
+#### Pros and Cons
+- This structure allows you to have a main application that dynamically loads and communicates with different translator plugins over gRPC.
+- The plugins can be developed independently and reside in separate repositories.</br>
+- HashiCorp's `go-plugin` library developed under Mozilla Public License.
 
 ### Known Unknowns
 - Creating CDEvents from other type of events and sending them to configured Message-broker can be implemented in a shared package.
