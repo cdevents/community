@@ -9,20 +9,12 @@ Different SCM systems or applications that are exposing events with endpoints/we
 
 For Example configuring Gerrit webhooks and mapping with CDEvents can be found in [gerrit-cdevent](gerrit-cdevents.md) 
 
-### Goals and Non-Goals
-Goals:
-- Create shared packages/interfaces that will be used as common in translating/sending CDEvents
-- Finalize one of the three approaches and use `cdevents-translator` library to implement Gerrit translator initially
-
-Non-Goals:
-- Implement translators for other SCM tools or any application that needs a translation to CDEvents
-
 
 ### Design
 Based on the initial design discussion, we have identified three different approaches to creating the cdevents-translator library. Each approach has its own pros and cons, and we need to choose the most suitable one.
 
 ### Approach 1 : Creating a Web Service with Libraries/Packages for different translators
-A Golang main application "cdevents-translator" will be created to expose the translation functionality as a web service with HTTP/REST API server.</br>
+A Golang main application `cdevents-translator` will be created to expose the translation functionality as a web service with HTTP/REST API server.</br>
 SCM system's webhooks/endpoints are registered to handle the translation of the events into CDEvents.</br>
 An interface `EventTranslator` will be created to handle `TranslateEvent` and this needs to be implemented by different translators.
 
@@ -45,11 +37,11 @@ func main() {
 }
 ````
 #### Create a Library/Package gerrit-translator-cdevents
-Library with the name "gerrit-translator-cdevents" will be created in a separate package/repo.</br>
+Library with the name `gerrit-translator-cdevents` will be created in a separate package/repo.</br>
 Declare a struct to hold fields related to translation of Gerrit event.</br>
-Implement "TranslateEvent" to translate Gerrit event to CDEvent.
+Implement `TranslateEvent` to translate Gerrit event to CDEvent.
 
-- Example structure of gerrit-translator-cdevents library
+- Example structure of `gerrit-translator-cdevents` library
 ````go
 package gerrittranslator
 
@@ -71,7 +63,7 @@ func (translator *GerritTranslator) TranslateEvent(req *http.Request) (CDEvent, 
 Plugins are Go interface implementations that can be compiled and loaded during the runtime of a Go program using Go's [plugin](https://pkg.go.dev/plugin) package
 
 #### Create a shared interface cdevents-translator
-Define an interface "EventTranslator" that represents the common functionality to "TranslateEvent" and expected to implement from all translator plugins.
+Define an interface `EventTranslator` that represents the common functionality to `TranslateEvent` and expected to implement from all translator plugins.
 
 - Example structure of cdevents-translator interface
 ````go
@@ -125,7 +117,7 @@ gRPC-based plugins with HashiCorp's go-plugin library will help to enable commun
 As per the HashiCorp's `go-plugin` library [usage documentation](https://github.com/hashicorp/go-plugin/tree/main?tab=readme-ov-file#usage) the translator services can be implemented as below,
 
 #### Create a shared interface cdevents-translator
-Define an interface "EventTranslator" that represents the common functionality to "TranslateEvent" and will be exposed for plugins to implement.</br>
+Define an interface `EventTranslator` that represents the common functionality to `TranslateEvent` and will be exposed for plugins to implement.</br>
 Different translator plugins can be implemented that communicates over a gRPC connection.
 
 - Example structure of cdevents-translator interface
@@ -169,7 +161,8 @@ func main() {
 ````
 #### GRPC client and server implementations using protocol buffers
 Creating GRPC Client and Server implementations is a common template that can be generated 
-by using `protoc-gen-go-grpc` plugin from the below [protocol buffers](https://protobuf.dev/getting-started/gotutorial/) (.proto) file.
+by using [Buf CLI's](https://buf.build/docs/generate/tutorial) `buf generate` command</br>
+That generates Go code from [protocol buffers](https://protobuf.dev/getting-started/gotutorial/) files(.proto) using Go plugin `protoc-gen-go-grpc`.
 
 - Example structure of cdevents-translator proto file
 ````proto
@@ -194,7 +187,7 @@ service EventTranslator {
 }
 ````
 
-The GRPC client/server will help to handle EventTranslator request/response over GRPC by using the proto generated files.
+The GRPC client/server will help to handle `EventTranslator` service request/response over GRPC by using the proto generated files.
 
 ````go
 package cdeventstranslator
@@ -226,6 +219,13 @@ More detailed implementation can be referred from HashiCorp's go-plugin [gRPC ex
 - This structure allows you to have a main application that dynamically loads and communicates with different translator plugins over gRPC.
 - The plugins can be developed independently and reside in separate repositories.</br>
 - HashiCorp's `go-plugin` library developed under Mozilla Public License.
+
+### Goals
+- Create shared packages/interfaces that will be used as common in translating/sending CDEvents
+- Finalize one of the three approaches and use `cdevents-translator` library to implement Gerrit translator initially
+
+### Non-Goals
+- Implement translators for other SCM tools or any application that needs a translation to CDEvents
 
 ### Known Unknowns
 - Creating CDEvents from other type of events and sending them to configured Message-broker can be implemented in a shared package.
