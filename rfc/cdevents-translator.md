@@ -59,7 +59,7 @@ func (translator *GerritTranslator) TranslateEvent(req *http.Request) (CDEvent, 
 - This structure can be extended by adding more translator libraries/Packages in the future.
 - The problem with this approach anyone who is wanting some custom set of translator would need to write their own main class.
 
-### Approach 2 : Creating a Go's plugin system to implement different Translators
+### Approach 2 : Using Go plugins to implement different Translators
 Plugins are Go interface implementations that can be compiled and loaded during the runtime of a Go program using Go's [plugin](https://pkg.go.dev/plugin) package
 
 #### Create a shared interface cdevents-translator
@@ -103,13 +103,13 @@ func main() {
 
 - This structure can be extended by adding more translator plugins in the future without having to recompile the entire application.
 - The plugins can be developed independently and reside in separate repositories.
-- But the Go plugin system is currently only supported on Unix-like systems and has some limitations, such as the need to compile everything with the same Go version.
+- The Go plugin system is currently only supported on Unix-like systems and has some limitations, such as the need to compile everything with the same Go version.
 - Expose the functionality of Go translator plugins as an HTTP/REST API, if this needs be used from other languages.
 
 
-### Approach 3 : Creating Go Plugin System over RPC(gRPC) using HashiCorp's go-plugin
+### Approach 3 : Using RPC to add new Translators
  
-HashiCorp's [`go-plugin`](https://github.com/hashicorp/go-plugin) library simplifies the implementation of a plugin system in Go, it is a Go (golang) plugin system over RPC created by HashiCorp.</br>
+HashiCorp's [`go-plugin`](https://github.com/hashicorp/go-plugin) library simplifies the implementation of a plugin system in Go, It is a Go (golang) plugin system over RPC created by HashiCorp.</br>
 gRPC is a high-performance RPC (Remote Procedure Call) framework developed by Google.
 
 gRPC-based plugins with HashiCorp's go-plugin library will help to enable communication between the main Go application (the server) and different translator plugins (the clients) using the gRPC framework.
@@ -231,3 +231,7 @@ More detailed implementation can be referred from HashiCorp's go-plugin [gRPC ex
 - Creating CDEvents from other type of events from SDK and sending them to configured Message-broker using CloudEvent library, can be implemented in a shared package.
 - Having a main application for Approach 2 and 3 from `cdevents-translator` or maintained by user of the translator.
 - A common library name can be changed to `scm-cdevents-translator` from `cdevents-translator`, but in future this translator can be extended to implement for Non SCM systems too.
+
+
+### Conclusion
+Discuss these approaches with the CDEvents Working Group and reach a conclusion to select the most suitable one
