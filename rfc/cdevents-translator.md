@@ -162,7 +162,7 @@ type GerritTranslator struct {
 }
 
 func (translator *GerritTranslator) TranslateEvent(event string) {
-	//handle translate Gerrit event to CDEvent
+	// handle translate Gerrit event to CDEvent
 }
 
 func main() {
