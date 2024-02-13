@@ -1,21 +1,38 @@
 ## CDEvents Translator
 
 ### Overview:
-This design describes the approaches to translate events from various source control systems into CDEvents and sending them to configured message-broker, by using a common `cdevents-translator`.
+This design describes the approaches to translate events from various Source Code Management (SCM) systems into CDEvents and sending them to configured message-broker, by using a common `cdevents-translator`.
 
-A library `cdevents-translator` will have an interface that can be implemented for various SCM systems like GitHub, Gerrit and Gitlab to translate events into CDEvents format.
+A library `cdevents-translator` will have an interface that can be implemented for various Source Code Management (SCM) systems like GitHub, Gerrit and Gitlab to translate events into CDEvents format.
 
 Different SCM systems or applications that are exposing events with endpoints/webhooks can be configured and mapped with the corresponding CDEvent.
 
 For Example configuring Gerrit webhooks and mapping with CDEvents can be found in [gerrit-cdevent](gerrit-cdevents.md) 
 
+### Motivation and Rationale
+In establishing the fundamental principles of CDEvents, a key objective is to ensure that events are sent directly from their source or as close to the source as feasible.</br> 
+Recognizing the challenge of achieving universal adaptation among all tools and systems to send CDEvents, there arises a need to bridge this gap.</br>
+To address this, the `cdevents-translator` will be implemented. This translator is designed to translate and send CDEvents to a message-broker, for various SCM systems.
+
+### Goals
+
+- The translators will be implemented for tools that support sending events over the HTTP protocol with webhook capabilities
+- Implement support for one-way translation only; that is, translating events from different SCM systems to CDEvents
+- The translators will be implemented to translate only [Source Code Control](https://cdevents.dev/docs/source-code-version-control/) type CDEvents
+- Create shared packages/interfaces that will be commonly used for translating and sending CDEvents. 
+- Finalize one of the three approaches and utilize the `cdevents-translator` library to implement the Gerrit translator initially.
+
+### Non-Goals
+- Implement translators for other SCM systems or any applications requiring translation to CDEvents
+- Translating from CDEvents to other SCM systems events. It is a more complex set up depending on what downstream systems/tools to support
+- Implementing translators for tools that support sending events other than HTTP protocol (like over ssh)
 
 ### Design
 Based on the initial design discussion, we have identified three different approaches to creating the `cdevents-translator` library. Each approach has its own pros and cons, and we need to choose the most suitable one.
 
 ### Approach 1 : Creating a Web Service with Libraries/Packages for different translators
 A Golang main application `cdevents-translator` will be created to expose the translation functionality as a web service with HTTP/REST API server.</br>
-SCM system's webhooks/endpoints are registered to handle the translation of the events into CDEvents.</br>
+SCM systems webhooks/endpoints are registered to handle the translation of the events into CDEvents.</br>
 An interface `EventTranslator` will be created to handle `TranslateEvent` and this needs to be implemented by different translators.
 
 - Example structure of `cdevents-translator` application
@@ -47,11 +64,11 @@ package gerrittranslator
 
 
 type GerritTranslator struct {
-   //Fields for Gerrit event Translator
+   // Fields for Gerrit event Translator
 }
 
 func (translator *GerritTranslator) TranslateEvent(req *http.Request) (CDEvent, error) {
-	//handle translate Gerrit event to CDEvent
+	// handle translate Gerrit event to CDEvent
 }
 ````
 
@@ -85,11 +102,11 @@ package main
 
 
 type GerritTranslator struct {
-   //Fields for Gerrit event Translator
+   // Fields for Gerrit event Translator
 }
 
 func (translator *GerritTranslator) TranslateEvent(event string) {
-	//handle translate Gerrit event to CDEvent
+	// handle translate Gerrit event to CDEvent
 }
 
 func main() {
@@ -102,7 +119,6 @@ func main() {
 #### Pros and Cons
 
 - This structure can be extended by adding more translator plugins in the future without having to recompile the entire application.
-- The plugins can be developed independently and reside in separate repositories.
 - The Go plugin system is currently only supported on Unix-like systems and has some limitations, such as the need to compile everything with the same Go version.
 - Expose the functionality of Go translator plugins as an HTTP/REST API, if this needs be used from other languages.
 
@@ -110,7 +126,7 @@ func main() {
 ### Approach 3 : Using RPC to add new Translators
  
 HashiCorp's [`go-plugin`](https://github.com/hashicorp/go-plugin) library simplifies the implementation of a plugin system in Go, It is a Go (golang) plugin system over RPC created by HashiCorp.</br>
-gRPC is a high-performance RPC (Remote Procedure Call) framework developed by Google.
+gRPC is a high-performance RPC (Remote Procedure Call) framework developed by Google under Mozilla Public License.
 
 gRPC-based plugins with HashiCorp's go-plugin library will help to enable communication between the main Go application (the server) and different translator plugins (the clients) using the gRPC framework.
 
@@ -142,7 +158,7 @@ package main
 
 
 type GerritTranslator struct {
-   //Fields for Gerrit event Translator
+   // Fields for Gerrit event Translator
 }
 
 func (translator *GerritTranslator) TranslateEvent(event string) {
@@ -193,7 +209,7 @@ The GRPC client/server will help to handle `EventTranslator` service request/res
 package cdeventstranslator
 
 type GRPCClient struct {
-   //init client
+   // init client
 }
 
 func (m *GRPCClient) TranslateEvent(event string) error {
@@ -202,7 +218,7 @@ func (m *GRPCClient) TranslateEvent(event string) error {
 }
 
 type GRPCServer struct {
-	//init server
+	// init server
 }
 
 func (m *GRPCServer) TranslateEvent(ctx context.Context, req *proto.TranslateRequest) (*proto.Empty, error) {
@@ -217,20 +233,12 @@ More detailed implementation can be referred from HashiCorp's go-plugin [gRPC ex
 
 #### Pros and Cons
 - This structure allows you to have a main application that dynamically loads and communicates with different translator plugins over gRPC.
-- The plugins can be developed independently and reside in separate repositories.</br>
-- HashiCorp's `go-plugin` library developed under Mozilla Public License.
 
-### Goals
-- Create shared packages/interfaces that will be used as common in translating/sending CDEvents
-- Finalize one of the three approaches and use `cdevents-translator` library to implement Gerrit translator initially
-
-### Non-Goals
-- Implement translators for other SCM tools or any application that needs a translation to CDEvents
 
 ### Known Unknowns
 - Creating CDEvents from other type of events from SDK and sending them to configured Message-broker using CloudEvent library, can be implemented in a shared package.
 - Having a main application for Approach 2 and 3 from `cdevents-translator` or maintained by user of the translator.
-- A common library name can be changed to `scm-cdevents-translator` from `cdevents-translator`, but in future this translator can be extended to implement for Non SCM systems too.
+- A common library name can be changed to `scm-cdevents-translator` from `cdevents-translator`, but in future this translator can be extended to implement for Non SCM tools too.
 
 
 ### Conclusion
