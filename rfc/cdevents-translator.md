@@ -166,7 +166,7 @@ func (translator *GerritTranslator) TranslateEvent(event string) {
 }
 
 func main() {
-	//using hashicorp's plugin
+	// using hashicorp's plugin
 	plugin.Serve(&plugin.ServeConfig{
 		.....
 
