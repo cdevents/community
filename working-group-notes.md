@@ -38,6 +38,205 @@ Agenda:
 - Review proposal for demo system https://github.com/cdevents/community/issues/31
 
 
+### Feb 26, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Emil Bäckmark, Ericsson, UTC+1
+- Andrea Frittoli, IBM, UTC
+- Brett Smith, SAS, UTC-4
+- Sean Brennan, Bloomberg, UTC-5
+- Jalander Ramagiri, Ericsson Software Technology, UTC
+- Christian Provenzano, Fidelity, UTC-5
+
+Agenda:
+
+- New attendees
+
+- Action Items
+  - (Andrea) Update custom events proposal
+    - Create PRs:
+      - SchemaUri: https://github.com/cdevents/spec/pull/184
+      - Custom Events: https://github.com/cdevents/spec/pull/185
+    - Section about versioning: done in PR
+    - Reply to comments: done
+    - Add worst case scenario handling: added more context in PR
+  - Define interoperability (TBD)
+
+- Brett's workshop preview
+
+- [Ticket Proposal](https://github.com/cdevents/spec/pull/180)
+
+- [Link Proposal](https://github.com/cdevents/spec/pull/139)
+
+- Custom Events proposal
+      - SchemaUri: https://github.com/cdevents/spec/pull/184
+      - Custom Events: https://github.com/cdevents/spec/pull/185
+- RFC:CDEvents Webhook Adapter [design review](https://github.com/cdevents/community/pull/42)
+
+### Feb 19, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC
+- Ben Powell, Apple, UTC-6
+- Brett Smith, SAS, UTC-4
+- Jalander Ramagiri, Ericsson Software Technology, UTC
+
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+
+Agenda:
+- New attendees
+- Action Items
+  - (Andrea) Update custom events proposal https://hackmd.io/LftfRirGRbKuAcLg9pdOag
+    - To be done, section about versioning
+    - To be done, create a PR
+    - Reply to comments
+    - Add worst case scenario handling, tools define their own competing custom events
+
+- [Ticket Proposal](https://github.com/cdevents/spec/pull/180)
+
+- [Link Proposal](https://github.com/cdevents/spec/pull/139)
+- 
+
+- New Repository creation for webhook-cdevents-adapter under cdevents
+  - RFC: comments addressed, re-review required
+  - Action: Andrea to create the new repo
+    - Jalander, Adam and Ben as maintainers
+  - Mozilla license should be ok
+
+- (Ben) What is interoperability? How far do we go?
+  - We should describe what we mean by interoperability
+  - Data migration is not part of the scope
+    - i.e. pipeline definitions, git repos, artifacts are not in scope
+  - Add a section to the primer https://cdevents.dev/docs/primer/
+    - Source https://github.com/cdevents/cdevents.dev/tree/main/assets
+  - We could use definitions from SIG Interop, and how much of that CDEvents covers https://github.com/cdfoundation/sig-interoperability
+  - With the current spec and definitions, interoperability could be painted to mean more than what we are solving for. For example, swapping out a new CD tool will not have all the old CD's pipelines.
+
+### Feb 12, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Brett Smith, SAS, UTC-4
+- Ben Powell, Apple, UTC-6
+- Andrea Frittoli, IBM, UTC
+- Jalander Ramagiri, Ericsson Software Technology, UTC
+- Sean Brennan, Bloomberg, UTC-5
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+
+Agenda:
+- New attendees
+- Action Items
+  - (Andrea) Update custom events proposal https://hackmd.io/LftfRirGRbKuAcLg9pdOag
+    - Added transitioning from custom to core
+    - Added section about links
+    - To be done, section about versioning
+    - To be done, create a PR
+- \<addme\>
+
+- [Ticket Proposal](https://github.com/cdevents/spec/pull/180)
+  - Some updates to the PR
+  - Only one outstanding comment to be addressed
+  - Please re-review
+
+- [Link Proposal](https://github.com/cdevents/spec/pull/139)
+  - Some updates to the PR
+  - Ready to be re-reviewed
+  - Andrea to prepare an example for linking to a subject
+
+- Next release
+  - We could do a release as soon a links is merged
+  - Tickets could go in the following release
+
+- cdevents-translator [design PR](https://github.com/cdevents/community/pull/42/files) review
+  - Addressed most comments
+  - Hashicorp plugins are MPL-2 - Ben to check if the license is acceptable from Apple POV. MPL-2 is fine from CDF POV
+  
+- GitOps + CDEvents: 
+  - https://hackmd.io/0XnerLOdROiI_JAKuRlUfQ
+
+- Spinnaker
+  - https://spinnaker.io/docs/setup/other_config/features/notifications/#cdevents
+
+  - https://spinnaker.io/docs/guides/user/pipeline/triggers/cdevents/
+
+### Feb 5, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, he/him, IBM, UTC
+- Brett Smith, SAS, UTC-4
+- Emil Bäckmark, Ericsson, UTC+1
+- Christian Provenzano, Fidelity, UTC-4
+- Sean Brennan, Bloomberg, UTC-5
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+
+Agenda:
+- New attendees
+- 
+- Action Items
+  - Andrea to formalise a proposal for [#168](https://github.com/cdevents/spec/issues/168) in an hackmd doc linked into the issue
+    - Proposal: https://hackmd.io/LftfRirGRbKuAcLg9pdOag
+      - Emil: What happens is custom events become core CDEvents?
+      - Emil: Is there any limitation on how custom events would link to core events?
+      - Brett: We can provide advice, but not provide restrictions
+          - We should consider how we handle custom events that might become core events. See Emil's question above. 
+      - Andrea: add a section about version
+
+- OpenTelemetry CI/CD Observability
+  - Meeting recordings lookup https://docs.google.com/spreadsheets/d/1SYKfjYhZdm2Wh2Cl6KVQalKg_m4NhTPZqq-8SzEVO6s/edit#gid=0
+  - https://docs.google.com/document/d/10xG7DNKWRhxNmFGt3yYd3980a9uwS8lMl2LvQL3VNK8
+  - 
+
+- [Ticket Proposal](https://github.com/cdevents/spec/pull/180)
+
+- [Link Proposal](https://github.com/cdevents/spec/pull/139)
+
+- (Ben) outcome enum https://github.com/cdevents/spec/pull/179
+
+- cdevents-translator [design PR](https://github.com/cdevents/community/pull/42/files) review
+
+### Jan 29, 2024
+
+Participants:
+- Andrea Frittoli, IBM, UTC
+- Ben Powell, Apple, UTC-6
+- Andrew Larsen, SAS, UTC-4
+- Sean Brennan, Bloomberg, UTC-5
+- Jalander Ramagiri, Ericsson Software Technology, UTC
+- Emil Bäckmark, Ericsson, UTC+1
+
+Links:
+- [v0.4 Roadmap](https://github.com/orgs/cdevents/projects/1/views/13)
+
+Agenda:
+- New attendees
+
+- Action Items
+    - Owen to create an issue about capitalizing URI
+    - Andrea to formalise a proposal for [#168](https://github.com/cdevents/spec/issues/168) in an hackmd doc linked into the issue
+        - WIP https://hackmd.io/LftfRirGRbKuAcLg9pdOag
+
+- OpenTelemetry CI/CD Observability
+    - Working Group approved by the TC
+    - See https://github.com/open-telemetry/community/pull/1822
+    - First meeting running in parallel to this one
+
+- [Ticket Proposal](https://github.com/cdevents/spec/pull/180)
+
+- [Link Proposal](https://github.com/cdevents/spec/pull/139)
+
+- (Ben) outcome enum, "failure"
+
+- cdevents-translator [design PR](https://github.com/cdevents/community/pull/42/files) review
+
 ### Jan 22, 2024
 
 Participants:
@@ -60,7 +259,7 @@ Agenda:
 
 - Action Items
     - Owen to create an issue about capitalizing URI
-    - ~~Andrea to create an issue about conformance groups
+    - ~~Andrea to create an issue about conformance groups~~
         - https://github.com/cdevents/spec/issues/182
     - Andrea to formalise a proposal for [#168](https://github.com/cdevents/spec/issues/168) in an hackmd doc linked into the issue
 
