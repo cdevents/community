@@ -1,9 +1,9 @@
 ## Webhook CDEvents Adapter
 
 ### Overview:
-This design describes the approaches to translate events from various Source Code Management (SCM) systems into CDEvents and sending them to configured message-broker, by using a common `webhook_cdevents_adapter`.
+This design describes the approaches to translate events from various Source Code Management (SCM) systems into CDEvents and sending them to configured message-broker, by using a common `webhook-adapter`.
 
-A library `webhook_cdevents_adapter` will have an interface that can be implemented for various Source Code Management (SCM) systems like GitHub, Gerrit and Gitlab to translate events into CDEvents format.
+A library `webhook-adapter` will have an interface that can be implemented for various Source Code Management (SCM) systems like GitHub, Gerrit and Gitlab to translate events into CDEvents format.
 
 Different SCM systems or applications that are exposing events with webhooks can be configured and mapped with the corresponding CDEvent.
 
@@ -12,7 +12,7 @@ For Example configuring Gerrit webhooks and mapping with CDEvents can be found i
 ### Motivation and Rationale
 In establishing the fundamental principles of CDEvents, a key objective is to ensure that events are sent directly from their source or as close to the source as feasible.</br> 
 Recognizing the challenge of achieving universal adaptation among all tools and systems to send CDEvents, there arises a need to bridge this gap.</br>
-To address this, the `webhook_cdevents_adapter` will be implemented. This is designed to translate and send CDEvents to a message-broker, for various SCM systems.
+To address this, the `webhook-adapter` will be implemented. This is designed to translate and send CDEvents to a message-broker, for various SCM systems.
 
 ### Goals
 
@@ -20,7 +20,7 @@ To address this, the `webhook_cdevents_adapter` will be implemented. This is des
 - Implement support for one-way translation only; that is, translating events from different SCM systems to CDEvents
 - The SCM translators will be implemented to translate only [Source Code Control](https://cdevents.dev/docs/source-code-version-control/) type CDEvents
 - Create shared packages/interfaces that will be commonly used for translating and sending CDEvents. 
-- Finalize one of the three approaches and utilize the `webhook_cdevents_adapter` library to implement the Gerrit translator initially.
+- Finalize one of the three approaches and utilize the `webhook-adapter` library to implement the Gerrit translator initially.
 
 ### Non-Goals
 - Implement translators for other applications (non-SCM systems) requiring translation to CDEvents
@@ -28,14 +28,14 @@ To address this, the `webhook_cdevents_adapter` will be implemented. This is des
 - Implementing translators for tools that support sending events other than HTTP protocol (like over ssh)
 
 ### Design
-Based on the initial design discussion, we have identified three different approaches to creating the `webhook_cdevents_adapter` library. Each approach has its own pros and cons, and we need to choose the most suitable one.
+Based on the initial design discussion, we have identified three different approaches to creating the `webhook-adapter` library. Each approach has its own pros and cons, and we need to choose the most suitable one.
 
 ### Approach 1 : Creating a Web Service with Libraries/Packages for different SCM translators
-A Golang main application `webhook_cdevents_adapter` will be created to expose the translation functionality as a web service with HTTP/REST API server.</br>
+A Golang main application `webhook-adapter` will be created to expose the translation functionality as a web service with HTTP/REST API server.</br>
 SCM systems webhooks/endpoints are registered to handle the translation of the events into CDEvents.</br>
 An interface `EventTranslator` will be created to handle `TranslateEvent` and this needs to be implemented by different translators.
 
-- Example structure of `webhook_cdevents_adapter` application
+- Example structure of `webhook-adapter` application
 ````go
 package main
 
@@ -53,12 +53,12 @@ func main() {
    http.ListenAndServe(":8080", nil)
 }
 ````
-#### Create a Library/Package gerrit-translator-cdevents
-Library with the name `gerrit-translator-cdevents` will be created in a separate package/repo.</br>
+#### Create a Library/Package gerrit-translator
+Library with the name `gerrit-translator` will be created in a separate package/repo.</br>
 Declare a struct to hold fields related to translation of Gerrit event.</br>
 Implement `TranslateEvent` to translate Gerrit event to CDEvent.
 
-- Example structure of `gerrit-translator-cdevents` library
+- Example structure of `gerrit-translator` library
 ````go
 package gerrittranslator
 
@@ -82,7 +82,7 @@ Plugins are Go interface implementations that can be compiled and loaded during 
 #### Create a shared interface
 Define an interface `EventTranslator` that represents the common functionality to `TranslateEvent` and expected to implement from all translator plugins.
 
-- Example structure of `webhook_cdevents_adapter` interface
+- Example structure of `webhook-adapter` interface
 ````go
 package cdeventstranslator
 
@@ -91,12 +91,12 @@ type EventTranslator interface {
 }
 ````
 
-#### Implement gerrit-translator-cdevents plugin
-Plugin with the name `gerrit-translator-cdevents` will be created in a separate repo.</br>
+#### Implement gerrit-translator plugin
+Plugin with the name `gerrit-translator` will be created in a separate repo.</br>
 GerritTranslator needs to implement the `cdeventstranslator.EventTranslator` interface to handle the translation from Gerrit event to CDEvent.</br>
-Build the `gerrit-translator-cdevents` plugin as shared object using `go build -buildmode=plugin`, so that the plugin can be loaded/used from other Golang main application to `TranslateEvent` using Go's [plugin](https://pkg.go.dev/plugin) package.
+Build the `gerrit-translator` plugin as shared object using `go build -buildmode=plugin`, so that the plugin can be loaded/used from other Golang main application to `TranslateEvent` using Go's [plugin](https://pkg.go.dev/plugin) package.
 
-- Example structure of `gerrit-translator-cdevents` plugin
+- Example structure of `gerrit-translator` plugin
 ````go
 package main
 
@@ -136,7 +136,7 @@ As per the HashiCorp's `go-plugin` library [usage documentation](https://github.
 Define an interface `EventTranslator` that represents the common functionality to `TranslateEvent` and will be exposed for plugins to implement.</br>
 Different translator plugins can be implemented that communicates over a gRPC connection.
 
-- Example structure of `webhook_cdevents_adapter` interface
+- Example structure of `webhook-adapter` interface
 ````go
 package cdeventstranslator
 
@@ -145,14 +145,14 @@ type EventTranslator interface {
 }
 ````
 
-#### Implement gerrit-translator-cdevents plugin
-Plugin with the name `gerrit-translator-cdevents` will be created in a separate repo/package.</br>
+#### Implement gerrit-translator plugin
+Plugin with the name `gerrit-translator` will be created in a separate repo/package.</br>
 GerritTranslator needs to implement the `cdeventstranslator.EventTranslator` interface to handle the translation from Gerrit event to CDEvent and that communicates over a gRPC connection.</br>
 Call `plugin.Serve` to serve a plugin from the main function to GRPC server using hashicorp's go-plugin
 
-Build the `gerrit-translator-cdevents` plugin using `go build`, so that the plugin can be loaded/used from other Golang main application to `TranslateEvent`
+Build the `gerrit-translator` plugin using `go build`, so that the plugin can be loaded/used from other Golang main application to `TranslateEvent`
 
-- Example structure of `gerrit-translator-cdevents` plugin:
+- Example structure of `gerrit-translator` plugin:
 ````go
 package main
 
@@ -180,7 +180,7 @@ Creating GRPC Client and Server implementations is a common template that can be
 by using [Buf CLI's](https://buf.build/docs/generate/tutorial) `buf generate` command</br>
 That generates Go code from [protocol buffers](https://protobuf.dev/getting-started/gotutorial/) files(.proto) using Go plugin `protoc-gen-go-grpc`.
 
-- Example structure of `webhook_cdevents_adapter` proto file
+- Example structure of `webhook-adapter` proto file
 ````proto
 // cdevents_translator.proto
 
@@ -236,8 +236,8 @@ More detailed implementation can be referred from HashiCorp's go-plugin [gRPC ex
 
 ### Proposed Architecture
 - Various SCM systems can be configured to send events through webhook
-- The event as raw payload will be received by `webhook_cdevents_adapter`
-- `webhook_cdevents_adapter` defines an interface, that can be implemented by various SCM systems to translate and send the event.
+- The event as raw payload will be received by `webhook-adapter`
+- `webhook-adapter` defines an interface, that can be implemented by various SCM systems to translate and send the event.
 - The event received will be mapped and translated to a specific CDEvent type.
 - Then the CDEvent will be send to configured message-broker
 
@@ -245,9 +245,9 @@ More detailed implementation can be referred from HashiCorp's go-plugin [gRPC ex
 
 ### Known Unknowns
 - Creating CDEvents from other type of events from SDK and sending them to configured Message-broker using CloudEvent library, can be implemented in a shared package.
-- Having a main application for Approach 2 and 3 from `webhook_cdevents_adapter` or maintained by user of the translator.
-- This `webhook_cdevents_adapter` can be extended to implement for Non SCM tools too.
+- Having a main application for Approach 2 and 3 from `webhook-adapter` or maintained by user of the translator.
+- This `webhook-adapter` can be extended to implement for Non SCM tools too.
 
 
 ### Conclusion
-Based on the discussion deciding to implement `webhook_cdevents_adapter` with  Approach 3 : Using RPC to add new Translators
+Based on the discussion deciding to implement `webhook-adapter` with  Approach 3 : Using RPC to add new Translators
