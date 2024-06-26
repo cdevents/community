@@ -12,7 +12,6 @@ This document contains the notes from the [CDEvents Working Group](https://hackm
 
 ### Schedule
 
-- APAC friendly Monday meetings are held at [11am UTC](https://time.is/10am_in_UTC) during summer time and at [12pm UTC](https://time.is/11am_in_UTC) during winter time).
 - NA friendly Monday meetings are held at [3pm UTC](https://time.is/3pm_in_UTC) during summer time and at [4pm UTC](https://time.is/4pm_in_UTC) during winter time)
 
 ### Previous Years
