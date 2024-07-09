@@ -19,14 +19,14 @@ Issue related Jira events can be mapped to CDEvent's [Ticket Events](https://cde
 
 | CDEvent Type  | Jira Event Type  | Comments / Jira Event Format   |
 | :------------ |:-------------------|:----------------------------------|
-| dev.cdevents.ticket.created| jira:issue_created  | [`Issue ceated event JSON`](#jira_issue_created) |
+| dev.cdevents.ticket.created| jira:issue_created  | [`Issue created event JSON`](#jira_issue_created) |
 |  dev.cdevents.ticket.updated   | jira:issue_updated </br> jira:worklog_updated  |`jira:issue_updated` event type has various actions, issue_updated  issue_commented, issue_assigned </br>[`Issue updated event JSON`](#jira_issue_updated) </br>[`Issue commented event JSON`](#jira_issue_commented) </br>[`Issue assigned event JSON`](#jira_issue_assigned) </br></br>  `jira:worklog_updated` event type has various actions, issue_work_logged  issue_worklog_updated, issue_worklog_deleted </br> [`Issue work logged event JSON`](#jira_issue_work_logged) </br>[`Issue worklog updated event JSON`](#jira_issue_worklog_updated) </br>[`Issue worklog deleted event JSON`](#jira_issue_worklog_deleted) |
 | dev.cdevents.ticket.closed |   jira:issue_updated   | For ticket closed the type `issue_generic` will be created with the `resolution` field set to `Done` </br>[`Issue updated generic event JSON`](#jira_issue_generic) |
 
 
 #### jira_issue_created
 
-<details><summary>Issue ceated event JSON</summary>
+<details><summary>Issue created event JSON</summary>
 
 ```json
 
