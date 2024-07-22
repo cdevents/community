@@ -26,7 +26,8 @@ To learn more about CDEvents:
 
 Reach out to see what we're up via:
 
-* [slack](https://cdeliveryfdn.slack.com/archives/C030SKZ0F4K)
+* [slack channel](https://cdeliveryfdn.slack.com/archives/C030SKZ0F4K)
+* [slack invite](https://join.slack.com/t/cdeliveryfdn/shared_invite/zt-nwc0jjd0-G65oEpv5ynFfPD5oOX5Ogg)
 * [our mailing list](https://groups.google.com/g/cdevents-dev)
 * our working group meetings:
   * [EMEA/Americas Friendly](https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2R1YWZqY3Y1N3BlZmc5MW1sYWhzZWljZ29fMjAyMzEwMzBUMTYwMDAwWiBsaW51eGZvdW5kYXRpb24ub3JnX21oZjBrbWdlZG42N2lobmk4cjEyOWF2cDI0QGc&tmsrc=linuxfoundation.org_mhf0kmgedn67ihni8r129avp24%40group.calendar.google.com&scp=ALL)
