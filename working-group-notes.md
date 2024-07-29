@@ -12,6 +12,7 @@ This document contains the notes from the [CDEvents Working Group](https://hackm
 
 ### Schedule
 
+- APAC friendly Monday meetings are held at [11am UTC](https://time.is/10am_in_UTC) during summer time and at [12pm UTC](https://time.is/11am_in_UTC) during winter time).
 - NA friendly Monday meetings are held at [3pm UTC](https://time.is/3pm_in_UTC) during summer time and at [4pm UTC](https://time.is/4pm_in_UTC) during winter time)
 
 ### Previous Years
@@ -35,6 +36,489 @@ Agenda:
 ### Topics for coming meetings
 
 - Review proposal for demo system https://github.com/cdevents/community/issues/31
+
+
+### July 29th, 2024
+
+Participants:
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+  - (Andrea) Cancelled CDEvents WG on Aug 05 and Aug 19
+    - One meeting per week between CDEvents and CDEvents Implementation WG
+
+- PRs pending review
+  - Spec: https://github.com/cdevents/spec/pulls
+  - Go SDK: https://github.com/cdevents/sdk-go/pull/87
+  - Java SDK: https://github.com/cdevents/sdk-java/pull/83
+  - Jira Translator: https://github.com/cdevents/jira-translator/pull/1
+  - Gerrit Translator: https://github.com/cdevents/gerrit-translator/pull/3
+- Spec [v0.5](https://github.com/orgs/cdevents/projects/1/views/15) review: 
+- \<addme\>
+
+
+### July 22nd, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+- Brett Smith, SAS, UTC-4
+- Ben Powell, Apple, CST 
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+- Summer Schedule
+  - Andrea: several vacations in August
+  - Emil: away in July, back in August
+  - Brett: available throught summer
+  - Ben: switch to be-weekly for summer, also happy to host the meetings if needed
+  - Proposal:
+    - Alternate CDEvents WG with Implementation WG in July/August
+    - Resume normal schedule in September
+    - Use Slack to see if we need fewer/more meetings
+
+- Determining what events are custom programmatically
+  - Type: dev.cdeventsx -> custom events
+  - Go SDK generators: looking "schema/custom" https://github.com/cdevents/sdk-go/blob/5e81f2367a798914b19fd97ec4f2175241b803f8/tools/generator.go#L555
+
+- [Spec Milestone v0.5](https://github.com/cdevents/spec/milestone/5) review
+  - Relooking at CD CDEvents
+- \<addme\>
+
+
+### July 8th, 2024
+
+Participants:
+- Ben Powell, Apple, CST
+- Brett Smith, SAS, UTC-4
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+
+Agenda:
+- New attendees
+- Action Items
+
+- Standardizing on `outcome` - Ben
+    * Brett will update for consistency
+    * https://github.com/cdevents/spec/issues/237
+- Updates for CloudEvents Zero Trust - Ben
+    * S/MIME and Jose (CMS types) were recommended by Cloudevents
+        * Security said they were a little too flexible
+    * Look at DSSE
+- jira-translator PR
+    * Formatting is a little hairy to even fix
+    * Need a repo to be created - `jira-translator`, once the RFC approved
+- gerrit-translator [PR](https://github.com/cdevents/gerrit-translator/pull/3) needs review
+    - Ben will review
+- SDK Java [PR](https://github.com/cdevents/sdk-java/pull/83) for custom events
+    - Needs reviewers
+        - Ben will review
+
+- Links issue will be created in the new implementations repo - Ben
+
+### July 1st, 2024
+
+Participants:
+- Ben Powell, Apple, CST
+- Andrea Frittoli, IBM, UTC+1
+- Emil Bäckmark, Ericsson, UTC+2
+- Brett Smith, SAS, UTC-4
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+
+- ([Martin](https://github.com/6543)) [cicd_feedback](https://github.com/6543/cicd_feedback) demo and discussion (~15min)
+  - [Gitea](https://about.gitea.com/)
+  - [Woodpecker CI](https://woodpecker-ci.org/)
+  - Use case: Gitea to display status of CI pipelines and logs
+  - MVP Solution: https://github.com/6543/cicd_feedback/tree/main
+
+- Status of CloudEvents Zero Trust - Ben
+   * [GH Issue](https://github.com/cloudevents/spec/issues/1302)
+   * Please provide feedback on the issue directly
+
+- \<addme\>
+
+
+
+### June 24, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+- Ben Powell, Apple, CST 
+- Steve Taylor, DeployHub/Ortelis, MST
+- Tracy Ragan, DeployHub/Ortelius, MST
+- Brett Smith, SAS, UTC-4
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+- New Working Group kicking off 25/06
+  - https://hackmd.io/o-vCvOq0SrCq4csB5Bl29g
+  - Topic: define mission and scope of the WG
+  - [Draft WG Mission](https://docs.google.com/document/d/1RgROt_MRep81bQp2qZ2HgZKG3tce7DHRUHhY2WscJts/edit?usp=sharing)
+  - Tracy talked about CDEvents to DevOps Finos automation https://devops.finos.org/
+    - They would like us to present draft architecture in September
+    - [OSS Supply Chain](https://devops.finos.org/docs/working-groups/osssc) managed by [John Mark Walker](https://www.linkedin.com/in/johnmarkwalker/) (former CDF GB @CapitalOne)
+
+- (Ben) Secure / Signed events
+  - Ben talking to the CloudEvents community
+  - Ben went through all various protocols supported by CloudEvents
+    - Pre-proposal focussed on that
+    - To be done (hopefully) today
+    - Initial review from Apple security team
+    - (Action) Ben to share the current proposal
+    - Discussion at Serverless WG
+      - [SIG Meeting](https://calendar.google.com/calendar/u/0/r/month/2024/6/20?ctz=UTC)
+
+- Golang SDK 0.4
+  - Most PRs merged
+  - Review before release
+    - Ben interested to take a look
+  - Link support in 0.4
+    - Only embedded links for now
+    - No support for standalone links
+    - No helpers for propagation
+  - Support for custom events
+    - Support for the schemaUri field for now
+  - Tags for webhook adapter
+    - Not only for webhook adapters
+    - Used by other golang SDKs as strategy
+    - Should not block v0.4 release
+
+- Java SDK 0.4
+  - Review needed
+    - Andrea to review the PR
+  - Custom Event support using Java SDK
+    - PR on top
+
+- [RFC Jira CDEvents integration](https://github.com/cdevents/community/blob/842923d76943545b456bbc5c1ca7c8d41f7437f4/rfc/jira-translator-cdevents.md)
+  - Review required
+
+### June 17, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Steve Taylor / DeployHub Ortelius/ MST
+- Emil Bäckmark, Ericsson, UTC+2
+- Brett Smith, SAS, UTC-4
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+- Adam
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+
+- Action Items
+
+- Schema Questions? (Steve)
+    - How can I see how an artifact relates to a source change commit?
+        - There are multiple ways, but none is clearly documented yet though
+        - Newly added 'links' could be used
+        - artifact.packaged.change could be used
+
+- SDK updates for v0.4.1
+  - SchemaURI support
+      - Waiting for Ben to create an issue on this
+  - Java SDK
+      - Waiting for reviews
+      - Waiting for an issue to be created on adding links support
+
+- New CDEvents Working Group Proposal
+    - First meeting in this new group proposed to be on June 25 (replacing the SIG Events meeting)
+    - Steve will initiate the mission doc
+    - Andrea will inform on Slack and mail
+
+- Flux integration current state
+    - Demo by Adam K
+
+- Brett presented the EPR workshop in San Diego recently
+    - https://github.com/xbcsmith/epr-workshop
+    - interested in the link service
+
+- \<addme\>
+
+
+### Jun 10, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Steve Taylor, Ortelius/DeployHub, MST
+- Andrea Frittoli, IBM, UTC+1
+- Emil Bäckmark, Ericsson, UTC+2
+- Ben Powell, Apple, CST
+- Brett Smith, SAS, UTC-4
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+
+- SDK updates for v0.4.1
+  - SchemaURI support
+    - We should support the property
+    - Perform validation against standard schema
+    - Validate against custom schema
+      - if the schema is available?
+        - Andrea to create an issue about this in the community repo
+          - Define standard approach across SDKs
+    - For custom events we can still validate against the custom root schema
+    - Support for customizing / subclassing the SDK for custom schema?
+      - Do we need support for this?
+      - We should look into how many people are interested in this feature
+      - SDKs could provide hooks to help supporting schemaURI
+      - Users may need support for schemaURI for tool-specific events
+      - If SDK hooks are designed well, this may help users migrating from custom events into CDEvents
+    - Process for adding a custom event and a proposing new event to CDEvents could be very similar
+    - Ben to create an issue in the community repo
+  - Java SDK: https://github.com/cdevents/sdk-java/pull/82
+    - Review please!
+    - Links and schemaURI pending
+      - Implementation to be defined across SDKs first
+      - For links, Ben to create an issue about this
+        - This will be some work to define
+        - Links propagation
+
+- New CDEvents Working Group Proposal
+  - Re-use the SIG Events time slot
+  - Monthly meeting right now
+    - We could change it to every other week
+    - Starting two weeks from now
+  - Steve to draft the working group mission doc for the first meeting
+  - Andrea to setup the calendar
+    - Use the current one and rename it for now
+  - Andrea to announce the new meeting on slack and cdevents-dev
+
+- [Enum or string](https://github.com/cdevents/spec/issues/215)
+  - Ben: we should look into the Rust / Java SDKs if there is a way to solve this with existing generators
+
+- <Jalander> https://github.com/cdevents/sdk-go/pull/82
+    - for [gerrit-translator](https://github.com/cdevents/gerrit-translator/pull/1#pullrequestreview-2105053961)
+- <Jalander> [RFC Jira CDEvents integration](https://github.com/cdevents/community/blob/842923d76943545b456bbc5c1ca7c8d41f7437f4/rfc/jira-translator-cdevents.md)
+
+
+### June 3, 2024
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+2
+- Ben Powell, Apple, CST
+- Steve Taylor, Ortelius/DeployHub, MST
+- Brett Smith, SAS, UTC-4
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+
+- Action Items
+
+- SDK updates for [v0.4.1](https://github.com/cdevents/spec/releases/tag/v0.4.1)
+    - Add support for [custom schemaUri](https://github.com/cdevents/spec/issues/236)
+        - Should the SDKs validate towards the custom schemas and also provide objects for easily creating such events?
+        - Could we enable simple 'sub classing' of our SDKs so that users of CDEvents could easily create the own adapted SDKs?
+        - (Steve) customData should be avoided as much as possible
+        - (Ben) customData/customEvents could be needed for tools specific to one company/org, when interoperability might not be the main goal
+        - Let's primarily support schemaUri as a uri-formatted string. Later we should consider validating towards a custom schema and potentially generate classes/objects for such. Providing a means to sub class our schemas is probably better in many cases.
+    - Add support for [links](https://github.com/cdevents/spec/issues/213)
+        - Start with embedded links
+        - How to propagate needed references in the SDK between events
+        - Extend it with external links and links service after that
+    - (old) [Conformance tests](https://github.com/cdevents/community/issues/12) - outdated issue?
+    - [Document SDK requirements](https://github.com/cdevents/community/issues/4)
+
+- [Enum or string](https://github.com/cdevents/spec/issues/215)
+    - [Comment from last WG](https://github.com/cdevents/spec/issues/215#issuecomment-2120787980)
+    - There is an issue with the Rust SDK for the current schema
+
+- New CDEvents Working Group Proposal
+    - Any news?
+
+- \<addme\>
+
+
+
+### May 20th, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+- Emil Bäckmark, Ericsson, UTC+2
+- Tracy Ragan, DeployHub / Ortelius UTC-7
+- Steve Taylor, DeployHub / Ortelius UTC-7
+- Jalander Ramagiri, Ericsson Software Technology, UTC+1
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+
+- [Release v0.4.1](https://github.com/cdevents/spec/releases/tag/v0.4.1) is out
+  - SDK work ongoing
+    - Java
+    - Golang
+    - Rust
+  - [Enum or string](https://github.com/cdevents/spec/issues/215)
+
+- Meeting schedule and holidays
+  - APAC friendly meeting
+    - Andrea to e-mail/slack about this
+    - If no interest we can cancel
+  - Andrea on PTO 24/05 to 04/06
+  - 27/05 is a holiday on the US
+    - Emil away, Andrea on PTO
+    - Let's cancel the meeting
+  - 03/06 Emil to facilitate the meeting
+
+- New CDEvents Working Group Proposal
+  - Name TBD - Tools / Implementation / Infra / else?
+  - Topics:
+    - SDKs
+    - Event buses
+    - Link service
+    - Adapters, apps & plugins
+    - Storing CDEvents
+    - Public playground
+  - Interested parties
+    - Ben
+    - Andrea
+    - Emil
+    - Natwest (OpenSSF)
+    - JP Morgan
+    - Harness
+  - Schedule
+  - Steve:
+    - Let's find interested parties and then find a schedule that works
+  - Proposal:
+    - Let's keep this meeting for spec discussions
+    - The new WG would cover non-spec discussions
+
+- Andrea to send an email to CDF GB
+  - Include Fidelity, Brett (SAS)
+  - How to promote about CDEvents adoption based on discussion from last TOC meeting
+
+- [Enum or string](https://github.com/cdevents/spec/issues/215)
+  - Proposal
+    - Switch to "string" only
+    - Use "examples" to carry some example values
+    - For v0.4.x SDKs, hardcode type to string on the SDK side
+    - Implement the change in v0.5
+  - Check with Ben if he agrees with the proposal
+
+### May 13th, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+- Ben Powell, Apple, CST
+- Brett Smith, SAS, UTC-4
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+
+- CloudEvents and trust
+  - Ben to join CloudEvents SIG to discuss on Thursday
+  - CNCF Serverless WG Meeting
+  - [Meeting notes](https://docs.google.com/document/d/1OVF68rpuPK5shIHILK9JOqlZBbfe91RNzQ7u_P7YCDE/edit#heading=h.6xidlvhv1goi)
+  - Related issue: https://github.com/cloudevents/spec/issues/565
+
+- Release v0.4.1 preparation
+  - Content: https://github.com/cdevents/spec/milestone/4
+    - add JSON schema validation https://github.com/cdevents/spec/pull/220
+    - fix the JSON schemas to pass validation https://github.com/cdevents/spec/pull/220
+    - change snake casing to match spec requirements in the links schemas https://github.com/cdevents/spec/pull/222
+    - add JSON linting (to validate the snake case)  - PR on main https://github.com/cdevents/spec/pull/205, cherry-pick PR pending
+    - adding links to the custom schema (PR pending)
+    - bump spec to v0.4.1 (PR to be done)
+    - make a release
+
+- Release v0.4 SDKs
+  - After v0.4.1 release
+  - No support for standalone links yet
+
+- Versioning and Releasing
+  - We could use automation to make the contribution process smoother
+  - We need to store metadata about minor/major changes in PRs
+    - It could be more than one kind in a single PR
+  - We might need a dedicated proposal / meeting to discuss this
+
+- OSS EU / CD Mini Summit, Vienna, Sept 16-19
+  - [CD Mini Summit CFP](https://cd.foundation/blog/2024/05/03/cd-mini-summit-2024-cfp/) is open now, until May 30
+
+
+
+### May 6, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Emil Bäckmark, Ericsson, UTC+2
+- Ben Powell, Apple, CST
+- Brett Smith, SAS, UTC-4
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+
+- New attendees
+    - Vonny Jap, Screwdriver, Yahoo
+
+- Action Items
+
+- [OTel & CDEvents](https://github.com/open-telemetry/semantic-conventions/issues/915)
+
+- OSS EU / CD Mini Summit, Vienna, Sept 16-19
+  - [CD Mini Summit CFP](https://cd.foundation/blog/2024/05/03/cd-mini-summit-2024-cfp/) is open now, until May 30
+
+- Other upcoming conferences
+    - [Cloudnative SecurityCon NA](https://events.linuxfoundation.org/cloudnativesecuritycon-north-america/), Seattle, June 26-27
+    - [KubeCon NA](https://events.linuxfoundation.org/kubecon-cloudnativecon-north-america/), Salt Lake City, Nov 12-15
+        - CFP open, closes on June 9
+
+- Links schemas need to updated as some of them are in the wrong format
+    - SDK and adapters being updated. Problem found in spec. Issue to be created.
+
+- Create GitHub issue for what all needs to be updated and changed in SDK to fully support links
+    - This will probably be one of many issues as implementing links is a larger than normal task
+
+- Should a proposal be written for all ideas around breaking changes? Or at least some overarching issue?
+    - [Open issues labeled for breaking changes](https://github.com/cdevents/spec/issues?q=is%3Aissue+label%3A%22breaking+change%22+is%3Aopen)
+
+- Any CDEvents [PRs](https://github.com/cdevents/spec/pulls) or [issues](https://github.com/cdevents/spec/issues) to discuss?
+
+
+- \<addme\>
+
 
 ### April 29, 2024
 
