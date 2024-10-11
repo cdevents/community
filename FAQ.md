@@ -59,61 +59,75 @@ For a comprehensive list, refer to the [CDEvents specification](https://github.c
 ---
 
 ### **Q: What technologies does CDEvents use?**
-**A:** CDEvents is technology-agnostic and can be implemented using various protocols and data formats. Common implementations use JSON or YAML for event payloads and can be transported over HTTP, WebSockets, or message brokers like Kafka and RabbitMQ.
+**A:** CDEvents is technology-agnostic and can be implemented using various protocols and data formats. Common implementations use JSON for event payloads and can be transported over HTTP, WebSockets, or message brokers like Kafka and RabbitMQ.
 
 ---
 
 ### **Q: Are there any libraries or SDKs available for CDEvents?**
-**A:** Yes, the community has developed several libraries and SDKs in various programming languages to facilitate the implementation of CDEvents. You can find these resources in our [GitHub repositories](https://github.com/cdevents/spec) or [Docs](https://cdevents.dev/docs/) or explore community-contributed projects.
+**A:** Yes, the community has developed several libraries and SDKs in various programming languages to facilitate the implementation of CDEvents. Below are some of the available SDKs:
+
+- [Go SDK](https://github.com/cdevents/sdk-go)
+- [Java SDK](https://github.com/cdevents/sdk-java)
+- [Rust SDK](https://github.com/cdevents/sdk-rust)
+
+More SDKs are being developed, and contributions are welcome! You can find additional resources in our [GitHub repositories](https://github.com/cdevents/spec) or in the [official documentation](https://cdevents.dev/docs/).
 
 ---
 
 ### **Q: How do CDEvents handle event metadata?**
-**A:** CDEvents includes a metadata section in each event payload, containing information such as event type, source, timestamp, and unique identifiers. This metadata ensures that events can be properly tracked, filtered, and processed across different tools and systems.
+**A:** CDEvents includes a metadata section in each event payload, containing information such as event type, source, timestamp, and unique identifiers. This metadata ensures that events can be properly tracked, filtered, and processed across different tools and systems. You can learn more about the context and metadata in the [CDEvent Context section](https://github.com/cdevents/spec/blob/main/spec.md#cdevent-context) of the specification.
 
 ---
 
 ## Implementation and Integration
 
 ### **Q: How do I implement CDEvents in my CI/CD pipeline?**
-**A:** To implement CDEvents:
+**A:** Implementing CDEvents involves several key steps, and while a definitive answer is still being discussed by the community's working group, the following points provide a good starting framework:
+
 1. **Identify Integration Points:** Determine where events are generated and consumed in your pipeline.
 2. **Adopt the CDEvents Schema:** Ensure that your tools emit and listen to events following the CDEvents specification.
 3. **Use Existing Libraries:** Leverage available SDKs or libraries to simplify implementation.
 4. **Configure Event Transport:** Set up the communication mechanism (e.g., HTTP, message broker) for event transmission.
 5. **Test Integration:** Validate that events are correctly emitted, received, and processed across your tools.
 
-Refer to our [implementation guide](https://cdevents.dev/docs/) for detailed steps and examples.
+We encourage you to follow the discussions and contributions from the [CDEvents Implementation Working Group](https://github.com/cdevents/implementation-wg) as they continue to refine the best practices for implementation. Meanwhile, you can refer to our [implementation guide](https://cdevents.dev/docs/) for detailed steps and examples.
 
 ---
 
 ### **Q: Can CDEvents be integrated with popular CI/CD tools like Jenkins, GitLab CI, or GitHub Actions?**
-**A:** Yes, CDEvents is designed to be tool-agnostic and can integrate with popular CI/CD tools. Integration can be achieved by configuring these tools to emit and consume CDEvents-compliant events. Some community-contributed plugins and extensions may already exist to facilitate this integration. Check out for [Jenkins](https://plugins.jenkins.io/cdevents/) and [Docs](https://cdevents.dev/docs/) for specific instructions and available resources.
+**A:** Yes, CDEvents is designed to be tool-agnostic and can integrate with popular CI/CD tools. Integration can be achieved by configuring these tools to emit and consume CDEvents-compliant events. Some community-contributed plugins and extensions may already exist to facilitate this integration. For example, check out the CDEvents plugin for [Jenkins](https://plugins.jenkins.io/cdevents/).
+
+Other tools like [Spinnaker](https://spinnaker.io/), [Testkube](https://testkube.io/), and [Guac.sh](https://guac.sh/) are also integrating CDEvents. You can visit the [CDEvents homepage](https://cdevents.dev) for a full list of supported tools and their logos, as well as resources on how to get started with each.
 
 ---
 
 ### **Q: What are the best practices for implementing CDEvents?**
-**A:** Best practices include:
-- **Adhere to the Specification:** Ensure all events conform to the CDEvents schema.
-- **Use Semantic Versioning:** Follow versioning guidelines to manage changes.
-- **Secure Event Transmission:** Implement authentication and encryption where necessary.
-- **Validate Events:** Use schema validation to ensure event integrity.
-- **Document Your Implementation:** Maintain clear documentation for your event workflows.
-- **Monitor and Log Events:** Keep track of event flow for troubleshooting and auditing.
+**A:** Best practices for implementing CDEvents include:
 
-For more detailed best practices, visit our [implementation best practices](https://cdevents.dev/docs/) page.
+- **Adhere to the Specification:** Ensure that all events conform to the CDEvents schema to maintain compatibility and consistency.
+- **Leverage Versioning Built Into the Spec:** CDEvents and their schemas are versioned, so ensure your implementation follows the appropriate event versions for backward and forward compatibility.
+- **Secure Event Transport:** CDEvents rely on the underlying transport protocol (e.g., HTTP, message broker), where encryption mechanisms like TLS can be used to secure event transmission.
+- **Include Links for Sensitive Data:** To keep events lean and secure, CDEvents includes links to additional data rather than embedding it directly. These links can be protected by authentication where necessary.
+- **Verify Event Integrity:** In some use cases, event consumers may need to verify the authenticity and integrity of events. This can be achieved by relying on the underlying protocol’s facilities for tamper-proof event verification, a feature that is being actively worked on in collaboration with the CloudEvents community.
+- **Validate Events:** Use schema validation to ensure that events follow the CDEvents specification and maintain integrity across systems.
+- **Monitor and Log Events:** Maintain visibility into the event flow by logging and monitoring events, helping with troubleshooting and auditing.
+- **Document Your Implementation:** Clearly document your event workflows and integration for future maintainability and team collaboration.
+
+For more detailed best practices, visit our [implementation best practices](https://cdevents.dev).
 
 ---
 
 ## Security and Compliance
 
 ### **Q: How does CDEvents handle authentication and authorization?**
-**A:** CDEvents itself is a specification and does not mandate specific authentication or authorization mechanisms. However, when implementing CDEvents in your environment, it is recommended to use secure protocols (e.g., HTTPS) and implement appropriate authentication (e.g., OAuth, API keys) and authorization controls to protect event data and ensure that only authorized systems can emit or consume events.
+**A:** CDEvents is a specification and does not prescribe specific authentication or authorization mechanisms. Instead, it relies on the underlying transport protocols (e.g., HTTPS, message brokers) to secure event transmission. To keep events lean, CDEvents typically includes links to external resources rather than embedding sensitive data directly in the events. These external resources can be protected by authentication and authorization mechanisms (e.g., OAuth, API keys) as needed in your specific implementation.
+
+In some scenarios, it may also be necessary to verify the integrity and origin of events. This verification depends on the capabilities of the underlying transport protocol, and the community is actively collaborating with CloudEvents to explore mechanisms for event integrity verification.
 
 ---
 
 ### **Q: Does CDEvents support encryption of event data?**
-**A:** While CDEvents does not specify encryption standards, it is advisable to encrypt event data during transmission and at rest, especially when dealing with sensitive information. The choice of encryption methods depends on the transport protocols and storage solutions used in your implementation.
+**A:** CDEvents itself does not define encryption standards. Whether or not to encrypt event data depends on the specific use case. In cases where sensitive data is involved, it may be necessary to use encryption during transmission or at rest. CDEvents relies on the underlying transport protocol (e.g., HTTPS, message brokers) to provide encryption where needed. The choice of encryption methods will depend on the transport and storage solutions used in your implementation.
 
 ---
 
@@ -174,9 +188,9 @@ Visit our [community page](https://cdevents.dev/community/) for more information
 - **Submitting Proposals:** Open a [GitHub issue](https://github.com/cdevents/spec/issues) to propose new features or changes.
 - **Opening Pull Requests:** Directly submit pull requests with your proposed changes.
 - **Participating in Discussions:** Join working group meetings and discussions to provide feedback and suggestions.
-- **Contributing to Documentation:** Help improve our [documentation](https://cdevents.dev/docs/) by adding tutorials, examples, or clarifications.
+- **Contributing to Documentation:** Help improve our [documentation](https://cdevents.dev/) by adding tutorials, examples, or clarifications.
 
-Refer to our [contribution guidelines](https://github.com/cdevents/sdk-rust/blob/367dfa38c425518dee521e2028c521d463a0bc70/CONTRIBUTING.md#L4) for detailed instructions.
+Refer to our [contribution guidelines](https://github.com/cdevents/.github/blob/main/docs/CONTRIBUTING.md) for detailed instructions.
 
 ---
 
@@ -186,8 +200,6 @@ Refer to our [contribution guidelines](https://github.com/cdevents/sdk-rust/blob
 2. **Draft the Specification:** Provide a detailed specification for the event, following the existing schema structure.
 3. **Review and Feedback:** Engage with the community and maintainers for feedback and revisions.
 4. **Approval and Integration:** Once approved, the event type will be integrated into the CDEvents specification.
-
-For more details, see our [event proposal guidelines](https://github.com/cdevents/spec/issues).
 
 ---
 
@@ -199,7 +211,7 @@ For more details, see our [event proposal guidelines](https://github.com/cdevent
 ## Miscellaneous
 
 ### **Q: Can CDEvents be used outside of Continuous Delivery?**
-**A:** While CDEvents is specifically designed for Continuous Delivery scenarios, its flexible and standardized event structure can be adapted for related areas within the software development lifecycle, such as Continuous Integration, DevOps practices, and even broader IT operations workflows.
+**A:** Yes, CDEvents is designed to cover a broad range of scenarios across the software development lifecycle, not just Continuous Delivery. In addition to CD, CDEvents also supports Continuous Integration, DevOps practices, and IT operations workflows. The specification defines events that span from issue tracking and source code management (SCM) to CI/CD processes, deployments, and even monitoring and observability. For more details on Continuous Delivery, refer to the [CD Foundation FAQ](https://github.com/cdfoundation/faq?tab=readme-ov-file#what-is-continuous-delivery-cd).
 
 ---
 
@@ -209,12 +221,12 @@ For more details, see our [event proposal guidelines](https://github.com/cdevent
 ---
 
 ### **Q: How does CDEvents handle backward compatibility?**
-**A:** Maintaining backward compatibility is a priority for CDEvents. When introducing changes:
-- **Minor Updates:** Add new fields or event types without altering existing structures, ensuring existing integrations remain functional.
-- **Major Updates:** Introduce breaking changes with clear migration paths and deprecation notices to allow users to update their implementations accordingly.
-- **Deprecation Policy:** Deprecated features are announced well in advance, with support timelines to facilitate smooth transitions.
+**A:** Maintaining backward compatibility is important for CDEvents. When introducing changes:
+- **Minor Updates:** New fields or event types may be added without breaking existing structures, ensuring that current integrations continue to work.
+- **Major Updates:** Breaking changes may occur, especially before reaching version 1.0, and will be communicated clearly to users with guidance for migration.
+- **Versioning Before 1.0:** Until we reach version 1.0, breaking changes may be introduced as the specification evolves. Users should be prepared for potential changes during this period.
 
-Detailed information is available in the [versioning and compatibility section](https://github.com/cdevents/spec/issues/43) of our documentation.
+For more details, see the [versioning and compatibility section](https://cdevents.dev/docs/primer/#versioning) of our documentation.
 
 ---
 
@@ -224,7 +236,12 @@ Detailed information is available in the [versioning and compatibility section](
 ---
 
 ### **Q: How does CDEvents handle large-scale event processing?**
-**A:** CDEvents is designed to be scalable and can handle large volumes of events by leveraging robust event transport mechanisms like message brokers (e.g., Kafka, RabbitMQ) and distributed processing frameworks. Implementers should ensure their infrastructure is capable of managing the expected event load and implement best practices for event handling and processing.
+**A:** CDEvents is designed with scalability in mind. Key features that support large-scale event processing include:
+- **Compact Event Design:** Events are kept as small as possible to minimize overhead and improve performance.
+- **Efficient Routing and Filtering:** The event context includes fields (such as `subject`) that can be used to efficiently route and filter events without parsing the entire payload. These fields are also available at the CloudEvents level, enabling even more efficient processing.
+- **Efficient Workflow Search:** CDEvents includes links to help efficiently search and retrieve events that belong to a specific workflow, supporting the storage and querying of large volumes of events.
+  
+While CDEvents provides the foundation for scalability, implementers should ensure their infrastructure (e.g., message brokers, databases) is capable of handling the expected event load based on their specific use case.
 
 ---
 
