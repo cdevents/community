@@ -1,6 +1,6 @@
 # Frequently Asked Questions (FAQ)
 
-Welcome to the **CDEvents FAQ**! This page provides answers to common questions about CDEvents. Whether you're new to CDEvents or looking to deepen your understanding, you'll find valuable information here. If you don't find the answer you're looking for, please refer to our [documentation](https://cdevents.dev/docs/), [whitepaper](https://cdevents.dev/docs/wpaper/), or explore relevant discussions on [GitHub](https://github.com/cdevents).
+Welcome to the **CDEvents FAQ**! This page provides answers to common questions about CDEvents. Whether you are new to CDEvents or looking to deepen your understanding, you will find valuable information here. If you do not find the answer you are looking for, please refer to our [documentation](https://cdevents.dev/docs/), [whitepaper](https://cdevents.dev/docs/wpaper/), or explore relevant discussions on [GitHub](https://github.com/cdevents).
 
 ---
 
@@ -19,22 +19,22 @@ Welcome to the **CDEvents FAQ**! This page provides answers to common questions 
 ## General Questions
 
 ### **Q: What is CDEvents?**
-**A:** CDEvents is an open specification for Continuous Delivery events, designed to promote interoperability between tools in the software production ecosystem. It standardizes the format of events across various phases of the software development lifecycle, enabling seamless communication and integration between different CI/CD tools.
+**A:** CDEvents is an open specification for SDLC events, designed to promote interoperability between tools in the software production ecosystem. It standardizes the format of events across various phases of the software development lifecycle, enabling seamless communication and integration between different SDLC tools.
 
 ---
 
 ### **Q: Why was CDEvents created?**
-**A:** CDEvents was created to address the fragmentation in the Continuous Delivery (CD) toolchain. By providing a common event specification, it allows different tools and platforms to communicate more effectively, reducing integration complexity and preventing vendor lock-in. This fosters a more flexible and adaptable CD pipeline.
+**A:** CDEvents was created to address the fragmentation in the SDLC toolchain. By providing a common event specification, it allows different tools and platforms to communicate more effectively, reducing integration complexity and preventing vendor lock-in. This fosters a more flexible and adaptable CD pipeline.
 
 ---
 
 ### **Q: Who is behind CDEvents?**
-**A:** CDEvents is developed and maintained by a collaborative working group comprising industry experts, open-source contributors, and representatives from various organizations committed to enhancing Continuous Delivery practices.
+**A:** CDEvents is developed and maintained by a collaborative working group comprising industry experts, open-source contributors, and representatives from various organizations committed to enhancing Software Development Life Cycle practices.
 
 ---
 
 ### **Q: How does CDEvents differ from other event specifications?**
-**A:** Unlike proprietary event formats or tool-specific integrations, CDEvents is an open, vendor-neutral specification focused solely on Continuous Delivery events. It emphasizes interoperability, flexibility, and ease of adoption across diverse toolchains and environments.
+**A:** Unlike proprietary event formats or tool-specific integrations, CDEvents is an open, vendor-neutral specification focused solely on Software Development Life Cycle events. It emphasizes interoperability, flexibility, and ease of adoption across diverse toolchains and environments.
 
 ---
 
@@ -81,7 +81,7 @@ More SDKs are being developed, and contributions are welcome! You can find addit
 
 ## Implementation and Integration
 
-### **Q: How do I implement CDEvents in my CI/CD pipeline?**
+### **Q: How do I implement CDEvents in my SDLC pipeline?**
 **A:** Implementing CDEvents involves several key steps, and while a definitive answer is still being discussed by the community's working group, the following points provide a good starting framework:
 
 1. **Identify Integration Points:** Determine where events are generated and consumed in your pipeline.
@@ -94,8 +94,8 @@ We encourage you to follow the discussions and contributions from the [CDEvents 
 
 ---
 
-### **Q: Can CDEvents be integrated with popular CI/CD tools like Jenkins, GitLab CI, or GitHub Actions?**
-**A:** Yes, CDEvents is designed to be tool-agnostic and can integrate with popular CI/CD tools. Integration can be achieved by configuring these tools to emit and consume CDEvents-compliant events. Some community-contributed plugins and extensions may already exist to facilitate this integration. For example, check out the CDEvents plugin for [Jenkins](https://plugins.jenkins.io/cdevents/).
+### **Q: Can CDEvents be integrated with popular SDLC tools like Jenkins, GitLab CI, or GitHub Actions?**
+**A:** Yes, CDEvents is designed to be tool-agnostic and can integrate with popular SDLC tools. Integration can be achieved by configuring these tools to emit and consume CDEvents-compliant events. Some community-contributed plugins and extensions may already exist to facilitate this integration. For example, check out the CDEvents plugin for [Jenkins](https://plugins.jenkins.io/cdevents/).
 
 Other tools like [Spinnaker](https://spinnaker.io/), [Testkube](https://testkube.io/), and [Guac.sh](https://guac.sh/) are also integrating CDEvents. You can visit the [CDEvents homepage](https://cdevents.dev) for a full list of supported tools and their logos, as well as resources on how to get started with each.
 
@@ -211,7 +211,7 @@ Refer to our [contribution guidelines](https://github.com/cdevents/.github/blob/
 ## Miscellaneous
 
 ### **Q: Can CDEvents be used outside of Continuous Delivery?**
-**A:** Yes, CDEvents is designed to cover a broad range of scenarios across the software development lifecycle, not just Continuous Delivery. In addition to CD, CDEvents also supports Continuous Integration, DevOps practices, and IT operations workflows. The specification defines events that span from issue tracking and source code management (SCM) to CI/CD processes, deployments, and even monitoring and observability. For more details on Continuous Delivery, refer to the [CD Foundation FAQ](https://github.com/cdfoundation/faq?tab=readme-ov-file#what-is-continuous-delivery-cd).
+**A:** Yes, CDEvents is designed to cover a broad range of scenarios across the software development lifecycle, not just Continuous Delivery. In addition to CD, CDEvents also supports Continuous Integration, DevOps practices, and IT operations workflows. The specification defines events that span from issue tracking and source code management (SCM) to SDLC processes, deployments, and even monitoring and observability. For more details on Continuous Delivery, refer to the [CD Foundation FAQ](https://github.com/cdfoundation/faq?tab=readme-ov-file#what-is-continuous-delivery-cd).
 
 ---
 
@@ -249,9 +249,9 @@ While CDEvents provides the foundation for scalability, implementers should ensu
 **A:** 
 1. **Fidelity Investments**: The CDEvents project is key to enabling interoperability, which simplifies the Software Delivery Lifecycle (SDL) processes. Fidelity uses an event-driven architecture to achieve continuous compliance for apps delivered in a highly regulated environment. Their internal tool, the Fidelity Pipeline Library, offers reusable pipeline templates with event triggers, showcasing how CDEvents can enhance developer experience and feature velocity.
 
-2. **Ericsson**: Ericsson co-founded CDEvents to address the need for innovative and simplified software deployment in telecommunications. They have implemented CDEvents in their CI/CD pipelines, demonstrating its effectiveness in achieving interoperability and streamlining processes.
+2. **Ericsson**: Ericsson co-founded CDEvents to address the need for innovative and simplified software deployment in telecommunications. They have implemented CDEvents in their SDLC pipelines, demonstrating its effectiveness in achieving interoperability and streamlining processes.
 
-3. **TestKube**: This Kubernetes-native testing framework has adopted CDEvents to improve feedback loops and quality-gated workflows within CI/CD pipelines. The integration of test events allows for better tracking and management of testing activities.
+3. **TestKube**: This Kubernetes-native testing framework has adopted CDEvents to improve feedback loops and quality-gated workflows within SDLC pipelines. The integration of test events allows for better tracking and management of testing activities.
 
 For more detailed insights into these case studies and others related to CDEvents, you can visit the following links:
 
