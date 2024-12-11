@@ -11,7 +11,7 @@ All events generated from the Github-Pipeline are captured in the [webhook-paylo
 ### CDEvent github-webhook-tranlator
 When installing plugins in the webhook adapter, the plugin name is used as path, with the resulting path being `<webhook adapter host>/translate/<plugin name>`.
 The below list of [CDEvents-Source Code Control Events](https://github.com/cdevents/spec/blob/v0.3.0/source-code-version-control.md) will be mapped with corresponding Github-Webhook event types to translate.  
-Since this effort is to process [ebhook events, we consider processing the webhook-events 
+Since this effort is to process webhook events, we consider processing the webhook-events 
 related to branch, repository and artifact. The [CDEvent-Spec](https://github.com/cdevents/spec/blob/v0.3.0/spec.md) does not have events for tags or release yet.
 
 
