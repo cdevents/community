@@ -34,4 +34,4 @@ Once mapped the CDEvent will be created using CDEvents Go-SDK and send to the co
 The "Webhook/Github Event Type" is obtained by the X-GitHub-Event HTTP header.
 The "Actions", when specified can be obtained by the .action field from the payload, shared by all events.
 In cases where the same GitHub Event Type corresponds to multiple CDEvents, the specific CDEvent to produce is identified by additional fields in the source payload.
-The "CDEvents Type" refers to the .context.type field in CDEvents.
+The "CDEvents Type" refers to the [.context.type](https://github.com/cdevents/spec/blob/v0.4.1/spec.md#type-context) field in CDEvents.
