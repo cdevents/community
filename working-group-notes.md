@@ -20,10 +20,1162 @@ This document contains the notes from the [CDEvents Working Group](https://hackm
 - [2022 Meeting Notes](https://github.com/cdevents/community/blob/main/working-group-notes-2022.md)
 - [2023 Meeting Notes](https://github.com/cdevents/community/blob/main/working-group-notes-2023.md)
 
+
 ### Template
 
 Participants:
 - Name / affiliation / TZ
+
+Links:
+- [v0.6 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+- \<addme\>
+
+### March, 24th 2026 (Americas)
+
+Participants:
+- Dadisi Sanyika, Sol Duara, Pacific
+- Ben Powell, Apple, CST
+- David Bernard, Alchim312/CDviz, UTC+2
+
+Agenda:
+- New attendees
+- Review roadmap
+- https://github.com/cdevents/spec/pull/302 source + id merge
+    - To vote next week
+- https://github.com/cdevents/spec/pull/292 Link + domainId
+    - Lessen scope to domain ID
+    - Introduce another proposal/PR that addresses subject to subject linking.
+        - Side meeting w/ David to address this
+- https://github.com/cdevents/spec/pull/276 automation of python
+    - Rewrite in JS (David)
+    - Still pending
+- https://github.com/cdevents/spec/issues/297 Feature Flag
+    - Ping Matt on this (Ben)
+
+### March, 17th 2026 (Americas)
+Participants:
+- Dadisi Sanyika, Sol Duara, Pacific
+- Andrea Frittoli, IBM, UTC
+- David Bernard, Alchim312/CDviz, UTC+2
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+    - https://github.com/cdevents/spec/pull/292
+        - Discussion ongoing, continue offline
+    - https://github.com/cdevents/spec/pull/276
+        - Needs to be reworked in js
+    - https://github.com/cdevents/spec/pull/298
+        - Needs Signed-off-by in commits for DCO
+        - 
+- (Action) Dasisi to archive old files and notes to git to free up space on hackmd
+- JSON Schema generation
+    - Demo: https://github.com/davidB/sandbox_cdevents_jsonschema_generation
+- CDViz include cdevents version translators tools
+- David to draft a google form to find out about CDEvents user
+    - Andrea to check with Kate if we can use a CDF account
+- Feedback needed on https://github.com/cdevents/spec/issues/252#issuecomment-4032746973 so David can author the PR
+
+### March, 10th 2026 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- David Bernard, Alchim312/CDviz, UTC+2
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged
+- https://github.com/cdevents/spec/pull/298 (Approval)
+    - David has approval depends on conformance example
+    - Add that after meeting
+- https://github.com/cdevents/spec/pull/276
+    - To close and rewrite in Javascript
+- https://github.com/cdevents/spec/issues/252 (Revisit next week)
+
+
+
+### March, 3rd 2026 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- Andrea Frittoli, IBM, UTC
+- David Bernard, Alchim312/CDviz, UTC+2
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged
+- https://github.com/cdevents/spec/pull/298 (Approval)
+    - Enums format needs documentation - Ben
+    - https://github.com/cdevents/spec/issues/252 slated for v0.6
+    - Vote for merging next week
+- https://github.com/cdevents/spec/pull/292 - Ben
+    - Vote for merging next week
+- https://github.com/cdevents/spec/pull/300 - Merged (Thanks Andrea)
+- DataOps CDEvents
+    - Reach out to individual projects related to data ops
+    - Create a blog regarding CDEvents / What does data ops mean?
+    - Creating a list of projects relevant to data ops
+    - https://cdeliveryfdn.slack.com/archives/C07N3QS2KGS
+- Generate JSON Schema from a meta data model
+    -  tried with Cuelang (but not happy with it, see the README of repo)
+    -  current proposal:
+        - yaml (pseudo json-schema fragment)
+        - typescript (to assemble, compose and generate json-schemas)
+    - https://github.com/davidB/sandbox_cdevents_jsonschema_generation
+
+### February, 17th 2026 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- Andrea Frittoli, IBM, UTC
+- David Bernard, Alchim312/CDviz, UTC+2
+- Dadisi Sanyika, Sol Duara
+- Candace Stump, Sol Duara
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged
+- Semantics - https://github.com/cdevents/spec/pull/291/ (Vote for approval next week)
+- Links - https://github.com/cdevents/spec/pull/292
+    - Examples needed for PR
+- Cherry-pick s/version/schemaversion
+    - Was able to release rust SDK
+    - ~~Add CI test for json schema validator~~
+        - Did not raise an error
+        - Fix https://github.com/cdevents/spec/commit/5ac28b18ab8217313be8f81ea9c2c33ce85016d5
+    - SDK consistencies
+        - https://github.com/cdevents/sdk-rust?tab=readme-ov-file#features
+- Devoxx French CDViz and CDEvents Talk (Paris - April 22-24)
+    - Accepted - David
+- Create GH issue for potentially replacing mdtoc with JS
+    - When introducing new CI tooling/validation, please use JS.
+- Data Ops (Victor Lu):
+    - DOK (Database on Kubernetes)
+    - Execution flow - core to orchestration
+        - Diagram needed
+            - Simple
+            - Complex
+- Approval event PR (next week-ish?) - Ben
+
+
+### February, 3rd 2026 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- Dadisi Sanyika, Sol Duara, Pacific
+- Victor Lu, Independent, EST
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged
+- Action Items:
+    - Website (almost ready for review) - Ben
+        - February 13th goal
+    - Base event criteria
+        - Must have subject, context, customdata as required fields.
+    - SDKs will allow for hooks into the event lifecycle
+        - Serialization, deserialization, sending via protocol, receiving via protocol (HTTP)
+        - SDK refactor goal is end of the month 28th of Feb
+    - Data op events
+        - Data ops next Wednesday 11 EST
+        - CDF Calendar (DataOps Initiative SIG)
+
+### January, 27th 2026 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- Dadisi Sanyika, Sol Duara, Pacific
+
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged
+- Action Items:
+    - namespace for SDKs? https://github.com/cdevents/spec/issues/250
+        - SDKs should enforce namespaces at the CustomData root level
+        - Proposal for namespace - Dadisi
+    - Base Event - https://github.com/cdevents/spec/issues/250 & https://github.com/cdevents/spec/issues/253
+    - SDK proposal pattern - Ben
+        - Proposal first then PR for Java SDK - Ben
+    - Road map CDEvents for website - Ben
+        - namespacing
+        - base events
+        - sdks
+        - approval event - https://github.com/cdevents/spec/issues/243
+
+### January, 13th 2026 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- Dadisi Sanyika, Sol Duara, Pacific  
+
+Links:
+- [v0.6 Roadmap] needs a v0.6 roadmap
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+    - Mid December v0.5 was released
+        - Some bugs regarding release reported by David
+    - Website primer needs updating: https://github.com/cdevents/spec/issues/287
+        - Needs to be synced with what is currently out
+        - Needs concepts like namespacing at some point
+    - How will namespacing work? - Low priority
+        - Namespacing will need to a first class citizen in SDKs
+    - SDKs need to be more user friendly
+        - Create an issue outlining the overall design for SDKs/best practices/patterns
+    - Verifiability
+        - Next week CloudEvents meeting, should have updated verifiability PR
+
+### December, 16th 2025 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- Luke Philips, MST
+- Dadisi Sanyika, Apple, Pacific
+- Name / affiliation / TZ
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+    - Meetings return in January
+    - v0.5 waiting on Andrea to make the meeting to have Ben shadow the release.
+        - Need to figure out how we can go about generating the SDKs in an automated fashion.
+        - Are the SDKs automated in any fashion to make releasing them easier?
+    - CDEvents clarifying semantics
+        - PR (github broker will link later)
+        - one final gloss over in the definitions
+    - Have both SDK automation and clarity SDK done by February
+        - Need a roadmap (2026)
+    - Clean up website
+        - https://cdevents.dev/docs/primer/ is outdated
+        - Link definition from https://cdevents.dev/docs/primer/#terminology
+    - Good patterns, practices, and guides with CDEvents
+        - Like custom data and namespacing is not properly defined (2026 namespacing)
+        - Source in subject, how are they used, for example (basic usage guides)
+    - [Argo CDEvent](https://github.com/argoproj/argo-cd/pull/24106)
+        - NA Argocon Luke will have some examples and how Argo works with CDEvents
+        - Mapping CDEvents to a tool/service needs documentation.
+            - Scalability of CDEvents, e.g. Spinnaker CDEvent production
+            - Trials and tribulations talk for CDCon.
+                - Start documentation of from when I first learned about CDEvents to integration to Spinnaker - Ben
+    - Verifiability with CDEvents
+        - No CloudEvent meetings til January
+        - PR will be updated short with the added approach.
+- \<addme\>
+
+### December, 2nd 2025 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- Luke Philips, MST
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+    - Ping Andrea about v0.5 release - Ben
+        - Issues have been resolved and PRs merged, so v0.5 is ready to go
+    - https://github.com/cdevents/spec/pull/276
+        - Recommended using semvar library as opposed to writing our own
+        - https://python-semver.readthedocs.io/en/2.9.0/usage.html
+        - Always tests
+        - Also ask to convert the full shell script to python
+        - Get more information around his capstone project to ensure we dont include a library that does his work
+- \<addme\>
+
+### November, 4th, 2025 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- Luke Philips, open, MST
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+- https://github.com/cdevents/cdevents.dev/pull/53 - Expanding on test definition and what to do
+    - Analysis seems to make more sense
+    - Create a slack thread to hopefully encourage discussion
+    - Otherwise we will merge this next week; contingent on discussion
+- \<addme\>
+
+### November, 4th, 2025 (Europe/Asia)
+
+Participants:
+- Ben Powell, Apple, CST
+- David Bernard, Alchim312/CDviz, UTC+2
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+- https://github.com/cdevents/spec/pull/270
+    - need maintainer approval to merge
+    - build script looks okay, but still need to test
+- https://github.com/cdevents/cdevents.dev/pull/53
+    - Test may need to be a more generic definition like analysis to add for things like security, and linting.
+    - Open slack thread to add discussion - (Ben)
+- Andrea to have context version to be renamed to specversion
+    - Due by Friday
+        - I will ping him on Friday, if unable, I'll do it - Ben
+- Jenkins CDEvents plugin - v0.3 compatible (but unsure)
+    - May need a migration tool or updated plugin for CDEvents
+- \<addme\>
+
+### October, 7th, 2025 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- Luke Philips, open, MT ⛰️
+- 
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+    - v0.5 updates
+        - Update linter for $id validation
+        - Definitions PR https://github.com/cdevents/cdevents.dev/pull/53 | Oct 21st <Decision>
+
+### October, 7th, 2025 (Europe/Asia)
+
+Participants:
+- Ben Powell, Apple, CST
+- David Bernard, Alchim312/CDviz, UTC+2
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+    - Verifiability PR open to CloudEvents https://github.com/cloudevents/spec/pull/1371
+    - v0.5
+        - Internal PRs approved - (Ben)
+            - $id will be consistent and PR will go out after this meeting
+        - version to renamed to specversion - (Ben)
+            - I can create a PR internally today, and probably get it out to OSS today.
+        - Definitions PR https://github.com/cdevents/cdevents.dev/pull/53
+            - Try to come to some decision by Oct 21st to close and/or merge
+            - Website needs to be easily found in the spec repo
+- \<addme\>
+
+### September 30, 2025 (Americas)
+
+Participants:
+- Name / affiliation / TZ
+- Ben Powell, Apple, CST
+- Luke Philips, open, MT ⛰️
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- [Definitions PR](https://github.com/cdevents/cdevents.dev/pull/53/files?short_path=4535411#diff-4535411189be273207c49e284ff1310580e19cc01d842a0fde01f2bfb05c5e90)
+
+### September 23, 2025 (Americas)
+
+Participants:
+- Name / affiliation / TZ
+- Ben Powell, Apple, CST
+- Luke Philips, open, MT
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Definitions: https://github.com/cdevents/cdevents.dev/pull/53
+- Argo / cdViz example project: https://github.com/argo-multiverse-labs/local-cluster/tree/feat/cdviz/argo-cdviz
+- 
+
+### September 23, 2025 (Europe/Asia)
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+- Ben Powell, Apple, CST
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- v0.5 roadmap
+    - Alignment of schema IDs https://github.com/cdevents/spec/issues/187
+        - Ben: Open internally, waiting for approval from Apple legal
+        - Linting rule to be added
+    - Versioning: https://github.com/cdevents/spec/issues/112
+        - Andrea: Not started working on it yet, should be able to work on it next week
+- Look at outstanding PRs
+    - https://github.com/cdevents/cdevents.dev/pull/53/files
+    - Review needed
+    - Where to put these definitions on the website
+- CDEvents and GitOps
+    - (luke adding a comment after the meeting): does CDEvents capture the '4 principles' of GitOps effectively? https://opengitops.dev/ (particularly a 'continuous reconcile loop')
+- CDEvents and DataOps
+    - SPDX being extended to "AIBOM"
+    - DataOps WG is working on defining what is DataOps
+    - OpenAPI has a new WG for Aync API
+        - How to make a workflow work when there is a combination of APIs and events
+    - 
+- Action for David: capture the discussion about GitOps vs. CDEvents
+- Lesson learnt about reconciling GitOps with CI/CD CDevents
+
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+- \<addme\>
+
+
+### September 16th, 2025 (Europe/Asia)
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+- Ben Powell, Apple, CST
+- David Bernard, Alchim312/CDviz, UTC+2
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review [v0.5 milestone](https://github.com/cdevents/spec/issues?q=is%3Aissue%20state%3Aopen%20milestone%3Av0.5)
+    - https://github.com/cdevents/spec/issues/263
+        - Upcoming PR by Ben with opinionated description of build
+    - https://github.com/cdevents/spec/issues/112
+        - WIP
+    - https://github.com/cdevents/spec/issues/187
+        - WIP
+    - Targeting v0.5 in a couple of weeks
+    - We need to update the website too!
+- Releases
+    - Document the process
+        - For the spec
+        - Website updates
+        - Anything else?
+    - Next time let's release in a zoom call
+
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+    - update on the meeting links
+        - https://github.com/cdevents/spec/pull/267
+        - https://github.com/cdevents/community/pull/51
+- \<addme\>
+
+
+
+
+### September 9th, 2025 (Europe/Asia)
+Participants:
+- Ben Powell, Apple, CST
+- Dadisi Sanyika, Apple, Pacific
+- David Bernard, Alchim312/CDviz, UTC+2
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+- Definitions and concepts (https://github.com/cdevents/spec/issues/263)
+    - build removal should not be done, but definitions should be clear and opinionated
+        - build != artifact.packaged
+        - PR coming to define these concepts
+- Update meeting times in repos (community) - Ben
+- Think about dataops CDEvents (Victor)
+    - Have clear and opinonated definitions - (Dadisi)
+    - Contributing
+        - Start with GH issue
+- \<addme\>
+
+### September 2nd, 2025 (Asia/Europe)
+
+Participants:
+- Ben Powell, Apple, CST
+- David Bernard, Alchim312/CDviz, UTC+2
+- 
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- https://github.com/cdevents/spec/issues/263
+    - ArgoCD - more gitops, e.g. do builds
+
+### September 2nd, 2025 (Americas)
+Participants:
+- Ben Powell, Apple, CST
+- Luke Philips, MT, open
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+### September 2nd, 2025 (Asia/Europe)
+
+Participants:
+- Ben Powell, Apple, CST
+- David Bernard, Alchim312/CDviz, UTC+2
+- 
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- https://github.com/cdevents/spec/issues/263
+    - ArgoCD - more gitops, e.g. do builds
+
+```
+CDEvents - v0.5 Release Candidate
+
+Completed
+
+1. Move from snake case to camel case
+2. https://github.com/cdevents/spec/pull/171 (SBOM URI to artifact event)
+3. https://github.com/cdevents/spec/issues/189 (remove subject.type)
+4. https://github.com/cdevents/spec/issues/124 (content.outcome should be enum)
+
+Pending
+1. https://github.com/cdevents/spec/issues/187 (alignment of $id and context.type) - Ben
+2. https://github.com/cdevents/spec/issues/112 (version is ambiguous) - Andrea
+~~3. http://github.com/cdevents/spec/issues/109 (improve spec consistency)~~
+~~4. https://github.com/cdevents/spec/issues/263 (remove build discussion) - Ben | David~~
+
+Optimistic Goals
+
+1. Approval events (proposal needed)
+```
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Look at meeting calendar to make sure meetings aren't duplicated
+    - CDEvents meeting may need region if it is missing. Need to check (Ben)
+- v0.5 (progress)
+    - ~~Was out last week, so was unable to create PR for subject.type removal (Ben)~~
+    - subject.type removal done by David
+- https://github.com/cdevents/spec/issues/263 (removing build)
+    - instead of deleting we need to first define what the terms mean in CDEvents, e.g. build (Ben)
+- Blog post for getting started
+    - Will start work on this - Ben
+    - Or maybe it does not need to be a blog but a "Getting Started" page in cdevents.dev
+- \<addme\>
+
+### August 19th, 2025 (Americas)
+
+Participants:
+- Ben Powell, Apple, CST
+- Luke Philips, MT, open
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- A hello world for CDEvents
+    - Consumers showing list of events coming through (potentially)
+    - A blog post regarding this
+- Luke talking cdEvents - https://sched.co/28D2u
+- \<addme\>
+
+### August 19th, 2025 (EMEA)
+
+Participants:
+- Andrea Frittoli, IBM, BST
+- David Bernard, Alchim312/CDviz, UTC+2
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- https://github.com/cdevents/spec/issues/109
+    - Proposal: deprecate build, to be replaced by task/pipeline/artifact events instead
+    - David to comment on the issue
+- All milestone issues assigned
+
+
+### August 12th, 2025 (Americas)
+
+Participants:
+- Ben Powell, CST, Apple
+- Luke Philips, MT, open
+- Dadisi Sanyika, Pacific, Apple
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+- v0.5 updates
+- https://github.com/argoproj/argo-cd/pull/24106
+    - Ask David about demo and cdviz bridge (Ben)
+    - Review PR (Ben)
+- \<addme\>
+
+### August 4th, 2025
+
+Participants:
+- Ben Powell, Apple, CST
+- David Bernard, Alchim312/CDviz, UTC+2
+- Dadisi Sanyika, Apple, Pacific
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged
+- Action Items
+- Status of v0.5
+    - https://github.com/cdevents/spec/issues/189 (remove subject.type)
+        - https://github.com/cdevents/spec/issues/258 - Tests to enforce formats
+    - https://github.com/cdevents/spec/issues/112 (is event versions really needed?)
+        - To ping Andrea on this (Ben)
+    - http://github.com/cdevents/spec/issues/109 (consistency)
+- https://opentelemetry.io/docs/specs/semconv/registry/attributes/cicd/
+    - Potentially use the same enums to be consistent with opentelemetry?
+    - One issue it looks like that CDEvents is after the fact an event happened, versus open telemetry which says exactly when something is happening.
+- \<addme\>
+
+### July 28th, 2025
+
+Participants:
+- Name / affiliation / TZ
+- Ben Powell, Apple, CST
+- David Bernard, Alchim312/CDviz, UTC+2
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+- v0.5 Release Candidate
+```
+CDEvents - v0.5 Release Candidate
+
+Completed
+
+1. Move from snake case to camel case
+2. https://github.com/cdevents/spec/pull/171 (SBOM URI to artifact event)
+
+Pending
+
+1. https://github.com/cdevents/spec/issues/189 (remove subject.type)
+2. https://github.com/cdevents/spec/issues/187 (alignment of $id and context.type)
+3. https://github.com/cdevents/spec/issues/124 (content.outcome should be enum)
+4. https://github.com/cdevents/spec/issues/112 (version is ambiguous)
+5. http://github.com/cdevents/spec/issues/109 (improve spec consistency)
+
+Optimistic Goals
+
+1. Approval events (proposal needed)
+```
+- Moving to TZs WG
+    - Move all SIGs to Tuesday
+    - 9AM CST/15:00 UTC for Europe/Asia and merge with implementation SIG
+    - 12PM CST for America (Need to ask PST folks)
+        - If we dont get more people by end of year, we can remove this SIG meeting
+- https://github.com/cdevents/spec/issues/252 will be main topic for next week
+- \<addme\>
+
+### July 7th, 2025
+
+Participants:
+- Name / affiliation / TZ
+- Ben Powell, Apple, CST
+- Andrea Frittoli, IBM, BST
+- Adam Kaplan, Red Hat, EDT
+- Luke Philips, MDT
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+
+Agenda:
+- New attendees
+    - Adam Kaplan
+    - Luke Philips
+- Adam: idea for "Release" event
+    - Previous Context
+        - https://github.com/cdevents/spec/issues/152 (For bulk APIs)
+        - https://github.com/cdevents/spec/issues/39 (Dependency updates through events)
+    - What does a release look like?
+        - It contains metadata
+            - Link to an issue which describes release
+            - Possibly list of vulnerabilities
+            - Can be used to cascade software updates
+        - Should it be a subject or a predicate to an existing subject?
+        - How would tools react to this event? Is it for observability?
+- Review roadmap
+    - (Andrea) Plans for v0.5
+- CDEvents and ArgoCD
+    - https://github.com/argoproj/argo-cd/pull/13723
+    - https://hackmd.io/@cdfoundation/SydQ9uDjT?utm_source=preview-mode&utm_medium=rec
+    - Flux CDEvents receiver design: https://github.com/fluxcd/flux2/tree/main/rfcs/0006-cdevents
+    - 
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+
+
+
+
+### Topics for coming meetings
+- \<addme\>
+
+### June 9th, 2025
+
+Meeting Video: https://youtu.be/hWXtx4a-kGs?si=cNyv9EGNYE6jyKDB
+
+Participants:
+- Name / affiliation / TZ
+- Ben Powell, Apple, CST
+- Andrea Frittoli, IBM, BST
+- Rajiv Singh
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- Conduit project
+    - Presentation at cdCon
+- Verifiability of events
+    - CloudEvents Extension, proposed to CDEvents
+        - More specific proposal
+    - Also submitted to CloudEvent
+        - More generic
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+- \<addme\>
+
+
+
+### May 19th, 2025
+Participants:
+- Ben Powell, Apple, CST
+- David Bernard, CDviz, UTC+2
+- Dadisi Sanyika, Apple, UTC-7
+- Rasheed Mudasiru, KnowNow, WAT
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+- [CloudEvents and CDEvents](https://github.com/cdevents/spec/issues/254)
+    - Reach back out for more information and specify that we do, in fact, rely on CloudEvents FULLY but just using structured mode.
+- [Interoperability Proposal](https://github.com/cdevents/spec/issues/253)
+- \<addme\>
+
+### May 5th, 2025
+
+Participants:
+- Ben Powell, Apple, CST
+- David Bernard, CDviz, UTC+2
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+- Action Items
+- [Namespacing Proposal](https://github.com/cdevents/spec/issues/250)
+- [Source issues](https://github.com/cdevents/spec/issues/252)
+- Links presentation to be worked on - Ben
+
+### April 14th, 2025
+
+- Ben Powell, Apple, CST
+- David Bernard, CDviz, UTC+2
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Dadisi and Ben talk accepted at cdCon
+
+### March 31st, 2025
+
+- Ben Powell, Apple, CST
+- David Bernard, CDviz, UTC+2
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+    - https://github.com/cdevents/spec/issues/247
+        - Can work in tandem with implementations SIG to figure out how new events could work (Ben)
+- Goals for CDEvents
+    - Be more specific in the CDEvents, themselves.
+        - For example, subject.source is too hand wavy
+    - Start thinking about how swapping tool A for tool B a system has the exact same behavior (Interoperability).
+    - More real world examples.
+        - When a new events are added, real world examples should be provided
+- Action Items
+- \<addme\>
+
+### March 24th, 2025
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC
+- Ben Powell, Apple, CST
+- David Bernard, CDviz, UTC+1
+- Dadisi Sanyika, Apple, UTC-8 
+
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Look at [open issues](https://github.com/cdevents/spec/issues) to be triaged 
+    - Private namespace: https://github.com/cdevents/spec/issues/245
+        - Guidelines for SDKs implementation of custom schemas are needed
+        - Spec needs work if we wanted to support custom namespaces like `com.orgx....` type of events
+        - Let's make a pseudo-code / use case proposal
+        - We can use sub-issues on GitHub 
+        - Dadisi to create sub-issues for this
+    - 
+- Review roadmap
+- Look at outstanding PRs
+- Action Items
+- \<addme\>
+- [Verifability proposal](https://github.com/cloudevents/spec/pull/1330) submitted to CloudEvents
+    - One of supported frameworks https://github.com/secure-systems-lab/dsse
+
+### Topics for coming meetings
+- \<addme\>
+
+### March 10th, 2025
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC
+- Ben Powell, Apple, CST
+- David Bernard, CDviz, UTC+2
+- Dadisi Sanyika, Apple, Pacific
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+    - https://github.com/cdevents/spec/pulls
+- Supporting DORA
+    - `change.committed` 
+    - https://github.com/cdevents/spec/blob/v0.4.1/source-code-version-control.md#change-created
+    - This is the time where a developer starts working on a change, by creating the first commit
+- Supporting private JSON schema for events outside of CDEventsX
+    - Private JSON schema support outside of CDEventsx -- Private URIs
+    - Are the SDKs aware of the `dev.cdeventsx.<namespace>-<subject>.<predicate>.<version>`?
+- Action Items
+- \<addme\>
+
+### February 24th, 2025
+
+Cancelled
+
+### February 10th, 2025
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC
+- Ben Powell, Apple, CST
+- David Bernard, - , UTC+2
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+    - https://github.com/cdevents/spec/issues/27 WIP
+    - https://github.com/cdevents/spec/issues/215 removed from the sprint for now as it depends on the modelling language
+- Approval events: https://github.com/cdevents/spec/issues/243
+- Smithy:
+    - Really focused on REST API, it requires a service, resources, etc
+    - Smithy always generates everything, client, server, model
+    - However validation logic may not be in the model, but in the client/server packages
+    - Smithy relies on the plugin to know how things will look like on the wire
+    - Ben: a model plugin exists, that might provide an answer to the points above 
+    - https://smithy.io/2.0/guides/using-code-generation/generating-a-client.html
+- Look at outstanding PRs
+- Action Items
+- \<addme\>
+
+### February 3rd, 2025
+
+Participants:
+- Name / affiliation / TZ
+- Ben Powell, Apple, CST
+- David Bernard
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+  - More inconsistency issues:
+    - https://github.com/cdevents/spec/issues/188
+    - https://github.com/cdevents/spec/issues/187
+    - Need issue for naming convention linting (Ben)
+  - Semantics need better clarity and definitions, esp. context attributes
+      - Package URL: PURL format provides good examples on how its used
+      - We recently moved our examples to conformance given they weren't really examples
+          - However, we still need examples for end users.
+          - Need issue (Ben)
+
+### January 27th, 2025
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC
+- Ben Powell, Apple, CST
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Naming Conventions
+    - We should have consistent naming in subjects
+        - e.g. taskRun, pipelineRun, but... build
+        - We should define that certain type of subjects use `Run` and other not so we are consistent in future
+        - Related issue: https://github.com/cdevents/spec/issues/27
+        - Ben to take ownership of the issue (added to the project)
+- Review roadmap
+    - Reviewed https://github.com/orgs/cdevents/projects/1/views/16
+- Look at outstanding PRs
+    - https://github.com/cdevents/spec/pull/238
+        - Ben to ping Ole about this change
+- Action Items
+- \<addme\>
+
+### Topics for coming meetings
+- \<addme\>
+
+### January 13th, 2025
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC
+- David Bernard
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+    - To be reviewed: https://github.com/cdevents/spec/pull/242
+- Action Items
+- \<addme\>
+
+### Topics for coming meetings
+- \<addme\>
+
+
+### Spec and Implementation WG SIGs canceled until 2025
+
+### Dec 2nd, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Ben Powell, Apple, CST
+- David Bernard, - , UTC+1
+- Andrea Frittoli, IBM, UTC
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Action Items
+  - [enums and anyOf](https://github.com/orgs/cdevents/projects/1/views/16?pane=issue&itemId=84206806&issue=cdevents%7Cspec%7C215)
+        - Describe limitations and how this can be solved partially with a new code generator and modeling language - Ben
+- \<addme\>
+
+### Nov 18th, 2024
+
+Participants:
+- Ben Powell, Apple, CST
+- Brett Smith, SAS, UTC-4
+- David Bernard, - , UTC+1
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+- [Outstanding PRs](https://github.com/cdevents/spec/pull/)
+
+Agenda:
+- New attendees
+- Review roadmap
+- Look at outstanding PRs
+- Action Items
+- demo of spec (json-schema) generation from pkl
+- demo of code generation: [davidB/sandbox_cdevents_spec: exploration of other way to define cdevents (and to generate doc, sdk,...)](https://github.com/davidB/sandbox_cdevents_spec)
+- \<addme\>
+
+### Nov 11th, 2024
+
+Participants:
+- Ben Powell, Apple, CST
+- Brett Smith, SAS, UTC-4
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- https://github.com/cdevents/spec/issues/193
+    - Consider relying on using "deployed" with some state that signifies what happened - Brett
+    - "If the data is not understood by the tool, it just becomes for the human" - Brett
+- https://github.com/cdevents/spec/pull/242/
+    - Needs reviewers
+- What is the state of:
+    - https://github.com/cdevents/spec/issues/37
+    - https://github.com/cdevents/spec/issues/241
+- Making test enums more consistent - https://github.com/cdevents/spec/pull/238
+    - Seems Andrea had some concerns about using success vs pass? Or failure vs fail?
+- Action Items
+- \<addme\>
+
+### Nov 4th, 2024
+
+Participants:
+- Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC
+- Ben Powell, Apple, CST
+- David Bernard, - , UTC+2
 
 Links:
 - [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
@@ -33,15 +1185,311 @@ Agenda:
 - Action Items
 - \<addme\>
 
-### Topics for coming meetings
+- TechStrong CDEvents first week of December
+  - Ben to check internally
+- TOC Project Updates
+  - https://github.com/cdfoundation/toc/pull/229/files#diff-1aed1851290031874b25e0e66181c61e0d767c802797cd8b1083bc6f6e357eb5
+  - Add Hacktoberfest and short update
 
-- Review proposal for demo system https://github.com/cdevents/community/issues/31
+- v0.5 Planning
+  - Project: https://github.com/orgs/cdevents/projects/1/views/16
+  - Table view: https://github.com/orgs/cdevents/projects/1/views/17
+
+- (Ben) CloudEvents and Security
+  - Still ongoing
+
+
+### Oct 21st, 2024
+
+Participants:
+- Ben Powell, Apple, CST
+- Andrea Frittoli, IBM, UTC
+- David Bernard, - , UTC+2
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+
+- TechStrong CDEvents in November
+  - Ben interested
+
+- Conference
+  - Proposal: Present CDEvents at conferences beyond CI/CD
+    - e.g. doing a talk about code generation for CDEvents
+  - LF Member Summit
+    - Andrea to talk about CDEvents
+
+- Jenkins + CDEvents @ Fidelity
+  - Share stories / issues with Spinnaker + CDEvents users
+  - Andrea to send intro email
+
+- v0.5 Planning
+  - Project: https://github.com/orgs/cdevents/projects/1/views/16
+  - Table view: https://github.com/orgs/cdevents/projects/1/views/17
+
+- \<addme\>
+
+### Oct 14th, 2024
+
+Participants:
+- Ben Powell, Apple, CST
+- Brett Smith, SAS, UTC-4
+- David Bernard, - , UTC+2
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+- v0.5 planning - Scheduled for next SIG
+- Code generation tooling - Implmentation SIG's next topic tomorrow
+    - Make SDK validations pluggable - e.g. hooks AKA handlers
+    - [JSON typedef](https://jsontypedef.com/) - to generate data structures
+    - [Smithy](https://smithy.io/2.0/index.html) - Has really good validation layer (Owned and created by AWS)
+    - A good want and NEED is a way to generate documentation for the SDKs
+- \<addme\>
+
+### Topics for coming meetings
+- \<addme\>
+
+### Oct 7th, 2024
+
+Participants:
+- Andrea Frittoli. IBM, UTC+1
+- Brett Smith, SAS, UTC-4
+- David Bernard, - , UTC+2
+- Ben Powell, Apple, CST
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+- Code generation (from last meeting)
+  - There's a lot of custom schema in each SDK to generate the code
+  - Some of the design choices in the JSON spec do not work well with existing tool
+  - The proposal is to bring this to the Implementation WG
+- Hacktoberfest
+  - First contributions: https://github.com/cdevents/community/pull/48
+    - Please Review!
+- Webhook Adapter - GitHub Plugin
+  - Hergy made a proposal: https://github.com/cdevents/community/pull/47
+- Jira Translator
+  - Jalander proposal: https://github.com/cdevents/jira-translator/pull/1
+
+
+- \<addme\>
+
+
+### Sep 30th, 2024
+
+Participants:
+- Ben Powell, Apple, CST
+- Brett Smith, SAS, UTC-4
+- David Bernard, - , UTC+2
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- None
+- Revisit code generation for SDKs based on https://github.com/cdevents/spec/issues/51 discussion
+    - Cuelang
+    - Proto schema
+    - OpenAPI (David - More investigation is needed since this is more server based)
+        - Only supports HTTP
+        - No async
+        - May not be appropriate for CDEvents
+    - (Ben) Will create GH issue for this
+- CloudEvents Verifiability
+    - Looking at using the DSSE signature and envelope spec
+    - https://github.com/secure-systems-lab/dsse
+    - Look at JWT for inspiration on how to sign proxying and translating layers
+- Java SDK maintainer still needed
+- \<addme\>
+
+
+
+### Sep 23rd, 2024
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+2
+- Andrea Frittoli, IBM, UTC+1
+- Brett Smith, SAS, UTC-4
+- Ben Powell, Apple, CST
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+- Open Source Summit / CD Mini Summit
+  - Two CDEvents talks at CD Mini Summit
+  - Recordings available in a couple of weeks
+  - Andrea: What's new in CDEvents 0.4
+    - Brief intro to CDEvents
+    - Call for contributions
+    - What's new and what's coming
+    - [slides](https://github.com/afrittoli/cdevents_interoperability/blob/oss_eu_2024/cdevents_interoperability.pdf)
+  - Andrew Fenner (Ericsson): Enhancing Interoperability in CI/CD Workflows Using CDEvents
+    - Live demo with CDEvents!
+    - Call for contributions
+    - Many 1:1 integrations are available
+      - Focus on observability / data as primary use case
+      - Chicken-egg issue as we need more adoption to show value on interoperability side
+      - (Ben) Long term Apple sees much more value in the interoperability use case, as Apple has a lot of observability in place already
+  - CD Mini Summit
+    - 15/20 people in the room
+    - Attendees Engaged
+
+  - Potentially interested in CDEvents
+    - [chainloop](https://chainloop.dev/)
+    - [semaphoreci](https://semaphoreci.com/)
+
+- Emil's future availability
+  - Need to step out from being an active contributor for now. Hopefully coming back sooner rather than later.
+  - Ericsson still has a very high interest in this area, including CDEvents itself.
+
+- Java SDK needs a new maintainer!
+  - Ben to check with his manager if he's able to contribute
+
+- PRs pending review
+  - CDEvents visualization with Prometheus/Grafana tool - https://github.com/cdevents/visualisation/pull/3
+  - Part2: gerrit-translator-cdevents - https://github.com/cdevents/gerrit-translator/pull/3
+  - Upgrade go-sdk v0.4 for webhook-adapter - https://github.com/cdevents/webhook-adapter/issues/6
+  - jira-translator-cdevents - https://github.com/cdevents/jira-translator/pull/1
+  - RFC: Jira-CDEvents Integration - https://github.com/cdevents/community/pull/45
+  - Support for creating Custom Event Types - https://github.com/cdevents/sdk-java/pull/83
+
+- Hacktoberfest
+  - CDEvents would like to participate
+  - We can tag larger items that we're working on as hacktobersfest to help boost interest
+  - (Andrea) Reviewing and tagging smaller items
+
+
+### Sep 9th, 2024
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+2
+- Andrea Frittoli, IBM, UTC+1
+- Brett Smith, SAS, UTC-1
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+- Action Items
+- Finalize discussion on ["to be considered" items](https://github.com/cdevents/spec/labels/to-be-considered)
+  - Versioning: https://github.com/cdevents/spec/issues/112
+    - `specversion` would be clearer +1 from Brett and Emil
+    - consistent with [CloudEvents](https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md#specversion)
+    - we shall make the change in v0.5 since it's a breaking change
+    - SDK will have to parse both `specversion` and `version`, at least until we get to 1.0
+
+- OpenTelemetry CI/CD
+    - [SIG](https://github.com/open-telemetry/community?tab=readme-ov-file#specification-sigs)
+    - [Board](https://github.com/orgs/open-telemetry/projects/79/views/1)
+
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15) review
+
+### Sep 2nd, 2024
+
+Participants:
+- Andrea Frittoli, IBM, UTC+1
+- Emil Bäckmark, Ericsson, UTC+2
+- Name / affiliation / TZ
+
+Links:
+- [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+
+Agenda:
+- New attendees
+
+- Action Items
+  - (Andrea, created July 29) Check for missing fields in CI (OpsMx and others) -> still pending
+  - (Andrea, created July 29) Call out in the slack channel that we'd like to make a "to be considered" WG meeting and call for participants
+    - We will try to collect feedback on specific issues
+    - Tentatively next Monday 9/9 we will discuss v0.5 planning
+    - To be advertised in advance on the slack channel
+
+- "To be considered":
+  - Versioning: https://github.com/cdevents/spec/issues/112
+    - The users of the SDK, the SDK make most of the versioning complexity
+    - Still visible to users defining custom events or working at JSON level
+    - Proposal is to keep things as they are unless someone voices concerns (on slack, on the issue, in a meeting)
+    - 
+  - Subject / Predicate: https://github.com/cdevents/spec/issues/51
+    - Similar consideration as for the previous one ^^^
+  - Change -> Change Proposal: https://github.com/cdevents/spec/issues/62
+    - Proposed to close
+
+- Meeting Schedule
+  - Andrea & Emil not available tomorrow
+    - We can post on slack, if folks are available they shall still meet
+  - 16/17 September: Open Source Summit
+    - Andrea and Emil won't be able to facilitate, might be able to join via phone
+
+- ~~V0.5 Planning / Open Issue triage~~
+
+- \<addme\>
+
+### Aug 26th, 2024
+
+Participants:
+- Emil Bäckmark, Ericsson, UTC+1
+- Ben Powell, Apple, CST
+- Name / affiliation / TZ
+
+Agenda:
+- New attendees
+
+- Action Items
+    - (Andrea, created July 29) Check for missing fields in CI (OpsMx and others)
+    - (Andrea, created July 29) Call out in the slack channel that we'd like to make a "to be considered" WG meeting and call for participants
+
+- Clarification on the two different CDEvents WGs
+    - This meeting (CDEvents WG) focuses on protocol related topics
+    - [CDEvents Implementation WG](https://github.com/cdevents/implementation-wg) focuses on SDKs, tools, etc, implementing the CDEvents protocol
+
+- CDEvents v0.5 planning
+    - v0.4 was released in April 2024
+    - Mostly admin changes so far, but at least one breaking-change introduced since v0.4. [Recently closed PRs](https://github.com/cdevents/spec/pulls?q=is%3Apr+is%3Aclosed).
+    - [v0.5 Milestone](https://github.com/cdevents/spec/milestone/5)
+    - [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
+    - ~~Revisit [issue 207](https://github.com/cdevents/spec/issues/207)?~~
+    - We should probably be able to describe who/what triggered a pipelineRun. Ben to create an issue.
+
+- Next meeting
+    - Meeting series updated?
+    - Sept 2 Labor Day in US. We'll keep that meeting anyway.
+    - Sept 16 Collides with Open-Source Summit
+
+- \<addme\>
+
+
+### Aug 12th, 2024
+
+- Canceled due to no attendees showing up
 
 
 ### July 29th, 2024
 
 Participants:
 - Name / affiliation / TZ
+- Andrea Frittoli, IBM, UTC+1
+- Ben Powell, Apple, CST
 
 Links:
 - [v0.5 Roadmap](https://github.com/orgs/cdevents/projects/1/views/15)
@@ -58,7 +1506,27 @@ Agenda:
   - Java SDK: https://github.com/cdevents/sdk-java/pull/83
   - Jira Translator: https://github.com/cdevents/jira-translator/pull/1
   - Gerrit Translator: https://github.com/cdevents/gerrit-translator/pull/3
-- Spec [v0.5](https://github.com/orgs/cdevents/projects/1/views/15) review: 
+
+- Questions for Translator
+  - Code Generation
+  - Maintainability
+  - Two aspects / type of problems
+    - Events -> CDEvents translation
+      - Tagging is one option
+    - First is large APIs from incoming webhook requests
+        - This requires modeling them in the translator which does not scale well if each API request has many fields.
+    - The second issue is mapping these custom models to CDEvents which has been addressed in the Jira Translator PR.
+
+- Spec [v0.5](https://github.com/orgs/cdevents/projects/1/views/15) review 
+  - Ben working on changes required to CD events
+  - Andrea to check for missing fields in CI (OpsMx and others)
+  - (Andrea) Call out in the slack channel that we'd like to make a "to be considered" WG meeting and call for participants
+
+- Proposal about event verifiability
+  - Work in progressing
+  - Likely a couple of months of work
+  - Concerns on Apple security side with S/MIME and Jose that were proposed by Serverless WG, to be discussed in upcoming WG
+
 - \<addme\>
 
 
